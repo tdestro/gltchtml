@@ -1,0 +1,460 @@
+@import "compass";
+@import "settings";
+@import "foundation";
+@import "normalize";
+
+// Flex box
+@media screen and (min-width: 640px) {
+  .top-bar-section > ul {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+  }
+  .top-bar-section > ul > li {
+    float: none;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    flex: 1;
+  }
+  .top-bar-section > ul > li > a {
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+  }
+}
+
+////////////////////////////////////////////////
+// THIS IS SMALL LAYOUT
+@media #{$small-only} {
+
+  // MENU ICON FOR SMALLg
+  .top-bar {
+    height: 100px;
+  }
+  .top-bar-section ul li > a {
+    font-size: 28pt;
+  }
+  .top-bar .toggle-topbar a {
+    height: 100px;
+    width: 91px;
+    background: url("../assets/topbar/topbarsmbutd.png") no-repeat;
+  }
+
+  .top-bar.expanded .toggle-topbar a {
+    height: 100px;
+    width: 91px;
+    background: url("../assets/topbar/topbarsmbut.png") no-repeat;
+  }
+  .sm-green-color-bg {
+    background-color: $gtnp_green;
+    font-family: $font-family-serif;
+  }
+  .sm-green-buts {
+    margin-top: 19px;
+    margin-bottom: 19px;
+    font-family: $font-family-sans-serif;
+    font-size: 28pt;
+    color: $white;
+  }
+
+  .title-area {
+    height: 100px !important;
+  }
+  // KEEPS TOP BAR OVERLOGO
+  .top-bar-section {
+    z-index: 1001;
+  }
+  // LOGO FOR SMALL
+  .smlogo {
+    z-index: 1000;
+    position: absolute;
+  }
+  .footer {
+    text-align: center;
+  }
+
+  .search-but {
+    position: relative;
+    background-color: $gtnp_dark_green;
+    padding: 26px 26px 26px;
+    height: 71px;
+  }
+  .search-but:hover,
+  .search-but:focus {
+    background-color: $gtnp_dark_gray;
+  }
+  .smsearchpad {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .searchpad {
+    padding-top: 47px;
+  }
+  .search {
+    height: 71px !important;
+    margin: 30px 0px 0.25rem !important;
+    padding: 0rem 0.5rem 0rem !important;
+    color: $gtnp_green !important;
+  }
+  .top-bar-section ul li.smsearchpad {
+    padding: 0px 20px;
+  }
+
+  .top-bar-section ul li {
+    padding: 0px 0px 0px 0px;
+  }
+
+  .top-bar-section .has-dropdown.moved {
+    position: relative;
+    display: block;
+  }
+  .top-bar-section .has-dropdown.expand {
+    position: relative;
+    display: block;
+
+  }
+  .top-bar-section .has-dropdown.moved > .dropdown {
+    display: block;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    clip: auto;
+    width: 100%;
+    left: 0;
+    //top: auto;
+    position: relative !important;
+  }
+  .title.back.js-generated {
+    display: none;
+  }
+  .top-bar input,
+  .top-bar select {
+    font-size: 28pt;
+  }
+  .top-bar-section .dropdown li a {
+    color: $gtnp_dark_gray;
+
+  }
+
+  .top-bar ul > li.has-dropdown a.open:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url("../assets/topbar/topbarsmdownd.png") no-repeat;
+    position: absolute;
+  }
+  .top-bar ul > li.has-dropdown.expand .open:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("../assets/topbar/topbarsmdown.png") no-repeat;
+  }
+
+}
+
+////////////////////////////////////////////////
+// THIS IS MEDIUM UP LAYOUT
+@media #{$medium-up} {
+  .search-but {
+    position: relative;
+    background-color: $gtnp_dark_green;
+    padding: 0.1rem 0.5rem 0.4rem;
+    height: 1.75rem;
+  }
+  .search-but:hover,
+  .search-but:focus {
+    background-color: $gtnp_dark_gray;
+  }
+  .logo {
+    margin-top: -2.4rem;
+
+  }
+
+  .white {
+    font-family: $font-family-sans-serif;
+    font-size: 9pt;
+    color: $white;
+  }
+  .def_icon_desc {
+    margin-top: 0.55rem;
+  }
+  .def_icon {
+    margin-top: 0.35rem;
+  }
+
+  .weather_temp {
+    font-size: 1.8rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+    height: 2rem;
+  }
+  .weather_desc {
+    font-family: $font-family-serif;
+    font-size: 9pt;
+    color: $white;
+    letter-spacing: 0.04rem;
+    line-height: 0.9rem;
+    padding-top: 0.2rem;
+  }
+  .orbit-container .orbit-slides-container > * .right-orbit {
+    background-color: transparent;
+    bottom: 0;
+    font-size: 0.875rem;
+    padding: 0.625rem 0.875rem;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    margin: 0% 50% 0%;
+  }
+
+  .searchpad {
+    padding-top: 0.17rem;
+  }
+  .search {
+    height: 1.75rem !important;
+    margin: 0.2rem 0px 0.25rem !important;
+    padding: 0rem 0.5rem 0rem !important;
+    color: $gtnp_green !important;
+  }
+  .top-bar {
+    z-index: 1000;
+  }
+  .top-bar-margin {
+    margin: -36px auto;
+  }
+  .top-bar-color-bg {
+    background-color: $gtnp_green;
+    height: 2.25rem;
+  }
+
+  // THIS SETS COLOR AND BACKGROUND FOR FULLSIZE MENU TO OVERIDE MOBILE MENU
+  .top-bar, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section ul li {
+    background: transparent;
+    color: $gtnp_green;
+  }
+  .top-bar-section .dropdown li:hover:not(.has-form):not(.active) > a:not(.button) {
+
+    background: $gtnp_dark_green none repeat scroll 0% 0%;
+  }
+
+  // THIS SETS THE ARROWS ON THE DROPDOWNS
+  .top-bar-section .has-dropdown > a:after {
+    width: 12px;
+    height: 10px;
+    border: none;
+    margin-top: -3px;
+    background: url("../assets/topbar/topbardroparrowd.png") no-repeat;
+  }
+
+  .top-bar-section .has-dropdown:hover > a:after {
+    width: 12px;
+    height: 10px;
+    border: none;
+
+    margin-top: -3px;
+    background: url("../assets/topbar/topbardroparrow.png") no-repeat;
+  }
+
+}
+
+/////////////////////////////////////////////////
+// ACTIVITIES BAR
+//
+.bar-color-bg {
+  background-color: $gtnp_light_green2;
+
+}
+
+.activities-bar-color-bg {
+  background-color: $gtnp_dark_green;
+
+  height: 3rem;
+  display: table;
+  overflow: hidden;
+  width: 100%;
+  a {
+    color: $white;
+    font-weight: 300;
+  }
+}
+
+////////////////////////////////////////////////
+// THREE IMAGE FRONT PAGE CSS
+.tri-bar-color-bg {
+  background-color: $gtnp_dark_green;
+  color: $white;
+  background-clip: content-box;
+}
+
+////////////////////////////////////////////////
+// FOUR IMAGE FRONT PAGE
+.padded-bottom {
+  padding-bottom: 2rem;
+
+}
+
+////////////////////////////////////////////////
+// footer CSS
+.footer {
+  background-color: $gtnp_gray;
+  text-align: left;
+  color: $gtnp_dark_gray;
+  i {
+    font-size: 100px;
+  }
+}
+
+////////////////////////////////////////////////
+// THESE ARE GENERALIZED STYLES TO BE USED ANYWHERE.
+.nopadding {
+  padding: 0rem 0rem 0rem;
+}
+
+.full-width {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+h6 {
+  color: $white;
+  font-size: 1rem;
+  font-family: $font-family-serif;
+  margin: 0rem 0rem 0rem;
+}
+
+.middle {
+
+  display: table-cell;
+  vertical-align: middle;
+
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+////////////////////////////////////////////////
+// FOOTER RELATED
+
+h5 {
+  color: $gtnp_green;
+  font-family: $font-family-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer {
+
+  h4 {
+    color: $gtnp_green;
+    font-family: $font-family-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    color: $gtnp_dark_gray;
+    font-family: $font-family-serif;
+    text-align: center;
+    font-size: 1rem;
+  }
+  p {
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+}
+
+.footer-links {
+  list-style-type: none;
+  a {
+    color: $gtnp_dark_gray;
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+  li {
+    margin-top: 0.5rem;
+  }
+
+  margin-left: 0rem;
+}
+
+.bottom-bar-color-bg {
+  background-color: $gtnp_light_green;
+  height: 2.25rem;
+}
+
+.wrapper {
+  float: left;
+  position: relative; /* important(so we can absolutely position the description div */
+}
+
+.description {
+  position: absolute; /* absolute position (so we can position it where we want)*/
+  bottom: 5px; /* position will be on bottom */
+  left: 0px;
+  width: 100%;
+  /* styling bellow */
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.dc {
+  padding: 10px;
+  margin: 0px;
+  color: #434343;
+}
+
+#fbicon, .camicon {
+  margin-left: 8px;
+}
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+     
