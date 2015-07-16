@@ -9,8 +9,77 @@
 
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/jquery-2.1.0.min/index.js"></script>
+    
+    <style>
+	      #map-canvas {
+	        width: 100%;
+	        height: 850px;
+	      }
+	</style>
+    
+    <script src="https://maps.googleapis.com/maps/api/js"></script>  
+    <script>
+      function initialize() {
+	    var mapCanvas = document.getElementById('map-canvas');
+	    var mapOptions = {
+	      center: new google.maps.LatLng(43.921143, -110.703735),
+	      zoom: 10,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    }
+	    
+	    var locations = [
+	    ['Jackson Lake Lodge', 43.877448, -110.577411, 'address 1'],
+	    ['Colter Bay Village', 43.905273, -110.639096, 'address 1'],
+	    ['Headwaters', 44.106511, -110.667603, 'address 1'],
+	    ['Jenny Lake Lodge', 43.782964, -110.724797, 'address 1'],
+	    ]
+	    
+	    var map = new google.maps.Map(mapCanvas, mapOptions);
+	    setMarkers(map, locations);	
+
+	  }
+	  
+	  function setMarkers(map,locations){
+
+	      var marker, i
+	
+		  for (i = 0; i < locations.length; i++)
+		  {  
+			
+			 var loan = locations[i][0]
+			 var lat = locations[i][1]
+			 var long = locations[i][2]
+			 var add =  locations[i][3]
+			
+			 latlngset = new google.maps.LatLng(lat, long);
+			
+			  var marker = new google.maps.Marker({  
+			          map: map, title: loan , position: latlngset  
+			        });
+			        map.setCenter(marker.getPosition())
+			
+			
+			        var content = "Loan Number: " + loan +  '</h3>' + "Address: " + add     
+			
+			  var infowindow = new google.maps.InfoWindow()
+			
+			google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+			    return function() {
+			        infowindow.setContent(content);
+			        infowindow.open(map,marker);
+			    };
+			})(marker,content,infowindow));  
+		  }
+	  }
+	  
+	   
+	  
+	  google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
 </head>
+
+
 
 <body>
     <div class="top-bar-color-bg show-for-medium-up"></div>
@@ -58,7 +127,7 @@
 
             </div>
         </div>
-    </div>
+    </div> 
     </div>
     <div class="row">
         <div class="small-8 columns">
@@ -151,8 +220,7 @@
     
 <div class="row full-width">
 <div class="large-12 columns nopadding">
-<ul class="example-orbit text-align-center" data-orbit data-options="pause_on_hover:false;
-                  bullets:false;" >
+<ul class="example-orbit text-align-center" data-orbit data-options="pause_on_hover:false;bullets:false;" >
 <li><img src="assets/front/orbit/orbit0.jpg">
   <div class="orbit-caption">
      <h6>Welcome to the Grand Teton National Park</h6>
@@ -179,29 +247,28 @@ Mountains of the Imagination
 Grand Teton National Park is famous for the endless amount of outdoor activities. There is so much to do that even the locals have a hard time getting it all in each season. Best of all, there is literally something for everyone—from the most extreme outdoor sports to leisure activities such as wildlife viewing or simply soaking in the surrounding natural beauty.
 </div>
 </div>
-<div class="bar-color-bg show-for-medium-up">
+<div class="featured-wrapper bar-color-bg">
 
 <div class="row">
 <div class="large-12 columns">
-<ul class="example-orbit text-align-center" data-orbit data-options="pause_on_hover:true;
-                  bullets:false;">
-<li><img src="assets/front/orbit2/orbitb0.png">
+<ul class="featured-orbit example-orbit text-align-center" data-orbit data-options="pause_on_hover:true; bullets:false;">
+<li><img class="left-image" src="assets/front/orbit2/orbitb0.png">
   <div class="orbit-caption right-orbit">
      <h6>Jenny Lake Lodge Photography Workshops</h6>
-The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of the Jenny Lake Lodge cruiser bicycles  as well as photography guidance from an industry professional at no additional cost. 
-
-Read More »
-
-    </div>
+    <div>
+		The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of the Jenny Lake Lodge cruiser bicycles  as well as photography guidance from an industry professional at no additional cost. 
+	</div>
+	<a href="#">Read More »</a>
+  </div>
 
 </li>
-<li><img src="http://placehold.it/400x400&amp;text=[%20img%202%20]">
+<li><img src="assets/front/orbit2/orbitb0.png">
   <div class="orbit-caption right-orbit">
       Caption Two.
     </div>
 </li>
 
-<li><img src="http://placehold.it/400x400&amp;text=[%20img%203%20]">
+<li><img src="assets/front/orbit2/orbitb0.png">
   <div class="orbit-caption right-orbit">
       Caption Three.
     </div>
@@ -247,6 +314,13 @@ So much to do that even the locals have a hard time getting it all in each seaso
 3 locations in the heart of the GTNP, as well as our Headwaters Lodge between Grand Teton National Park and Yellowstone. Explore our different lodges below.
 </div>
 </div>
+
+<div class="row full-width">
+	<div class="large-12 columns text-align-center">
+		<div id="map-canvas"></div>
+	</div>
+</div>
+
 <div class="row">
 <div class="large-12 columns text-align-center">
 <h5>
@@ -340,7 +414,6 @@ Authorized Concessioner of the National Park Service</h3>
     </div>
   </div>
 </footer>
-    
     
 
 

@@ -155,6 +155,31 @@
     height: 50px;
     background: url("../assets/topbar/topbarsmdown.png") no-repeat;
   }
+  
+  .featured-orbit li{
+    position:relative;
+  }
+  
+  .featured-wrapper .orbit-caption.right-orbit {
+      background-color: transparent !important;
+      clear: both;
+      display: block;
+      /* position:absolute; */
+      height: auto;
+      position: relative;
+      text-align: left;
+  }
+  
+  .featured-wrapper img.left-image {
+      margin-left: auto;
+      margin-right: auto;
+      clear: both;
+      display: block;
+      position:absolute;
+      height: auto;
+      padding: 0;
+      position: relative;
+  }
 
 }
 
@@ -259,6 +284,16 @@
 
     margin-top: -3px;
     background: url("../assets/topbar/topbardroparrow.png") no-repeat;
+  }
+  
+  .featured-wrapper .orbit-container .orbit-slides-container > * .right-orbit {
+    background-color: transparent;
+    bottom: 0;
+    font-size: 0.875rem;
+    padding: 1.625rem 1.875rem;
+    height: 100%;
+    position: relative;
+    text-align: left;
   }
 
 }
@@ -418,6 +453,67 @@ h5 {
 
 #fbicon, .camicon {
   margin-left: 8px;
+}
+
+.featured-wrapper{
+  margin-top: 3rem;
+  margin-bottom:2rem;
+}
+
+.featured-wrapper .orbit-timer {
+    display: none !important;
+}
+
+.featured-wrapper .orbit-slide-number {
+  display: none !important;
+}
+
+.featured-wrapper .orbit-container .orbit-slides-container img{
+  display: inline-block;
+  max-width: 100%;
+  float: left;
+}
+
+.featured-orbit > li > .orbit-caption {
+    color: #788983 !important;
+}
+
+.featured-orbit > li > .orbit-caption h6 {
+    color: #788983;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+}
+
+.featured-orbit a {
+    color: #788983;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    display: block;
+}
+
+.featured-orbit li {
+    padding: 0rem 2rem;
+}
+
+.featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span {
+  height: 50px !important;
+  width: 22px !important;
+  padding: 0;
+  margin: 0;
+  border: 0 !important;
+  left:0px;
+}
+
+.featured-wrapper .orbit-container .orbit-prev:hover, .featured-wrapper .orbit-container .orbit-next:hover {
+    background-color: transparent !important;
+}
+
+.featured-wrapper .orbit-next span {
+    background: url(../assets/front/orbit2/right-arrow.png) no-repeat;
+}
+
+.featured-wrapper .orbit-prev span {
+    background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
 }
 
 // Or selectively include components
