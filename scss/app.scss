@@ -3,32 +3,30 @@
 @import "foundation";
 @import "normalize";
 
-// Flex box
-@media screen and (min-width: 640px) {
-  .top-bar-section > ul {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    flex-direction: row;
-  }
-  .top-bar-section > ul > li {
-    float: none;
-    -webkit-flex: 1;
-    -moz-flex: 1;
-    flex: 1;
-  }
-  .top-bar-section > ul > li > a {
-    white-space: nowrap;
-    text-align: center;
-    overflow: hidden;
-  }
-}
-
 ////////////////////////////////////////////////
 // THIS IS SMALL LAYOUT
+
+// hides temp so it doesn't go under logo.
+@media screen and (max-width: 590px) {
+  .smtemp {
+    display: none !important;
+  }
+}
 @media #{$small-only} {
+
+  .weather_temp {
+    color: $white;
+    font-weight: 600;
+    margin-left: -120px;
+    margin-top: -115px;
+    font-size: 42pt;
+  }
+  .weather_cur {
+    color: $white;
+    margin-left: -151px;
+    margin-top: -51px;
+    font-size: 22pt;
+  }
 
   // MENU ICON FOR SMALLg
   .top-bar {
@@ -37,27 +35,11 @@
   .top-bar-section ul li > a {
     font-size: 28pt;
   }
-  .top-bar .toggle-topbar a {
-    height: 100px;
-    width: 91px;
-    background: url("../assets/topbar/topbarsmbutd.png") no-repeat;
-  }
 
-  .top-bar.expanded .toggle-topbar a {
-    height: 100px;
-    width: 91px;
-    background: url("../assets/topbar/topbarsmbut.png") no-repeat;
-  }
-  .sm-green-color-bg {
-    background-color: $gtnp_green;
-    font-family: $font-family-serif;
-  }
   .sm-green-buts {
     margin-top: 19px;
     margin-bottom: 19px;
-    font-family: $font-family-sans-serif;
     font-size: 28pt;
-    color: $white;
   }
 
   .title-area {
@@ -67,20 +49,69 @@
   .top-bar-section {
     z-index: 1001;
   }
-  // LOGO FOR SMALL
-  .smlogo {
-    z-index: 1000;
-    position: absolute;
-  }
   .footer {
     text-align: center;
+  }
+  .top-bar .toggle-topbar a {
+    height: 100px;
+    width: 91px;
+
+  }
+  .search-but {
+    padding: 26px 26px 26px;
+    height: 71px;
+  }
+  .searchpad {
+    padding-top: 47px;
+  }
+  .search {
+    height: 71px !important;
+    margin: 30px 0px 0.25rem !important;
+  }
+  .top-bar-section ul li.smsearchpad {
+    padding: 0px 20px;
+  }
+
+  .top-bar-section ul li {
+    padding: 0px 0px 0px 0px;
+  }
+
+  .top-bar input,
+  .top-bar select {
+    font-size: 28pt;
+  }
+
+  .top-bar ul > li.has-dropdown a.open:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url("../assets/topbar/topbarsmdownd.png") no-repeat;
+
+    position: absolute;
+  }
+  .top-bar ul > li.has-dropdown.expand .open:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("../assets/topbar/topbarsmdown.png") no-repeat;
+    margin-top: -40px;
+    top: initial;
+  }
+
+}
+
+@media #{$medium-down} {
+  .sm-green-buts {
+    font-family: $font-family-sans-serif;
+    color: $white;
   }
 
   .search-but {
     position: relative;
     background-color: $gtnp_dark_green;
-    padding: 26px 26px 26px;
-    height: 71px;
   }
   .search-but:hover,
   .search-but:focus {
@@ -90,21 +121,9 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-  .searchpad {
-    padding-top: 47px;
-  }
-  .search {
-    height: 71px !important;
-    margin: 30px 0px 0.25rem !important;
-    padding: 0rem 0.5rem 0rem !important;
-    color: $gtnp_green !important;
-  }
-  .top-bar-section ul li.smsearchpad {
-    padding: 0px 20px;
-  }
 
-  .top-bar-section ul li {
-    padding: 0px 0px 0px 0px;
+  .search {
+    color: $gtnp_green !important;
   }
 
   .top-bar-section .has-dropdown.moved {
@@ -130,37 +149,124 @@
   .title.back.js-generated {
     display: none;
   }
-  .top-bar input,
-  .top-bar select {
-    font-size: 28pt;
-  }
-  .top-bar-section .dropdown li a {
-    color: $gtnp_dark_gray;
-
-  }
-
-  .top-bar ul > li.has-dropdown a.open:after{
-    content: "";
-    display: block;
-    width: 50px;
-    height: 50px;
-    border: 0;
-    background: url("../assets/topbar/topbarsmdownd.png") no-repeat;
+  .smlogo {
+    z-index: 1000;
     position: absolute;
   }
-  .top-bar ul > li.has-dropdown.expand .open:after{
-    content: "";
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: url("../assets/topbar/topbarsmdown.png") no-repeat;
+
+  .top-bar .toggle-topbar a {
+    background: url("../assets/topbar/topbarsmbutd.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .top-bar.expanded .toggle-topbar a {
+    background: url("../assets/topbar/topbarsmbut.png") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .top-bar-section .dropdown li a {
+    color: $gtnp_dark_gray;
+  }
+
+  .sm-green-color-bg {
+    background-color: $gtnp_green;
+    font-family: $font-family-serif;
   }
 
 }
 
+
+@media #{$medium-up} {
+  .weather_temp {
+    color: $white;
+    font-size: 1.8rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+    height: 2rem;
+  }
+
+  .weather_desc {
+    font-family: $font-family-serif;
+    font-size: 9pt;
+    color: $white;
+    letter-spacing: 0.04rem;
+    line-height: 0.9rem;
+    padding-top: 0.2rem;
+  }
+  .weather_cur {
+    color: $white;
+  }
+}
 ////////////////////////////////////////////////
 // THIS IS MEDIUM UP LAYOUT
-@media #{$medium-up} {
+@media #{$medium-only} {
+
+
+
+  .weather_temp {
+    margin-left: -95px;
+    margin-top: -57px;
+  }
+  .weather_cur {
+    margin-left: -110px;
+    margin-top: -34px;
+  }
+
+  .sm-green-buts {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .search-but {
+    padding: 0.1rem 0.5rem 0.4rem;
+    height: 1.75rem;
+  }
+
+  .searchpad {
+    padding-top: 0.5rem;
+  }
+  .search {
+    margin: 0.5rem 0px 0.25rem !important;
+    padding: 0rem 0.5rem 0rem !important;
+  }
+
+  .top-bar .toggle-topbar a {
+    height: 50px;
+    width: 45px;
+  }
+
+  .smlogo {
+    height: 60px;
+    width: 170px;
+  }
+  .top-bar, .top-bar .name {
+    height: 50px;
+  }
+}
+
+////////////////////////////////////////////////
+// THIS IS LARGE UP LAYOUT
+@media #{$large-up} {
+
+  .top-bar-section > ul {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+  }
+  .top-bar-section > ul > li {
+    float: none;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    flex: 1;
+  }
+  .top-bar-section > ul > li > a {
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+  }
+
   .search-but {
     position: relative;
     background-color: $gtnp_dark_green;
@@ -181,27 +287,11 @@
     font-size: 9pt;
     color: $white;
   }
-  .def_icon_desc {
-    margin-top: 0.55rem;
-  }
+
   .def_icon {
     margin-top: 0.35rem;
   }
 
-  .weather_temp {
-    font-size: 1.8rem;
-    margin-top: 0.25rem;
-    font-weight: 600;
-    height: 2rem;
-  }
-  .weather_desc {
-    font-family: $font-family-serif;
-    font-size: 9pt;
-    color: $white;
-    letter-spacing: 0.04rem;
-    line-height: 0.9rem;
-    padding-top: 0.2rem;
-  }
   .orbit-container .orbit-slides-container > * .right-orbit {
     background-color: transparent;
     bottom: 0;
@@ -262,6 +352,27 @@
   }
 
 }
+.hero-orbit .orbit-prev  {
+  background: url("../assets/orbit/orbitleft.png");
+  width: 34px !important;
+  height: 84px !important;
+
+  span {
+    border: 0;
+  }
+}
+
+
+.hero-orbit .orbit-next  {
+  background: url("../assets/orbit/orbitright.png");
+  width: 34px !important;
+  height: 84px !important;
+
+  span {
+    border: 0;
+  }
+}
+
 
 /////////////////////////////////////////////////
 // ACTIVITIES BAR
@@ -312,6 +423,12 @@
 
 ////////////////////////////////////////////////
 // THESE ARE GENERALIZED STYLES TO BE USED ANYWHERE.
+
+.def_icon_desc {
+  margin-top: 0.43rem;
+}
+
+
 .nopadding {
   padding: 0rem 0rem 0rem;
 }

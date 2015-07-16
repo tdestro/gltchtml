@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Grand Teton National Park</title>
-    <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/app.css"/>
 
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/jquery-2.1.0.min/index.js"></script>
@@ -13,340 +13,386 @@
 </head>
 
 <body>
-    <div class="top-bar-color-bg show-for-medium-up"></div>
-    <div class="row top-bar-margin show-for-medium-up">
-        <div class="small-offset-3 small-3 columns">
-            <form>
-                <div class="row collapse">
-                    <div class="small-offset-1 small-9 columns">
-
-                        <input type="text" class="search white" placeholder="Search" />
-                    </div>
-                    <div class="small-2 columns searchpad">
-                        <a href="#" class="search-but"><img src="assets/topbar/searchbutd.png" /></a>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="small-6 columns white">
+<div class="top-bar-color-bg show-for-large-up"></div>
+<div class="row top-bar-margin show-for-large-up">
+    <div class="small-offset-3 small-3 columns">
+        <form>
             <div class="row collapse">
-                <div class="small-2 columns weather_cur def_icon_desc">
-                    CURRENT
-                </div>
-                <div class="small-2 columns weather_temp">
-                    65&#176;
-                </div>
-                <div class="small-2 columns weather_desc">Chance of Showers</div>
+                <div class="small-offset-1 small-9 columns">
 
-                <div class="small-1 columns def_icon_desc">
-                    SOCIAL
-                </div>
-                <div class="small-1 columns def_icon">
-                    <img class="show-for-medium-up" id="fbicon" src="assets/topbar/topbar_fb.png" />
+                    <input type="text" class="search white" placeholder="Search"/>
                 </div>
 
-                <div class="small-1 columns def_icon">
-                    <img class="show-for-medium-up" src="assets/topbar/topbar_twitter.png" />
+                <div class="small-2 columns searchpad">
+                    <a href="#" class="search-but"><img src="assets/topbar/searchbutd.png"/></a>
                 </div>
-                <div class="small-1 columns def_icon_desc">
-                    MEDIA
-                </div>
-                <div class="small-1 columns def_icon"> <img class="show-for-medium-up camicon" src="assets/topbar/topbar_cam.png" /></div>
-                <div class="small-1 columns def_icon"> <img class="show-for-medium-up" src="assets/topbar/topbar_vid.png" />
+            </div>
+        </form>
+    </div>
+    <div class="small-6 columns white">
+        <div class="row collapse">
+            <div class="small-2 columns weather_cur def_icon_desc">
+                CURRENT
+            </div>
+            <div class="small-2 columns weather_temp">
+                65&#176;
+            </div>
+            <div class="small-2 columns weather_desc">Chance of Showers</div>
 
-                </div>
+            <div class="small-1 columns def_icon_desc">
+                SOCIAL
+            </div>
+            <div class="small-1 columns def_icon">
+                <img class="show-for-medium-up" id="fbicon" src="assets/topbar/topbar_fb.png"/>
+            </div>
+
+            <div class="small-1 columns def_icon">
+                <img class="show-for-medium-up" src="assets/topbar/topbar_twitter.png"/>
+            </div>
+            <div class="small-1 columns def_icon_desc">
+                MEDIA
+            </div>
+            <div class="small-1 columns def_icon"><img class="show-for-medium-up camicon"
+                                                       src="assets/topbar/topbar_cam.png"/></div>
+            <div class="small-1 columns def_icon"><img class="show-for-medium-up" src="assets/topbar/topbar_vid.png"/>
 
             </div>
+
         </div>
     </div>
-    </div>
-    <div class="row">
-        <div class="small-8 columns">
-            <img class="smlogo show-for-small-only" src="assets/topbar/logo.png"/>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-12 columns nopadding">
-            <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: false;">
-                <ul class="title-area">
-                    <li class="name">
-
-                        <img class="logo show-for-medium-up" src="assets/topbar/logolarge.png" />
-                    </li>
-                    <li class="toggle-topbar"><a href="#"><span></span></a></li>
-
-                    </li>
-                </ul>
-                <section class="top-bar-section">
-                    <!-- Right Nav Section -->
-                    <ul class="full-width">
-                    <li class="show-for-small-only">
-                    <form>
-                <div class="row collapse smsearchpad">
-                    <div class="small-9 columns">
-
-                        <input type="text" class="search white" placeholder="Search" />
-                    </div>
-                    <div class="small-3 columns searchpad">
-                        <a href="#" class="search-but"><img src="assets/topbar/searchbut.png" /></a>
-                    </div>
-                </div>
-            </form>
-            </li>
-                        <li class="has-dropdown"><a class="open" href="#">THE PARK</a>
-                        <ul class="dropdown">
-                            
-                            </ul>
-
-                        </li>
-                        <li class="has-dropdown"> <a class="open" href="#">LODGING</a>
-
-                            <ul class="dropdown">
-                                    <li><a href="#">Lodging Overview</a>
-
-                                </li>
-                                <li><a href="#">Jackson Lake Lodge</a>
-
-                                </li>
-                                <li><a href="#">Jenny Lake Lodge</a>
-
-                                </li>
-                                <li><a href="#">Colter Bay Village</a>
-
-                                </li>
-                                <li><a href="#">Headwaters</a>
-
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">CAMPING</a>
-
-                        </li>
-                        <li><a href="#">RV</a>
-
-                        </li>
-                        <li><a href="#">ACTIVITIES</a>
-
-                        </li>
-                        <li><a href="#">DINING</a>
-
-                        </li>
-
-                        <li class="show-for-small-only">
-                            <div class="row collapse sm-green-color-bg">
-                                <div class="small-offset-1 small-11 columns sm-green-buts">
-                                    MEDIA
-                                    <img class="camicon" src="assets/topbar/smicon_cam.png" />
-                                    <img class="camicon" src="assets/topbar/smicon_vid.png" />
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-            </nav>
-        </div>
-    </div>
-    
-    
-    
-<div class="row full-width">
-<div class="large-12 columns nopadding">
-<ul class="example-orbit text-align-center" data-orbit data-options="pause_on_hover:false;
-                  bullets:false;" >
-<li><img src="assets/front/orbit/orbit0.jpg">
-  <div class="orbit-caption">
-     <h6>Welcome to the Grand Teton National Park</h6>
-Mountains of the Imagination
-    </div>
-
-</li>
-<li><img src="http://placehold.it/1400x762&amp;text=[%20img%202%20]">
-  <div class="orbit-caption">
-      Caption Two.
-    </div>
-</li>
-
-<li><img src="http://placehold.it/1400x762&amp;text=[%20img%203%20]">
-  <div class="orbit-caption">
-      Caption Three.
-    </div>
-</li>
-</ul>
 </div>
 </div>
 <div class="row">
-<div class="large-12 columns text-align-center">
-Grand Teton National Park is famous for the endless amount of outdoor activities. There is so much to do that even the locals have a hard time getting it all in each season. Best of all, there is literally something for everyone—from the most extreme outdoor sports to leisure activities such as wildlife viewing or simply soaking in the surrounding natural beauty.
+    <div class="small-8 columns">
+        <img class="smlogo show-for-medium-down" src="assets/topbar/logo.png"/>
+    </div>
 </div>
+<div class="row">
+    <div class="small-12 columns nopadding">
+        <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: false;">
+            <ul class="title-area">
+                <li class="name">
+
+                    <img class="logo show-for-large-up" src="assets/topbar/logolarge.png"/>
+
+
+                </li>
+                <li class="toggle-topbar">   <a class="right" href="#"><span></span></a>
+                    <ul class="show-for-medium-down small-block-grid-1 smtemp">
+                        <li class="weather_temp">65&#176;</li>
+                        <li class="weather_cur">CURRENT</li>
+                    </ul>
+                </li>
+
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="full-width">
+                    <li class="show-for-medium-down">
+                        <form>
+                            <div class="row collapse smsearchpad">
+                                <div class="small-9 columns">
+
+                                    <input type="text" class="search white" placeholder="Search"/>
+                                </div>
+                                <div class="small-3 columns searchpad">
+                                    <a href="#" class="search-but"><img class="show-for-medium-only"
+                                                                        src="assets/topbar/searchbutd.png"/><img
+                                            class="show-for-small-only" src="assets/topbar/searchbut.png"/></a>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="has-dropdown"><a class="open" href="#">THE PARK</a>
+                        <ul class="dropdown">
+
+                        </ul>
+
+                    </li>
+                    <li class="has-dropdown"><a class="open" href="#">LODGING</a>
+
+                        <ul class="dropdown">
+                            <li><a href="#">Lodging Overview</a>
+
+                            </li>
+                            <li><a href="#">Jackson Lake Lodge</a>
+
+                            </li>
+                            <li><a href="#">Jenny Lake Lodge</a>
+
+                            </li>
+                            <li><a href="#">Colter Bay Village</a>
+
+                            </li>
+                            <li><a href="#">Headwaters</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">CAMPING</a>
+
+                    </li>
+                    <li><a href="#">RV</a>
+
+                    </li>
+                    <li><a href="#">ACTIVITIES</a>
+
+                    </li>
+                    <li><a href="#">DINING</a>
+
+                    </li>
+
+                    <li class="show-for-medium-down">
+                        <div class="row collapse sm-green-color-bg">
+                            <div class="show-for-small-only small-offset-1 small-11 columns sm-green-buts">
+                                MEDIA
+                                <img class="camicon" src="assets/topbar/smicon_cam.png"/>
+                                <img class="camicon" src="assets/topbar/smicon_vid.png"/>
+
+                            </div>
+
+                            <div class="show-for-medium-only small-offset-1 small-11 columns sm-green-buts">
+                                MEDIA
+                                <img class="camicon" src="assets/topbar/topbar_cam.png"/>
+                                <img class="camicon" src="assets/topbar/topbar_vid.png"/>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+</div>
+
+
+<div class="row full-width">
+    <div class="large-12 columns nopadding hero-orbit">
+        <ul class="text-align-center" data-orbit data-options="pause_on_hover:false;
+                  bullets:false; slide_number: false;">
+            <li><img src="assets/front/orbit/MainImage1.jpg">
+
+                <div class="orbit-caption">
+                    <h6>Welcome to the Grand Teton National Park</h6>
+                    Mountains of the Imagination
+                </div>
+
+            </li>
+            <li><img src="assets/front/orbit/MainImage2.jpg">
+
+                <div class="orbit-caption">
+                    Caption Two.
+                </div>
+            </li>
+
+            <li><img src="assets/front/orbit/MainImage3.jpg">
+
+                <div class="orbit-caption">
+                    Caption Three.
+                </div>
+            </li>
+            <li><img src="assets/front/orbit/MainImage4.jpg">
+
+                <div class="orbit-caption">
+                    Caption Three.
+                </div>
+            </li>
+
+            <li><img src="assets/front/orbit/MainImage5.jpg">
+
+                <div class="orbit-caption">
+                    Caption Three.
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns text-align-center">
+        Grand Teton National Park is famous for the endless amount of outdoor activities. There is so much to do that
+        even the locals have a hard time getting it all in each season. Best of all, there is literally something for
+        everyone—from the most extreme outdoor sports to leisure activities such as wildlife viewing or simply soaking
+        in the surrounding natural beauty.
+    </div>
 </div>
 <div class="bar-color-bg show-for-medium-up">
 
+    <div class="row">
+        <div class="large-12 columns">
+            <ul class="example-orbit text-align-center" data-orbit data-options="pause_on_hover:true;
+                  bullets:false; slide_number: false;">
+                <li><img src="assets/front/orbit2/orbitb0.png">
+
+                    <div class="orbit-caption right-orbit">
+                        <h6>Jenny Lake Lodge Photography Workshops</h6>
+                        The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of the
+                        Jenny Lake Lodge cruiser bicycles as well as photography guidance from an industry professional
+                        at no additional cost.
+
+                        Read More »
+
+                    </div>
+
+                </li>
+                <li><img src="http://placehold.it/400x400&amp;text=[%20img%202%20]">
+
+                    <div class="orbit-caption right-orbit">
+                        Caption Two.
+                    </div>
+                </li>
+
+                <li><img src="http://placehold.it/400x400&amp;text=[%20img%203%20]">
+
+                    <div class="orbit-caption right-orbit">
+                        Caption Three.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
 <div class="row">
-<div class="large-12 columns">
-<ul class="example-orbit text-align-center" data-orbit data-options="pause_on_hover:true;
-                  bullets:false;">
-<li><img src="assets/front/orbit2/orbitb0.png">
-  <div class="orbit-caption right-orbit">
-     <h6>Jenny Lake Lodge Photography Workshops</h6>
-The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of the Jenny Lake Lodge cruiser bicycles  as well as photography guidance from an industry professional at no additional cost. 
+    <div class="large-12 columns text-align-center">
 
-Read More »
+        <h5>Endless Amounts of Outdoor Activities</h5>
+        So much to do that even the locals have a hard time getting it all in each season.
+
 
     </div>
-
-</li>
-<li><img src="http://placehold.it/400x400&amp;text=[%20img%202%20]">
-  <div class="orbit-caption right-orbit">
-      Caption Two.
-    </div>
-</li>
-
-<li><img src="http://placehold.it/400x400&amp;text=[%20img%203%20]">
-  <div class="orbit-caption right-orbit">
-      Caption Three.
-    </div>
-</li>
-</ul>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="large-12 columns text-align-center">
- 
-<h5>Endless Amounts of Outdoor Activities</h5>
-So much to do that even the locals have a hard time getting it all in each season. 
-
-
-</div>
 </div>
 <div class="row full-width">
 
-<div class="small-12 medium-6 columns padded-bottom">
-<img src="assets/front/quad/quad1.jpg"/>
-</div>
-<div class="small-12 medium-6 columns padded-bottom">
-<img src="assets/front/quad/quad2.jpg"/>
-</div>
+    <div class="small-12 medium-6 columns padded-bottom">
+        <img src="assets/front/quad/quad1.jpg"/>
+    </div>
+    <div class="small-12 medium-6 columns padded-bottom">
+        <img src="assets/front/quad/quad2.jpg"/>
+    </div>
 </div>
 <div class="row full-width">
-<div class="small-12 medium-6 columns padded-bottom">
-<img src="assets/front/quad/quad3.jpg"/>
-</div>
-<div class="small-12 medium-6 column padded-bottom">
-<img src="assets/front/quad/quad4.jpg"/>
-</div>
+    <div class="small-12 medium-6 columns padded-bottom">
+        <img src="assets/front/quad/quad3.jpg"/>
+    </div>
+    <div class="small-12 medium-6 column padded-bottom">
+        <img src="assets/front/quad/quad4.jpg"/>
+    </div>
 </div>
 <div class="activities-bar-color-bg text-align-center">
-<div class="middle">
-<a href="#">SEE ALL ACTIVITIES »</a></div></div>
+    <div class="middle">
+        <a href="#">SEE ALL ACTIVITIES »</a></div>
+</div>
 
 <div class="row">
-<div class="large-12 columns text-align-center">
-<h5>Located Inside the Grand Teton National Park</h5>
-3 locations in the heart of the GTNP, as well as our Headwaters Lodge between Grand Teton National Park and Yellowstone. Explore our different lodges below.
-</div>
+    <div class="large-12 columns text-align-center">
+        <h5>Located Inside the Grand Teton National Park</h5>
+        3 locations in the heart of the GTNP, as well as our Headwaters Lodge between Grand Teton National Park and
+        Yellowstone. Explore our different lodges below.
+    </div>
 </div>
 <div class="row">
-<div class="large-12 columns text-align-center">
-<h5>
-Lodging Types
-</h5>
-From relaxing to roughing it, we have accomodations for everybody.</div>
+    <div class="large-12 columns text-align-center">
+        <h5>
+            Lodging Types
+        </h5>
+        From relaxing to roughing it, we have accomodations for everybody.
+    </div>
 </div>
 
 <div class="row text-align-center">
-<div class="large-4 columns tri-bar-color-bg">
-<div class="wrapper">
-		<img src="assets/front/tri/tri3.jpg"/>
-		<div class="description">
-				<div class="dc">
-					  <p>Your caption here....</p>
-				</div>
-		</div>
-</div></div>
-<div class="large-4 columns tri-bar-color-bg"><img src="assets/front/tri/tri2.jpg"/>CAMP</div>
-<div class="large-4 columns tri-bar-color-bg"><img src="assets/front/tri/tri1.jpg"/>RV</div>
+    <div class="large-4 columns tri-bar-color-bg">
+        <div class="wrapper">
+            <img src="assets/front/tri/tri3.jpg"/>
+
+            <div class="description">
+                <div class="dc">
+                    <p>Your caption here....</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="large-4 columns tri-bar-color-bg"><img src="assets/front/tri/tri2.jpg"/>CAMP</div>
+    <div class="large-4 columns tri-bar-color-bg"><img src="assets/front/tri/tri1.jpg"/>RV</div>
 </div>
- 
+
 
 <div class="row">
     <div class="small-12 medium-12 large-12 columns">
-      <h5>Preserve &bull; Protect &bull; Inspire</h5>
+        <h5>Preserve &bull; Protect &bull; Inspire</h5>
 
-      
+
     </div>
-      </div>
+</div>
 <footer class="footer">
 
-<div class="bottom-bar-color-bg show-for-medium-up">
-<div class="row">
-        <div class="small-3 columns">
-            <form>
-                <div class="row collapse">
-                    <div class="small-offset-1 small-9 columns">
-                        <input type="text" class="search white" placeholder="Newsletter Sign Up"/>
+    <div class="bottom-bar-color-bg show-for-medium-up">
+        <div class="row">
+            <div class="small-3 columns">
+                <form>
+                    <div class="row collapse">
+                        <div class="small-offset-1 small-9 columns">
+                            <input type="text" class="search white" placeholder="Newsletter Sign Up"/>
+                        </div>
+                        <div class="small-2 columns searchpad">
+                            <a href="#" class="search-but"><img src="assets/topbar/searchbut.png"/></a>
+                        </div>
                     </div>
-                    <div class="small-2 columns searchpad">
-                        <a href="#" class="search-but"><img src="assets/topbar/searchbut.png" /></a>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            <div class="small-9 columns">
+            </div>
         </div>
-  <div class="small-9 columns">
-  </div>
-</div>
-</div>
+    </div>
 
 
+    <div class="row">
+        <div class="small-12 medium-4 large-4 columns text-align-center">
+            <i><img src="assets/footer/lodgecompany.png"/></a></i>
+            <i><img src="assets/footer/headwaters.png"/></a></i>
+            <i><img src="assets/footer/authorized.png"/></a></i>
+        </div>
+        <div class="small-12 medium-4 large-4 columns">
+            <h4>Grand Teton Lodge Company</h4>
+            <ul class="footer-links">
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">Weddings</a></li>
+                <li><a href="#">Envision</a></li>
+                <li><a href="#">Employment</a></li>
+                <li><a href="#">Press Room</a></li>
+                <li><a href="#">Site Map</a></li>
+                <li><a href="#">Privacy Statement</a></li>
+                <ul>
+        </div>
+        <div class="small-12 medium-4 large-4 columns">
+            <h4>Contact Us</h4>
+            <ul class="footer-links">
+                <li>1-888-555-5555</li>
+                <li>info@gtlc.com</li>
+            </ul>
 
-  <div class="row">
-    <div class="small-12 medium-4 large-4 columns text-align-center">
-      <i><img src="assets/footer/lodgecompany.png" /></a></i>
-      <i><img src="assets/footer/headwaters.png" /></a></i>
-      <i><img src="assets/footer/authorized.png" /></a></i>
-    </div>
-      <div class="small-12 medium-4 large-4 columns">
-      <h4>Grand Teton Lodge Company</h4>
-      <ul class="footer-links">
-        <li><a href="#">Groups</a></li>
-        <li><a href="#">Weddings</a></li>
-        <li><a href="#">Envision</a></li>
-        <li><a href="#">Employment</a></li>
-        <li><a href="#">Press Room</a></li>
-        <li><a href="#">Site Map</a></li>
-        <li><a href="#">Privacy Statement</a></li>
-      <ul>
-    </div>
-    <div class="small-12 medium-4 large-4 columns">
-      <h4>Contact Us</h4>
-      <ul class="footer-links">
-        <li>1-888-555-5555</li>
-        <li>info@gtlc.com</li>
-      </ul>
-      
-      <h4>Social</h4>
-       <div class="row collapse">
-       <div class="small-offset-5 small-1 medium-offset-0 medium-1 columns"><img src="assets/footer/darktwit.png" /></div>
-       <div class="small-1 medium-1 columns"><img src="assets/footer/darkfb.png" /></div>
-       <div class="small-5 medium-10 columns"></div>
-       </div>
-    </div>
-    <div class="small-12 medium-12 large-12 columns">
-      <h3>Copyright &copy; 2015 Grand Teton Lodge Company & Flagg Ranch Company</br>
-Authorized Concessioner of the National Park Service</h3>
+            <h4>Social</h4>
 
-      
+            <div class="row collapse">
+                <div class="small-offset-5 small-1 medium-offset-0 medium-1 columns"><img
+                        src="assets/footer/darktwit.png"/></div>
+                <div class="small-1 medium-1 columns"><img src="assets/footer/darkfb.png"/></div>
+                <div class="small-5 medium-10 columns"></div>
+            </div>
+        </div>
+        <div class="small-12 medium-12 large-12 columns">
+            <h3>Copyright &copy; 2015 Grand Teton Lodge Company & Flagg Ranch Company</br>
+                Authorized Concessioner of the National Park Service</h3>
+
+
+        </div>
     </div>
-  </div>
 </footer>
-    
-    
 
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 
