@@ -7,8 +7,9 @@
     <title>Grand Teton National Park</title>
     <link rel="stylesheet" href="stylesheets/app.css"/>
 
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="bower_components/jquery-2.1.0.min/index.js"></script>
+    <script src="bower_components/modernizr/modernizr.js"></script>   
+    <link rel="stylesheet" type="text/css" href="stylesheets/easy-responsive-tabs.css " />
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
     
     <style>
 	      #map-canvas {
@@ -29,9 +30,6 @@
 	    }
 	    
 	    var locations = [
-	    ['Jackson Lake Lodge', 43.877448, -110.577411, 'address 1'],
-	    ['Colter Bay Village', 43.905273, -110.639096, 'address 1'],
-	    ['Headwaters', 44.106511, -110.667603, 'address 1'],
 	    ['Jenny Lake Lodge', 43.782964, -110.724797, 'address 1'],
 	    ]
 	    
@@ -236,6 +234,7 @@
 </div>
 
 
+
 <div class="row full-width">
     <div class="large-12 columns nopadding hero-orbit">
         <ul  class="text-align-center" data-orbit data-options="pause_on_hover:false;
@@ -278,120 +277,180 @@
     </div>
 </div>
 <div class="row">
-	<div class="large-10 medium-12 columns text-align-center small-centered headline">
-			Grand Teton National Park is famous for the endless amount of outdoor activities. There is so much to do that
-	        even the locals have a hard time getting it all in each season. Best of all, there is literally something for
-	        everyone—from the most extreme outdoor sports to leisure activities such as wildlife viewing or simply soaking
-	        in the surrounding natural beauty.
+	<div class="medium-12 large-10 columns small-centered">
+	    	<div class="booking-widget row">
+	    		<div class="small-12 medium-2 columns">
+		    		<input class="datepicker" name="departure-date" type="text" placeholder="Arrival Date" />
+		    	</div>
+		    	<div class="small-12 medium-2 columns">
+		    		<input class="datepicker" name="departure-date" type="text" placeholder="Departure Date" />
+		    	</div>
+		    	<div class="small-12 medium-2 columns">
+			    	<select>
+			    		<option disabled="disabled" selected="">Select Property</option>
+			    	</select>
+			    </div>
+			    <div class="small-12 medium-2 columns">
+			    	<select>
+			    		<option disabled="disabled" selected="">2 Adults</option>
+			    	</select>
+			    </div>
+			    <div class="small-12 medium-2 columns">
+			    	<select>
+			    		<option disabled="disabled" selected="">2 Children</option>
+			    	</select>			    	
+			    </div>
+			    <div class="small-12 medium-2 columns">
+			    	<input class="button" type="submit" value="Book Now" />
+			    </div>
+		    </div>
+    	</div>  
+</div>
+
+
+<div class="top-content">
+	<div class="row">
+		<div class="large-10 medium-12 columns text-align-center small-centered headline">
+				Step inside Jenny Lake Lodge an you are surrounded by rustic elegance. Step outside any door on the property, and you are encircled
+				by towering pines, nestled in the breathing vacinity of three glacial lakes, and awed by the rugged Teton spires that domainate your view.
+				However, you can only truly discover Jenny Lake by staying the night in one of our romantic luxury cabins at Jenny Lake Lodge in Grand 
+				Teton National Park.
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+		</div>
 	</div>
-</div>
-<div class="featured-wrapper bar-color-bg">
-    <div class="row">
-        <div class="large-12 columns">
-            <ul class="featured-orbit text-align-center" data-orbit="" data-options="pause_on_hover:true; bullets:false;">
-				<li class="active"><img class="left-image" src="assets/front/orbit2/orbitb0.png">
-				  <div class="orbit-caption right-orbit">
-				     <h6>Jenny Lake Lodge Photography Workshops</h6>
-				    <div>
-						The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of the Jenny Lake Lodge cruiser bicycles  as well as photography guidance from an industry professional at no additional cost. 
-					</div>
-					<a href="#">Read More »</a>
-				  </div>
-				
-				</li>
-				<li><img src="assets/front/orbit2/orbitb0.png">
-				  <div class="orbit-caption right-orbit">
-				      Caption Two.
-				    </div>
-				</li>
-				
-				<li><img src="assets/front/orbit2/orbitb0.png">
-				  <div class="orbit-caption right-orbit">
-				      Caption Three.
-				    </div>
-				</li>
-			</ul>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="large-12 columns text-align-center">
-
-        <h5>Endless Amounts of Outdoor Activities</h5>
-        So much to do that even the locals have a hard time getting it all in each season.
-
-
-    </div>
-</div>
-<div class="row full-width">
-
-    <div class="small-12 medium-6 columns padded-bottom">
-        <img src="assets/front/quad/quad1.jpg"/>
-    </div>
-    <div class="small-12 medium-6 columns padded-bottom">
-        <img src="assets/front/quad/quad2.jpg"/>
-    </div>
-</div>
-<div class="row full-width">
-    <div class="small-12 medium-6 columns padded-bottom">
-        <img src="assets/front/quad/quad3.jpg"/>
-    </div>
-    <div class="small-12 medium-6 column padded-bottom">
-        <img src="assets/front/quad/quad4.jpg"/>
-    </div>
-</div>
-<div class="activities-bar-color-bg text-align-center">
-    <div class="middle">
-        <a href="#">SEE ALL ACTIVITIES »</a></div>
-</div>
-
-<div class="row">
-    <div class="large-12 columns text-align-center">
-        <h5>Located Inside the Grand Teton National Park</h5>
-        3 locations in the heart of the GTNP, as well as our Headwaters Lodge between Grand Teton National Park and
-        Yellowstone. Explore our different lodges below.
-    </div>
-</div>
-
-<div class="row full-width">
-	<div class="large-12 columns nopadding text-align-center">
-		<div id="map-canvas"></div>
+	
+	<div class="row ">
+		<div class="large-12 columns text-align-center">
+			<div id="map-canvas"></div>
+		</div>
 	</div>
 </div>
 
-<div class="row">
-    <div class="large-12 columns text-align-center">
-        <h5>
-            Lodging Types
-        </h5>
-        From relaxing to roughing it, we have accomodations for everybody.
-    </div>
+
+<div class="activities-content">
+	<div class="row">
+		<div class="small-12 columns">
+			<div class="activitiesGridRow">
+	            <ul class="resp-tabs-list hor_1">
+	                <li><img src="assets/front/quad/quad1.jpg"/></li>
+	                <li><img src="assets/front/quad/quad2.jpg"/></li>
+	            </ul>
+	            <div class="resp-tabs-container hor_1">
+	                <div> 
+	                	<a class="close-activities-content" aria-label="Close">&#215;</a>
+	                    <div class="row">
+	                    	<div class="medium-12 large-10 columns small-centered text-center headline">
+	                    		Our Lodge Cabins are top notch, accomodating couple stays to large family vacations. Whatever your needs, we have it all.
+	                    	</div>
+	                    </div>
+	                    <div class="row lodge">
+	                    	<div class="small-12 medium-6 columns image">
+	                    		<div class="image-wrapper">
+		                    		<img src="assets/front/activities/room.jpg"/>
+		                    		<div class="caption">
+		                    			<span class="title">Free Standing Cabins</span>
+		                    			<span class="sleeps">Sleeps 1-4 People</span>
+		                    			<span class="price">$$$$</span>
+		                    		</div>
+		                    	</div>
+	                    	</div>
+	                    	<div class="small-12 medium-6 columns">
+	                    		Most of our cabins are single room, frestanding log cabins. Each room has handmade comforters, a newly renovated private bathroom,
+	                    		and authentic log walls to provide an elegant rustic charm for your stay.
+	                    		
+	                    		All of our cabins are non-smoking.
+	                    		
+	                    		<ul class="small-block-grid-1 medium-block-grid-2 features">
+	                    			<li>Bedroom</li>
+	                    			<li>Sitting Parlour</li>
+	                    			<li>Wood Bruning Stove</li>
+	                    			<li>Private Bathroom</li>
+	                    		</ul>
+	                    		<a class="button book-now">Book Now</a>
+	                    	</div>
+	                    </div>
+						<div class="row lodge">
+	                    	<div class="small-12 medium-6 columns image">
+	                    		<div class="image-wrapper">
+		                    		<img src="assets/front/activities/room.jpg"/>
+		                    		<div class="caption">
+		                    			<span class="title">Free Standing Cabins</span>
+		                    			<span class="sleeps">Sleeps 1-4 People</span>
+		                    			<span class="price">$$$$</span>
+		                    		</div>
+		                    	</div>
+	                    	</div>
+	                    	<div class="small-12 medium-6 columns">
+	                    		Most of our cabins are single room, frestanding log cabins. Each room has handmade comforters, a newly renovated private bathroom,
+	                    		and authentic log walls to provide an elegant rustic charm for your stay.
+	                    		
+	                    		All of our cabins are non-smoking.
+	                    		
+	                    		<ul class="small-block-grid-1 medium-block-grid-2 features">
+	                    			<li>Bedroom</li>
+	                    			<li>Sitting Parlour</li>
+	                    			<li>Wood Bruning Stove</li>
+	                    			<li>Private Bathroom</li>
+	                    		</ul>
+	                    		<a class="button book-now">Book Now</a>
+	                    	</div>
+	                    </div>            
+	                </div>
+	                <div>
+	                	<a class="close-activities-content" aria-label="Close">&#215;</a>
+	                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+	                    <br>
+	                    <br>
+	                    <p>Tab 2 Container</p>
+	                </div>
+	            </div>
+	        </div>
+	        
+	        <div class="activitiesGridRow">
+	            <ul class="resp-tabs-list hor_1">
+	                <li><img src="assets/front/quad/quad3.jpg"/></li>
+	                <li><img src="assets/front/quad/quad4.jpg"/></li>
+	            </ul>
+	            <div class="resp-tabs-container hor_1">
+	                <div>
+	                	<a class="close-activities-content" aria-label="Close">&#215;</a>
+	                    <p>Tab 3 Container</p>
+	                </div>
+	                <div>
+	                	<a class="close-activities-content" aria-label="Close">&#215;</a>
+	                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+	                    <br>
+	                    <br>
+	                    <p>Tab 4 Container</p>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	
+	<div class="row preserve-protect">
+	    <div class="small-12 medium-12 large-12 columns">
+	        <h5>Preserve &bull; Protect &bull; Inspire</h5>
+	    </div>
+	</div>
 </div>
 
-<div class="row text-align-center">
-    <div class="large-4 columns tri-bar-color-bg">
-        <div class="wrapper">
-            <img src="assets/front/tri/tri3.jpg"/>
 
-            <div class="description">
-                <div class="dc">
-                    <p>Your caption here....</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="large-4 columns tri-bar-color-bg"><img src="assets/front/tri/tri2.jpg"/>CAMP</div>
-    <div class="large-4 columns tri-bar-color-bg"><img src="assets/front/tri/tri1.jpg"/>RV</div>
-</div>
-
-
-<div class="row preserve-protect">
-    <div class="small-12 medium-12 large-12 columns">
-        <h5>Preserve &bull; Protect &bull; Inspire</h5>
-
-
-    </div>
-</div>
 <footer class="footer">
 	    <div class="bottom-bar-color-bg show-for-medium-up">
 	        <div class="row">
@@ -459,8 +518,50 @@
 
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="js/easyResponsiveTabs.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
 <script src="js/app.js"></script>
+
+<script>
+	    $(document).ready(function() {
+        	//Horizontal Tab
+	        $('.activitiesGridRow').easyResponsiveTabs({
+	            type: 'default', //Types: default, vertical, accordion
+	            width: 'auto', //auto or any width like 600px
+	            fit: true, // 100% fit in a container
+	            closed: true,
+	            tabidentify: 'hor_1', // The tab groups identifier
+	            activate: function(event) { // Callback function if tab is switched
+	                var $tab = $(this);
+	                var $info = $('#nested-tabInfo');
+	                var $name = $('span', $info);
+	                $name.text($tab.text());
+	                $info.show();
+	            }
+	        });
+	        
+	        $('.activitiesGridRow .resp-tab-content .close-activities-content').on('click', function(){  
+	        	console.log($(this).parent('.resp-tab-content'));
+	        	var closeTab = $(this).parent('.resp-tab-content');
+	        	$(closeTab).slideUp('', function () {
+                	$(this).addClass('resp-accordion-closed');
+                });
+	        });
+	        
+	        $( ".datepicker" ).datepicker();
+	        
+	        /*
+	        $('.activitiesGridRow .resp-tab-content').on('click', function(){
+	        	console.log($(this).attr('aria-labelledby'));
+	        	var labelledby = $(this).attr('aria-labelledby');
+	        	$()
+	        });
+	        */
+	    });
+	    
+</script>
+
 
 </body>
 
