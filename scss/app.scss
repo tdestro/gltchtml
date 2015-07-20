@@ -233,6 +233,31 @@
     height: 50px;
     width: 45px;
   }
+  
+  .featured-orbit li{
+    position:relative;
+  }
+  
+  .featured-wrapper .orbit-caption.right-orbit {
+      background-color: transparent !important;
+      clear: both;
+      display: block;
+      /* position:absolute; */
+      height: auto;
+      position: relative;
+      text-align: left;
+  }
+  
+  .featured-wrapper img.left-image {
+      margin-left: auto;
+      margin-right: auto;
+      clear: both;
+      display: block;
+      position:absolute;
+      height: auto;
+      padding: 0;
+      position: relative;
+  }
 
   .smlogo {
     height: 60px;
@@ -350,6 +375,16 @@
     margin-top: -3px;
     background: url("../assets/topbar/topbardroparrow.png") no-repeat;
   }
+  
+  .featured-wrapper .orbit-container .orbit-slides-container > * .right-orbit {
+    background-color: transparent;
+    bottom: 0;
+    font-size: 0.875rem;
+    padding: 1.625rem 1.875rem;
+    height: 100%;
+    position: relative;
+    text-align: left;
+  }
 
 }
 .hero-orbit .orbit-prev  {
@@ -371,6 +406,31 @@
   span {
     border: 0;
   }
+}
+
+.booking-widget {
+  margin-top:-10rem !important;
+  background-color: $gtnp_gray;
+}
+
+.booking-widget .columns {
+  padding-left: .5rem;
+}
+
+.booking-widget [type='submit'] {
+    padding: .5rem .6rem;
+    text-transform: uppercase;
+}
+
+.booking-widget input, .booking-widget select {
+  margin-top: .4rem !important;
+  margin-bottom: .4rem !important;
+}
+
+
+
+.booking-widget > .columns {
+    padding-right: 0;
 }
 
 
@@ -409,6 +469,101 @@
   padding-bottom: 2rem;
 
 }
+
+////////////////////////////////////////////////
+// LODGING
+
+.top-content {
+  background-color: #fff;
+  padding-bottom: 3rem;
+}
+
+.activities-content{
+  background: url(../assets/front/activities/map-bg.jpg) no-repeat fixed;
+  background-size: cover;
+}
+
+.activitiesGridRow {
+  margin-top: 5rem !important;
+  margin-bottom: 1rem !important;
+  font-family: "Lato", Regular;
+  font-weight: 300;
+  font-size: .9rem;
+}
+
+.activitiesGridRow {
+  ul.resp-tabs-list li {
+    width: calc(50% - .5rem);
+    padding: 0 0 !important;
+    margin: 0rem 1rem 0 0 !important;
+    border: 0 !important;
+  }
+  
+  [role='tab']:not(.resp-tab-active) > img{
+    opacity: 0.4;
+    filter: alpha(opacity=80);
+  }
+  
+  ul.resp-tabs-list li:last-child {
+    margin-right: 0 !important;
+  }
+  
+  div.lodge{
+    margin-top:2rem;
+  }
+  
+  a.close-activities-content {
+    font-size: 2rem;
+    color: $gtnp_gray;
+    float: right;
+  }
+  
+  ul.features {
+    list-style-position: inside !important;
+    list-style-type: disc !important;
+    margin-top: 1rem;
+  }
+  
+  ul.features li {
+    display: list-item !important;
+    list-style: inherit;
+    padding-bottom: .2rem;
+  }
+  
+  .resp-tab-content .image-wrapper {
+    max-width: 440px;
+  }
+  
+  a.button.book-now {
+    padding: .5rem 1rem !important;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    width: 50%;
+    text-align: left;
+    text-transform: uppercase;
+    background-image: url('../assets/front/activities/book-btn-arrow.png');
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: contain;
+  }
+  
+  .caption .price {
+  float: right;
+  }
+  .caption .title {
+    font-family: $font-family-serif;
+    display: block;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  .caption {
+    background-color: $gtnp_green;
+    color: #fff;
+    padding: .7rem 1rem;
+  }
+  
+}
+
 
 ////////////////////////////////////////////////
 // footer CSS
@@ -458,8 +613,18 @@ h6 {
   text-align: center;
 }
 
+.button {
+  background-color:$gtnp_green;
+  color:#fff;
+}
+
 ////////////////////////////////////////////////
 // FOOTER RELATED
+
+.preserve-protect {
+  padding-top:3.5rem;
+  padding-bottom:3.5rem;
+}
 
 h5 {
   color: $gtnp_green;
@@ -477,20 +642,46 @@ h5 {
     font-family: $font-family-serif;
     font-size: 1rem;
     font-weight: 600;
-    margin-top: 2.5rem;
-    margin-bottom: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2px;
   }
 
   h3 {
     color: $gtnp_dark_gray;
     font-family: $font-family-serif;
     text-align: center;
-    font-size: 1rem;
+    font-size: .8rem;
+    font-weight: 100;
+    padding-top: 3rem;
   }
   p {
     font-weight: 300;
     font-size: 0.8rem;
   }
+  
+  i {
+      font-size: 100px;
+      display: block;
+      padding-top: 1rem;
+  }
+  
+  .searchpad img {
+    height: 17px;
+  }
+
+  input.search {
+    box-shadow: none;
+    color: $gtnp_dark_gray !important;
+  }
+
+  input.search::-webkit-input-placeholder {
+      color: $gtnp_dark_gray;
+  }
+
+  input.search::-moz-placeholder, .footer input.search:-ms-input-placeholder{
+      color: $gtnp_dark_gray;
+  }
+  
 }
 
 .footer-links {
@@ -498,10 +689,12 @@ h5 {
   a {
     color: $gtnp_dark_gray;
     font-weight: 300;
-    font-size: 0.8rem;
+    font-size: .9rem;
   }
   li {
-    margin-top: 0.5rem;
+    margin-top: 0rem;
+    font-weight: 300;
+    font-size: .9rem;
   }
 
   margin-left: 0rem;
@@ -535,6 +728,73 @@ h5 {
 
 #fbicon, .camicon {
   margin-left: 8px;
+}
+
+.headline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2rem 0;
+}
+
+.featured-wrapper{
+  margin-top: 3rem;
+  margin-bottom:2rem;
+}
+
+.featured-wrapper .orbit-timer {
+    display: none !important;
+}
+
+.featured-wrapper .orbit-slide-number {
+  display: none !important;
+}
+
+.featured-wrapper .orbit-container .orbit-slides-container img{
+  display: inline-block;
+  max-width: 100%;
+  float: left;
+}
+
+.featured-orbit > li > .orbit-caption {
+    color: $gtnp_green !important;
+}
+
+.featured-orbit > li > .orbit-caption h6 {
+    color: $gtnp_green;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+}
+
+.featured-orbit a {
+    color: $gtnp_green;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    display: block;
+}
+
+.featured-orbit li {
+    padding: 0rem 2rem;
+}
+
+.featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span {
+  height: 50px !important;
+  width: 22px !important;
+  padding: 0;
+  margin: 0;
+  border: 0 !important;
+  left:0px;
+}
+
+.featured-wrapper .orbit-container .orbit-prev:hover, .featured-wrapper .orbit-container .orbit-next:hover {
+    background-color: transparent !important;
+}
+
+.featured-wrapper .orbit-next span {
+    background: url(../assets/front/orbit2/right-arrow.png) no-repeat;
+}
+
+.featured-wrapper .orbit-prev span {
+    background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
 }
 
 // Or selectively include components
