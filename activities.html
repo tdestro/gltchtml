@@ -1,0 +1,568 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Grand Teton National Park</title>
+    <link rel="stylesheet" href="stylesheets/app.css"/>
+
+    <script src="bower_components/modernizr/modernizr.js"></script>   
+    <link rel="stylesheet" type="text/css" href="stylesheets/easy-responsive-tabs.css " />
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
+    
+    <style>
+	      #map-canvas {
+	        width: 100%;
+	        height: 850px;
+	      }
+	</style>
+    
+    <script src="https://maps.googleapis.com/maps/api/js"></script>  
+    <script>
+      function initialize() {
+	    var mapCanvas = document.getElementById('map-canvas');
+	    var mapOptions = {
+	      center: new google.maps.LatLng(43.921143, -110.703735),
+	      zoom: 10,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP,
+	      scrollwheel: false,
+	    }
+	    
+	    var locations = [
+	    ['Jenny Lake Lodge', 43.782964, -110.724797, 'address 1'],
+	    ]
+	    
+	    var map = new google.maps.Map(mapCanvas, mapOptions);
+	    setMarkers(map, locations);	
+
+	  }
+	  
+	  function setMarkers(map,locations){
+
+	      var marker, i
+	
+		  for (i = 0; i < locations.length; i++)
+		  {  
+			
+			 var loan = locations[i][0]
+			 var lat = locations[i][1]
+			 var long = locations[i][2]
+			 var add =  locations[i][3]
+			
+			 latlngset = new google.maps.LatLng(lat, long);
+			
+			  var marker = new google.maps.Marker({  
+			          map: map, title: loan , position: latlngset  
+			        });
+			        map.setCenter(marker.getPosition())
+			
+			
+			        var content = "Loan Number: " + loan +  '</h3>' + "Address: " + add     
+			
+			  var infowindow = new google.maps.InfoWindow()
+			
+			google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+			    return function() {
+			        infowindow.setContent(content);
+			        infowindow.open(map,marker);
+			    };
+			})(marker,content,infowindow));  
+		  }
+	  }
+	  
+	   
+	  
+	  google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+</head>
+
+
+
+<body>
+<div class="top-bar-color-bg show-for-large-up"></div>
+<div class="row top-bar-margin show-for-large-up">
+    <div class="small-offset-3 small-3 columns">
+        <form>
+            <div class="row collapse">
+                <div class="small-offset-1 small-9 columns">
+
+                    <input type="text" class="search white" placeholder="Search"/>
+                </div>
+
+                <div class="small-2 columns searchpad">
+                    <a href="#" class="search-but"><img src="assets/topbar/searchbutd.png"/></a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="small-6 columns white">
+        <div class="row collapse">
+            <div class="small-2 columns weather_cur def_icon_desc">
+                CURRENT
+            </div>
+            <div class="small-2 columns weather_temp">
+                65&#176;
+            </div>
+            <div class="small-2 columns weather_desc">Chance of Showers</div>
+
+            <div class="small-1 columns def_icon_desc">
+                SOCIAL
+            </div>
+            <div class="small-1 columns def_icon">
+                <img class="show-for-medium-up" id="fbicon" src="assets/topbar/topbar_fb.png"/>
+            </div>
+
+            <div class="small-1 columns def_icon">
+                <img class="show-for-medium-up" src="assets/topbar/topbar_twitter.png"/>
+            </div>
+            <div class="small-1 columns def_icon_desc">
+                MEDIA
+            </div>
+            <div class="small-1 columns def_icon"><img class="show-for-medium-up camicon"
+                                                       src="assets/topbar/topbar_cam.png"/></div>
+            <div class="small-1 columns def_icon"><img class="show-for-medium-up" src="assets/topbar/topbar_vid.png"/>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="small-8 columns">
+        <img class="smlogo show-for-medium-down" src="assets/topbar/logo.png"/>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 columns nopadding">
+        <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: false;">
+            <ul class="title-area">
+                <li class="name">
+
+                    <img class="logo show-for-large-up" src="assets/topbar/logolarge.png"/>
+
+
+                </li>
+                <li class="toggle-topbar">   <a class="right" href="#"><span></span></a>
+                    <ul class="show-for-medium-down small-block-grid-1 smtemp">
+                        <li class="weather_temp">65&#176;</li>
+                        <li class="weather_cur">CURRENT</li>
+                    </ul>
+                </li>
+
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="full-width">
+                    <li class="show-for-medium-down">
+                        <form>
+                            <div class="row collapse smsearchpad">
+                                <div class="small-9 columns">
+
+                                    <input type="text" class="search white" placeholder="Search"/>
+                                </div>
+                                <div class="small-3 columns searchpad">
+                                    <a href="#" class="search-but"><img class="show-for-medium-only"
+                                                                        src="assets/topbar/searchbutd.png"/><img
+                                            class="show-for-small-only" src="assets/topbar/searchbut.png"/></a>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="has-dropdown"><a class="open" href="#">THE PARK</a>
+                        <ul class="dropdown">
+
+                        </ul>
+
+                    </li>
+                    <li class="has-dropdown"><a class="open" href="#">LODGING</a>
+
+                        <ul class="dropdown">
+                            <li><a href="#">Lodging Overview</a>
+
+                            </li>
+                            <li><a href="#">Jackson Lake Lodge</a>
+
+                            </li>
+                            <li><a href="#">Jenny Lake Lodge</a>
+
+                            </li>
+                            <li><a href="#">Colter Bay Village</a>
+
+                            </li>
+                            <li><a href="#">Headwaters</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">CAMPING</a>
+
+                    </li>
+                    <li><a href="#">RV</a>
+
+                    </li>
+                    <li><a href="#">ACTIVITIES</a>
+
+                    </li>
+                    <li><a href="#">DINING</a>
+
+                    </li>
+
+                    <li class="show-for-medium-down">
+                        <div class="row collapse sm-green-color-bg">
+                            <div class="show-for-small-only small-offset-1 small-11 columns sm-green-buts">
+                                MEDIA
+                                <img class="camicon" src="assets/topbar/smicon_cam.png"/>
+                                <img class="camicon" src="assets/topbar/smicon_vid.png"/>
+
+                            </div>
+
+                            <div class="show-for-medium-only small-offset-1 small-11 columns sm-green-buts">
+                                MEDIA
+                                <img class="camicon" src="assets/topbar/topbar_cam.png"/>
+                                <img class="camicon" src="assets/topbar/topbar_vid.png"/>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="row full-width">
+    <div class="large-12 columns nopadding hero-orbit">
+        <ul  class="text-align-center" data-orbit data-options="pause_on_hover:false;
+                  bullets:false; slide_number: false;">
+            <li><img src="assets/front/orbit/MainImage1.jpg">
+
+                <div class="orbit-caption">
+                    <h6>Welcome to the Grand Teton National Park</h6>
+                    Mountains of the Imagination
+                </div>
+
+            </li>
+            <li><img src="assets/front/orbit/MainImage2.jpg">
+
+                <div class="orbit-caption">
+                    Caption Two.
+                </div>
+            </li>
+
+            <li><img src="assets/front/orbit/MainImage3.jpg">
+
+                <div class="orbit-caption">
+                    Caption Three.
+                </div>
+            </li>
+            <li><img src="assets/front/orbit/MainImage4.jpg">
+
+                <div class="orbit-caption">
+                    Caption Three.
+                </div>
+            </li>
+
+            <li><img src="assets/front/orbit/MainImage5.jpg">
+
+                <div class="orbit-caption">
+                    Caption Three.
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+	<div class="medium-12 large-10 columns small-centered">
+	    	<div class="booking-widget row">
+	    		<div class="small-12 medium-2 columns">
+		    		<input class="datepicker" name="departure-date" type="text" placeholder="Arrival Date" />
+		    	</div>
+		    	<div class="small-12 medium-2 columns">
+		    		<input class="datepicker" name="departure-date" type="text" placeholder="Departure Date" />
+		    	</div>
+		    	<div class="small-12 medium-2 columns">
+			    	<select>
+			    		<option disabled="disabled" selected="">Select Property</option>
+			    	</select>
+			    </div>
+			    <div class="small-12 medium-2 columns">
+			    	<select>
+			    		<option disabled="disabled" selected="">2 Adults</option>
+			    	</select>
+			    </div>
+			    <div class="small-12 medium-2 columns">
+			    	<select>
+			    		<option disabled="disabled" selected="">2 Children</option>
+			    	</select>			    	
+			    </div>
+			    <div class="small-12 medium-2 columns">
+			    	<input class="button" type="submit" value="Book Now" />
+			    </div>
+		    </div>
+    	</div>  
+</div>
+
+
+<div class="top-content">
+	<div class="row">
+		<div class="large-10 medium-12 columns text-align-center small-centered headline">
+				Step inside Jenny Lake Lodge an you are surrounded by rustic elegance. Step outside any door on the property, and you are encircled
+				by towering pines, nestled in the breathing vacinity of three glacial lakes, and awed by the rugged Teton spires that domainate your view.
+				However, you can only truly discover Jenny Lake by staying the night in one of our romantic luxury cabins at Jenny Lake Lodge in Grand 
+				Teton National Park.
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+		</div>
+	</div>
+	
+	<div class="row ">
+		<div class="large-12 columns text-align-center">
+			<div id="map-canvas"></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="activities-content">
+	<div class="row">
+		<div class="small-12 columns">
+			<div class="activitiesGridRow">
+	            <ul class="resp-tabs-list hor_1">
+	                <li><img src="assets/front/quad/quad1.jpg"/></li>
+	                <li><img src="assets/front/quad/quad2.jpg"/></li>
+	            </ul>
+	            <div class="resp-tabs-container hor_1">
+	                <div> 
+	                	<a class="close-activities-content" aria-label="Close">&#215;</a>
+	                    <div class="row">
+	                    	<div class="medium-12 large-10 columns small-centered text-center headline">
+	                    		Our Lodge Cabins are top notch, accomodating couple stays to large family vacations. Whatever your needs, we have it all.
+	                    	</div>
+	                    </div>
+	                    <div class="row lodge">
+	                    	<div class="small-12 medium-6 columns image">
+	                    		<div class="image-wrapper">
+		                    		<img src="assets/front/activities/room.jpg"/>
+		                    		<div class="caption">
+		                    			<span class="title">Free Standing Cabins</span>
+		                    			<span class="sleeps">Sleeps 1-4 People</span>
+		                    			<span class="price">$$$$</span>
+		                    		</div>
+		                    	</div>
+	                    	</div>
+	                    	<div class="small-12 medium-6 columns">
+	                    		Most of our cabins are single room, frestanding log cabins. Each room has handmade comforters, a newly renovated private bathroom,
+	                    		and authentic log walls to provide an elegant rustic charm for your stay.
+	                    		
+	                    		All of our cabins are non-smoking.
+	                    		
+	                    		<ul class="small-block-grid-1 medium-block-grid-2 features">
+	                    			<li>Bedroom</li>
+	                    			<li>Sitting Parlour</li>
+	                    			<li>Wood Bruning Stove</li>
+	                    			<li>Private Bathroom</li>
+	                    		</ul>
+	                    		<a class="button book-now">Book Now</a>
+	                    	</div>
+	                    </div>
+						<div class="row lodge">
+	                    	<div class="small-12 medium-6 columns image">
+	                    		<div class="image-wrapper">
+		                    		<img src="assets/front/activities/room.jpg"/>
+		                    		<div class="caption">
+		                    			<span class="title">Free Standing Cabins</span>
+		                    			<span class="sleeps">Sleeps 1-4 People</span>
+		                    			<span class="price">$$$$</span>
+		                    		</div>
+		                    	</div>
+	                    	</div>
+	                    	<div class="small-12 medium-6 columns">
+	                    		Most of our cabins are single room, frestanding log cabins. Each room has handmade comforters, a newly renovated private bathroom,
+	                    		and authentic log walls to provide an elegant rustic charm for your stay.
+	                    		
+	                    		All of our cabins are non-smoking.
+	                    		
+	                    		<ul class="small-block-grid-1 medium-block-grid-2 features">
+	                    			<li>Bedroom</li>
+	                    			<li>Sitting Parlour</li>
+	                    			<li>Wood Bruning Stove</li>
+	                    			<li>Private Bathroom</li>
+	                    		</ul>
+	                    		<a class="button book-now">Book Now</a>
+	                    	</div>
+	                    </div>            
+	                </div>
+	                <div>
+	                	<a class="close-activities-content" aria-label="Close">&#215;</a>
+	                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+	                    <br>
+	                    <br>
+	                    <p>Tab 2 Container</p>
+	                </div>
+	            </div>
+	        </div>
+	        
+	        <div class="activitiesGridRow">
+	            <ul class="resp-tabs-list hor_1">
+	                <li><img src="assets/front/quad/quad3.jpg"/></li>
+	                <li><img src="assets/front/quad/quad4.jpg"/></li>
+	            </ul>
+	            <div class="resp-tabs-container hor_1">
+	                <div>
+	                	<a class="close-activities-content" aria-label="Close">&#215;</a>
+	                    <p>Tab 3 Container</p>
+	                </div>
+	                <div>
+	                	<a class="close-activities-content" aria-label="Close">&#215;</a>
+	                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+	                    <br>
+	                    <br>
+	                    <p>Tab 4 Container</p>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	
+	<div class="row preserve-protect">
+	    <div class="small-12 medium-12 large-12 columns">
+	        <h5>Preserve &bull; Protect &bull; Inspire</h5>
+	    </div>
+	</div>
+</div>
+
+
+<footer class="footer">
+	    <div class="bottom-bar-color-bg show-for-medium-up">
+	        <div class="row">
+	            <div class="small-3 columns">
+	                <form>
+	                    <div class="row collapse">
+	                        <div class="small-offset-1 small-9 columns">
+	                            <input type="text" class="search white" placeholder="Newsletter Sign Up"/>
+	                        </div>
+	                        <div class="small-2 columns searchpad">
+	                            <a href="#" class="search-but"><img src="assets/topbar/searchbut.png"/></a>
+	                        </div>
+	                    </div>
+	                </form>
+	            </div>
+	            <div class="small-9 columns">
+	            </div>
+	        </div>
+	    </div>
+	<div class="small-12 medium-12 large-12 columns no-padding">	
+	    <div class="row">
+	        <div class="small-12 medium-4 large-4 columns text-align-center">
+	            <i><img src="assets/footer/gtlc.png"/></a></i>
+	            <i><img src="assets/footer/headwaters.png"/></a></i>
+	            <i><img src="assets/footer/nps_authorized.png"/></a></i>
+	        </div>
+	        <div class="small-12 medium-4 large-4 columns">
+	            <h4>Grand Teton Lodge Company</h4>
+	            <ul class="footer-links">
+	                <li><a href="#">Groups</a></li>
+	                <li><a href="#">Weddings</a></li>
+	                <li><a href="#">Envision</a></li>
+	                <li><a href="#">Employment</a></li>
+	                <li><a href="#">Press Room</a></li>
+	                <li><a href="#">Site Map</a></li>
+	                <li><a href="#">Privacy Statement</a></li>
+	                <ul>
+	        </div>
+	        <div class="small-12 medium-4 large-4 columns"> 
+	            <h4>Contact Us</h4>
+	            <ul class="footer-links">
+	                <li>1-888-555-5555</li>
+	                <li>info@gtlc.com</li>
+	            </ul>
+	 
+	            <h4>Social</h4>
+	
+	            <div class="row collapse">
+	                <div class="small-offset-5 small-1 medium-offset-0 medium-1 columns"><img
+	                        src="assets/footer/darktwit.png"/></div>
+	                <div class="small-1 medium-1 columns"><img src="assets/footer/darkfb.png"/></div>
+	                <div class="small-5 medium-10 columns"></div>
+	            </div>
+	        </div>
+	    </div>
+	 </div>
+	    <div class="row">
+	    	<div class="small-12 medium-12 large-12 columns">
+	            <h3>Copyright &copy; 2015 Grand Teton Lodge Company & Flagg Ranch Company</br>
+	                Authorized Concessioner of the National Park Service</h3>
+	        </div>
+	    </div>
+	</div>
+</footer>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="js/easyResponsiveTabs.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+	    $(document).ready(function() {
+        	//Horizontal Tab
+	        $('.activitiesGridRow').easyResponsiveTabs({
+	            type: 'default', //Types: default, vertical, accordion
+	            width: 'auto', //auto or any width like 600px
+	            fit: true, // 100% fit in a container
+	            closed: true,
+	            tabidentify: 'hor_1', // The tab groups identifier
+	            activate: function(event) { // Callback function if tab is switched
+	                var $tab = $(this);
+	                var $info = $('#nested-tabInfo');
+	                var $name = $('span', $info);
+	                $name.text($tab.text());
+	                $info.show();
+	            }
+	        });
+	        
+	        $('.activitiesGridRow .resp-tab-content .close-activities-content').on('click', function(){  
+	        	console.log($(this).parent('.resp-tab-content'));
+	        	var closeTab = $(this).parent('.resp-tab-content');
+	        	$(closeTab).slideUp('', function () {
+                	$(this).addClass('resp-accordion-closed');
+                });
+	        });
+	        
+	        $( ".datepicker" ).datepicker();
+	        
+	        /*
+	        $('.activitiesGridRow .resp-tab-content').on('click', function(){
+	        	console.log($(this).attr('aria-labelledby'));
+	        	var labelledby = $(this).attr('aria-labelledby');
+	        	$()
+	        });
+	        */
+	    });
+	    
+</script>
+
+
+</body>
+
+</html>
