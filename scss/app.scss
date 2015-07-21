@@ -2,6 +2,9 @@
 @import "settings";
 @import "foundation";
 @import "normalize";
+// Font Awesome.
+@import "../bower_components/components-font-awesome/scss/font-awesome.scss";
+
 
 ////////////////////////////////////////////////
 // THIS IS SMALL LAYOUT
@@ -80,25 +83,28 @@
   .top-bar select {
     font-size: 28pt;
   }
+  @mixin smarrows {
+
+    display: inline;
+    position: absolute;
+    top: -50px;
+    right: 58px;
+    border: 0;
+    font-family: FontAwesome;
+    /* font-style: normal; */
+    font-weight: lighter;
+    font-size: 110px;
+    content: "\f107";
+
+  }
 
   .top-bar ul > li.has-dropdown a.open:after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 50px;
-    border: 0;
-    background: url("../assets/topbar/topbarsmdownd.png") no-repeat;
-
-    position: absolute;
+    @include smarrows;
+    content: "\f107";
   }
   .top-bar ul > li.has-dropdown.expand .open:after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: url("../assets/topbar/topbarsmdown.png") no-repeat;
-    margin-top: -40px;
-    top: initial;
+    @include smarrows;
+    content: "\f106";
   }
 
 }
@@ -155,6 +161,7 @@
   }
 
   .top-bar .toggle-topbar a {
+
     background: url("../assets/topbar/topbarsmbutd.png") no-repeat;
     background-size: 100% 100%;
   }
@@ -359,21 +366,28 @@
   }
 
   // THIS SETS THE ARROWS ON THE DROPDOWNS
+
+  @mixin arrows {
+    display: inline;
+    position: static;
+    border: 0;
+    content: "\f078";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 12px;
+    margin-left: 3px;
+  }
+
   .top-bar-section .has-dropdown > a:after {
-    width: 12px;
-    height: 10px;
-    border: none;
-    margin-top: -3px;
-    background: url("../assets/topbar/topbardroparrowd.png") no-repeat;
+    @include arrows;
+    color: $gtnp_dark_green;
   }
 
   .top-bar-section .has-dropdown:hover > a:after {
-    width: 12px;
-    height: 10px;
-    border: none;
-
-    margin-top: -3px;
-    background: url("../assets/topbar/topbardroparrow.png") no-repeat;
+    @include arrows;
+    color: white;
   }
   
   .featured-wrapper .orbit-container .orbit-slides-container > * .right-orbit {
