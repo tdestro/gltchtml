@@ -110,6 +110,16 @@
 }
 
 @media #{$medium-down} {
+  .tri-bar-color-bg{
+    font-size: 1.3rem;
+    line-height: 40px;
+  }
+
+  .tri-bar-color-bg img{
+    margin:auto;
+    margin-top: 20px;
+
+  }
   .sm-green-buts {
     font-family: $font-family-sans-serif;
     color: $white;
