@@ -100,6 +100,33 @@
     margin-top: -40px;
     top: initial;
   }
+  
+  
+  .featured-wrapper .orbit-container .orbit-slides-container > * .orbit-caption {
+    background-color: transparent;
+    display: block;
+    clear: both;
+    width: 100%;
+    position: relative;
+  }
+  
+  .featured-wrapper .orbit-container .orbit-slides-container img {
+    display: block;
+    max-width: 100%;
+    float: none;
+    clear: both;
+    width: 100% !important;
+    position: relative;
+  }
+  
+  .orbit-next, .orbit-prev {
+    display: block; 
+  }
+  
+  .featured-wrapper .orbit-next span {
+    right: 0 !important;
+    margin-left: -4px !important;
+  }
 
 }
 
@@ -194,6 +221,10 @@
   }
   .weather_cur {
     color: $white;
+  }
+  
+  .featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span{
+    left: 0;
   }
 }
 ////////////////////////////////////////////////
@@ -406,6 +437,7 @@
   span {
     border: 0;
   }
+  
 }
 
 .booking-widget {
@@ -782,7 +814,6 @@ h5 {
   padding: 0;
   margin: 0;
   border: 0 !important;
-  left:0px;
 }
 
 .featured-wrapper .orbit-container .orbit-prev:hover, .featured-wrapper .orbit-container .orbit-next:hover {
@@ -795,6 +826,77 @@ h5 {
 
 .featured-wrapper .orbit-prev span {
     background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
+}
+
+.featured-activities ul > li > a {
+    position: relative;
+    display:block;
+}
+
+.featured-activities ul > li div.caption {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    color:#fff;
+    padding-bottom: .5rem;
+}
+
+.featured-activities ul > li div.caption .title {
+  font-family: $font-family-serif;
+}
+
+.featured-activities ul > li div.caption .sub {
+  font-size: .9rem;
+  font-weight: lighter;
+}
+
+
+//////////////////////////////////////
+// MAP
+.example-number {
+  position:relative;
+  width:200px;
+  height: 71px;
+  margin: 50px 0px 199px;
+  text-align:center;
+  font: 21px/30px Arial, sans-serif;
+  color:#fff;
+  background:#C91F2C;
+  padding-top: 10px;
+}
+
+/* creates the larger triangle */
+.example-number:before {
+  content:"";
+  position:absolute;
+  bottom: -140px;
+  right: 98px;
+  border-width: 0 0 140px 185px;
+  border-style:solid;
+  border-color:transparent #C91F2C;
+}
+
+/* creates the larger triangle */
+.example-number:after {
+  content:"";
+  position:absolute;
+  bottom:-140px;
+  right: 183px;
+  border-width: 0 0 140px 100px;
+  border-style:solid;
+  border-color:transparent #fff;
+}
+
+.example-number-arrow {
+  width: 0px;
+  height: 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 100px solid #2f2f2f;
+  -ms-transform: rotate(-137deg);
+  -webkit-transform: rotate(-137deg);
+  transform: rotate(-137deg);
 }
 
 // Or selectively include components
