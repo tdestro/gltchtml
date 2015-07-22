@@ -110,10 +110,7 @@
 }
 
 @media #{$medium-down} {
-  .tri-bar-color-bg{
-    font-size: 1.3rem;
-    line-height: 40px;
-  }
+
 
   .tri-bar-color-bg img{
     margin:auto;
@@ -375,6 +372,7 @@
     background: $gtnp_dark_green none repeat scroll 0% 0%;
   }
 
+
   // THIS SETS THE ARROWS ON THE DROPDOWNS
 
   @mixin arrows {
@@ -484,7 +482,6 @@
 .tri-bar-color-bg {
   background-color: $gtnp_dark_green;
   color: $white;
-  background-clip: content-box;
 }
 
 ////////////////////////////////////////////////
@@ -642,6 +639,13 @@ h6 {
   color:#fff;
 }
 
+.tri-bar-color-bg{
+  font-size: 1.3rem;
+  line-height: 40px;
+  -webkit-box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
+  -moz-box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
+  box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
+}
 ////////////////////////////////////////////////
 // FOOTER RELATED
 
