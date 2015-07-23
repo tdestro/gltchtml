@@ -7,13 +7,12 @@
     <title>Grand Teton National Park</title>
     <link rel="stylesheet" href="stylesheets/app.css"/>
     <link rel="stylesheet" href="stylesheets/theme_cb.css"/>
-    <link rel="stylesheet" href="stylesheets/theme_headwaters.css"/>
-    <link rel="stylesheet" href="stylesheets/theme_jenny.css"/>
-    <link rel="stylesheet" href="stylesheets/theme_jackson.css"/>
+    <link rel="stylesheet" href="assets/jquery-ui.css"/>
 
     <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="bower_components/jquery-2.1.0.min/index.js"></script>
-    
+
+
+
     <style>
 	      #map-canvas {
 	        width: 100%;
@@ -239,10 +238,9 @@
     </div>
 </div>
 
-
 <div class="row full-width">
     <div class="large-12 columns nopadding hero-orbit">
-        <ul  class="text-align-center" data-orbit data-options="pause_on_hover:false;
+        <ul class="text-align-center" data-orbit data-options="pause_on_hover:false;
                   bullets:false; slide_number: false;">
             <li><img src="assets/front/orbit/MainImage1.jpg">
 
@@ -281,6 +279,43 @@
         </ul>
     </div>
 </div>
+
+
+<div id="booking-widget" class="row layer-10 full-width">
+    <div class="large-offset-1 large-10 medium-12 columns">
+        <div class="booking-widget row">
+            <div class="small-12 medium-2 columns">
+                <input type="text" placeholder="Arrival Date" name="departure-date" id="arrival-date" class="datepicker">
+                <img src="/assets/bookingwidget/datepicker.png" class="input_img">
+            </div>
+            <div class="small-12 medium-2 columns">
+                <input type="text" placeholder="Departure Date" name="departure-date" id="departure-date" class="datepicker">
+                <img src="/assets/bookingwidget/datepicker.png" class="input_img">
+            </div>
+            <div class="small-12 medium-2 columns selectParent">
+                <select>
+                    <option selected="" disabled="disabled">Select Property</option>
+                </select>
+            </div>
+            <div class="small-12 medium-2 columns selectParent">
+                <select>
+                    <option selected="" disabled="disabled">2 Adults</option>
+                </select>
+            </div>
+            <div class="small-12 medium-2 columns selectParent">
+                <select>
+                    <option selected="" disabled="disabled">2 Children</option>
+                </select>
+            </div>
+            <div class="small-12 medium-2 columns text-center bookbut">
+
+                <input type="submit" value="Book Now" class="button">
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="row">
 	<div class="large-10 medium-12 columns text-align-center small-centered headline">
 			Grand Teton National Park is famous for the endless amount of outdoor activities. There is so much to do that
@@ -456,8 +491,8 @@
 	</div>
 </footer>
 
-
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
 <script src="js/app.js"></script>
 

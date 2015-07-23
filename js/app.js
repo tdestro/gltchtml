@@ -1,6 +1,15 @@
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
+$( document ).ready(function() {
 
+
+    $("#arrival-date").datepicker({
+    });
+
+    $("#departure-date").datepicker({
+    });
+
+});
     $(document).foundation({
    topbar: {
      sticky_class: 'sticky',
@@ -24,7 +33,8 @@
       $(this).addClass('moved');
    }
  });
- 
+
+
 $(document).foundation();
 $(window).resize(function () {
     // Use modernizer or some other to to test for flexbox
