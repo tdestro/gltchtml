@@ -715,21 +715,26 @@ h5 {
   }
   
   form.newsletter {
-      height: 1rem;
+    display: block;
+    margin: 0.2rem 0 .1rem;  
   }
 
   .newsletter input {
-      height: auto !important;
+    padding: 0.2rem .8rem !important;
+    margin: 0 !important;
+    height: 1.6rem !important;
+    border: none;
   }
   
   .newsletter input[type="submit"] {
-      /* padding: 0; */
-      background: url(assets/topbar/searchbut.png) no-repeat;
-      background-position: center;
-      background-color: #606e69;   
-      padding: 0.2rem .8rem;
-      border: none;
-      background-size: .6rem 1rem;
+    background: url(../assets/topbar/searchbut.png) no-repeat;
+    background-position: center;
+    background-color: #606e69;
+    padding: 0.2rem .8rem !important;
+    border: none;
+    background-size: .6rem 1rem;
+    height: 1.6rem !important;
+    margin: 0 !important;
   }
   
 }
