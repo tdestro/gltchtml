@@ -2,6 +2,8 @@
 @import "settings";
 @import "foundation";
 @import "normalize";
+// Font Awesome.
+@import "../bower_components/components-font-awesome/scss/font-awesome.scss";
 
 ////////////////////////////////////////////////
 // THIS IS SMALL LAYOUT
@@ -12,8 +14,46 @@
     display: none !important;
   }
 }
+
+.orbit-container .orbit-slides-container > * .orbit-caption {
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,0.99) 99%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(99%,rgba(0,0,0,0.99)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
 @media #{$small-only} {
 
+
+
+
+
+  .orbit-container ul li img, .orbit-container ul li {
+    min-height: 670px;
+    min-width: 1295px;
+    overflow: hidden;
+  }
+  .orbit-container .orbit-slides-container > * .orbit-caption {
+    z-index: 100;
+    width: 100vw;
+  }
+  .orbit-container ul li img { width: 100%; }
+
+  .orbit-container ul li:nth-of-type(1) img {
+    margin-left: -463px;
+  }
+  .orbit-container ul li:nth-of-type(2) img {
+    margin-left: -600px;
+  }
+  .orbit-container ul li:nth-of-type(3) img {
+    margin-left: -552px;
+  }
+  .orbit-container ul li:nth-of-type(4) img {
+    margin-left: -466px;
+  }
   .weather_temp {
     color: $white;
     font-weight: 600;
@@ -89,25 +129,28 @@
   .top-bar select {
     font-size: 28pt;
   }
+  @mixin smarrows {
+
+    display: inline;
+    position: absolute;
+    top: -50px;
+    right: 58px;
+    border: 0;
+    font-family: FontAwesome;
+    /* font-style: normal; */
+    font-weight: lighter;
+    font-size: 110px;
+    content: "\f107";
+
+  }
 
   .top-bar ul > li.has-dropdown a.open:after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 50px;
-    border: 0;
-    background: url("../assets/topbar/topbarsmdownd.png") no-repeat;
-
-    position: absolute;
+    @include smarrows;
+    content: "\f107";
   }
   .top-bar ul > li.has-dropdown.expand .open:after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: url("../assets/topbar/topbarsmdown.png") no-repeat;
-    margin-top: -40px;
-    top: initial;
+    @include smarrows;
+    content: "\f106";
   }
   
   .featured-orbit > li {
@@ -176,6 +219,12 @@
 }
 
 @media #{$medium-down} {
+
+  .tri-bar-color-bg img {
+    margin: auto;
+    margin-top: 20px;
+
+  }
   .sm-green-buts {
     font-family: $font-family-sans-serif;
     color: $white;
@@ -235,6 +284,7 @@
   }
 
   .top-bar .toggle-topbar a {
+
     background: url("../assets/topbar/topbarsmbutd.png") no-repeat;
     background-size: 100% 100%;
   }
@@ -252,10 +302,17 @@
     font-family: $font-family-serif;
   }
 
+  .tri-bar-color-bg {
+    padding-top: 10px;
+  }
+
 }
 
-
 @media #{$medium-up} {
+  .layer-10 {
+    margin-top: -120px;
+  }
+
   .weather_temp {
     color: $white;
     font-size: 1.8rem;
@@ -266,11 +323,13 @@
 
   .weather_desc {
     font-family: $font-family-serif;
+    font-weight: 100;
     font-size: 9pt;
     color: $white;
     letter-spacing: 0.04rem;
     line-height: 0.9rem;
     padding-top: 0.2rem;
+    margin-left: 10px;
   }
   .weather_cur {
     color: $white;
@@ -279,12 +338,19 @@
   .featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span{
     left: 0;
   }
+
+  .hero-orbit .orbit-prev {
+    left: 15px;
+  }
+
+  .hero-orbit .orbit-next {
+    padding-right: 50px;
+  }
 }
+
 ////////////////////////////////////////////////
 // THIS IS MEDIUM UP LAYOUT
 @media #{$medium-only} {
-
-
 
   .weather_temp {
     margin-left: -95px;
@@ -317,30 +383,30 @@
     height: 50px;
     width: 45px;
   }
-  
-  .featured-orbit li{
-    position:relative;
+
+  .featured-orbit li {
+    position: relative;
   }
-  
+
   .featured-wrapper .orbit-caption.right-orbit {
-      background-color: transparent !important;
-      clear: both;
-      display: block;
-      /* position:absolute; */
-      height: auto;
-      position: relative;
-      text-align: left;
+    background-color: transparent !important;
+    clear: both;
+    display: block;
+    /* position:absolute; */
+    height: auto;
+    position: relative;
+    text-align: left;
   }
-  
+
   .featured-wrapper img.left-image {
-      margin-left: auto;
-      margin-right: auto;
-      clear: both;
-      display: block;
-      position:absolute;
-      height: auto;
-      padding: 0;
-      position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+    display: block;
+    position: absolute;
+    height: auto;
+    padding: 0;
+    position: relative;
   }
 
   .smlogo {
@@ -443,23 +509,30 @@
   }
 
   // THIS SETS THE ARROWS ON THE DROPDOWNS
+
+  @mixin arrows {
+    display: inline;
+    position: static;
+    border: 0;
+    content: "\f078";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 12px;
+    margin-left: 3px;
+  }
+
   .top-bar-section .has-dropdown > a:after {
-    width: 12px;
-    height: 10px;
-    border: none;
-    margin-top: -3px;
-    background: url("../assets/topbar/topbardroparrowd.png") no-repeat;
+    @include arrows;
+    color: $gtnp_dark_green;
   }
 
   .top-bar-section .has-dropdown:hover > a:after {
-    width: 12px;
-    height: 10px;
-    border: none;
-
-    margin-top: -3px;
-    background: url("../assets/topbar/topbardroparrow.png") no-repeat;
+    @include arrows;
+    color: white;
   }
-  
+
   .featured-wrapper .orbit-container .orbit-slides-container > * .right-orbit {
     background-color: transparent;
     bottom: 0;
@@ -545,7 +618,6 @@
 .tri-bar-color-bg {
   background-color: $gtnp_dark_green;
   color: $white;
-  background-clip: content-box;
 }
 
 ////////////////////////////////////////////////
@@ -583,42 +655,42 @@
     margin: 0rem 1rem 0 0 !important;
     border: 0 !important;
   }
-  
-  [role='tab']:not(.resp-tab-active) > img{
+
+  [role='tab']:not(.resp-tab-active) > img {
     opacity: 0.4;
     filter: alpha(opacity=80);
   }
-  
+
   ul.resp-tabs-list li:last-child {
     margin-right: 0 !important;
   }
-  
-  div.lodge{
-    margin-top:2rem;
+
+  div.lodge {
+    margin-top: 2rem;
   }
-  
+
   a.close-activities-content {
     font-size: 2rem;
     color: $gtnp_gray;
     float: right;
   }
-  
+
   ul.features {
     list-style-position: inside !important;
     list-style-type: disc !important;
     margin-top: 1rem;
   }
-  
+
   ul.features li {
     display: list-item !important;
     list-style: inherit;
     padding-bottom: .2rem;
   }
-  
+
   .resp-tab-content .image-wrapper {
     max-width: 440px;
   }
-  
+
   a.button.book-now {
     padding: .5rem 1rem !important;
     margin-top: 2rem;
@@ -631,9 +703,9 @@
     background-position: 100% 0;
     background-size: contain;
   }
-  
+
   .caption .price {
-  float: right;
+    float: right;
   }
   .caption .title {
     font-family: $font-family-serif;
@@ -646,9 +718,67 @@
     color: #fff;
     padding: .7rem 1rem;
   }
-  
+
+}
+////////////////////////////////////////////////
+// Hero Orbit Related.
+.hero-orbit .orbit-prev {
+  background: url("../assets/orbit/orbitleft.png") no-repeat;
+  width: 34px !important;
+  height: 84px !important;
+
+  span {
+    border: 0;
+  }
 }
 
+.hero-orbit .orbit-next {
+  background: url("../assets/orbit/orbitright.png") no-repeat;
+  width: 34px !important;
+  height: 84px !important;
+  span {
+    border: 0;
+  }
+}
+
+////////////////////////////////////////////////
+// Booking Widget Related.
+.booking-widget {
+  background-color: $gtnp_gray;
+}
+
+.booking-widget .columns {
+  padding-left: .5rem;
+}
+
+.booking-widget [type='submit'] {
+  padding: .5rem .6rem;
+  text-transform: uppercase;
+}
+
+.booking-widget input, .booking-widget select {
+  margin-top: .4rem !important;
+  margin-bottom: .4rem !important;
+}
+
+.booking-widget > .columns {
+  padding-right: 0;
+}
+
+.input_img {
+  position: absolute;
+  bottom: 14px;
+  right: 4px;
+}
+
+.layer-10 {
+  z-index: 100;
+  position: absolute;
+}
+.selectParent select{
+  background: url("../assets/bookingwidget/dwn.png") no-repeat white;
+  background-position: right 5px bottom 10px;
+}
 
 ////////////////////////////////////////////////
 // footer CSS
@@ -661,13 +791,19 @@
   }
 }
 
+
 ////////////////////////////////////////////////
 // THESE ARE GENERALIZED STYLES TO BE USED ANYWHERE.
+
+.orbit-container .orbit-timer{
+  display:none;
+}
+
+
 
 .def_icon_desc {
   margin-top: 0.43rem;
 }
-
 
 .nopadding {
   padding: 0rem 0rem 0rem;
@@ -699,16 +835,24 @@ h6 {
 }
 
 .button {
-  background-color:$gtnp_green;
-  color:#fff;
+  background-color: $gtnp_green;
+  color: #fff;
+}
+
+.tri-bar-color-bg {
+  font-size: 1.3rem;
+  line-height: 40px;
+  -webkit-box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
+  -moz-box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
+  box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
 }
 
 ////////////////////////////////////////////////
 // FOOTER RELATED
 
 .preserve-protect {
-  padding-top:3.5rem;
-  padding-bottom:3.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 h5 {
@@ -743,13 +887,13 @@ h5 {
     font-weight: 300;
     font-size: 0.8rem;
   }
-  
+
   i {
-      font-size: 100px;
-      display: block;
-      padding-top: 1rem;
+    font-size: 100px;
+    display: block;
+    padding-top: 1rem;
   }
-  
+
   .searchpad img {
     height: 17px;
   }
@@ -760,11 +904,11 @@ h5 {
   }
 
   input.search::-webkit-input-placeholder {
-      color: $gtnp_dark_gray;
+    color: $gtnp_dark_gray;
   }
 
-  input.search::-moz-placeholder, .footer input.search:-ms-input-placeholder{
-      color: $gtnp_dark_gray;
+  input.search::-moz-placeholder, .footer input.search:-ms-input-placeholder {
+    color: $gtnp_dark_gray;
   }
   
   form.newsletter {
@@ -790,6 +934,7 @@ h5 {
     margin: 0 !important;
   }
   
+
 }
 
 .footer-links {
@@ -843,44 +988,44 @@ h5 {
   margin: 2rem 0;
 }
 
-.featured-wrapper{
+.featured-wrapper {
   margin-top: 3rem;
-  margin-bottom:2rem;
+  margin-bottom: 2rem;
 }
 
 .featured-wrapper .orbit-timer {
-    display: none !important;
+  display: none !important;
 }
 
 .featured-wrapper .orbit-slide-number {
   display: none !important;
 }
 
-.featured-wrapper .orbit-container .orbit-slides-container img{
+.featured-wrapper .orbit-container .orbit-slides-container img {
   display: inline-block;
   max-width: 100%;
   float: left;
 }
 
 .featured-orbit > li > .orbit-caption {
-    color: $gtnp_green !important;
+  color: $gtnp_green !important;
 }
 
 .featured-orbit > li > .orbit-caption h6 {
-    color: $gtnp_green;
-    padding-bottom: 1rem;
-    font-weight: lighter;
+  color: $gtnp_green;
+  padding-bottom: 1rem;
+  font-weight: lighter;
 }
 
 .featured-orbit a {
-    color: $gtnp_green;
-    font-weight: bold;
-    margin-top: 1.5rem;
-    display: block;
+  color: $gtnp_green;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  display: block;
 }
 
 .featured-orbit li {
-    padding: 0rem 2rem;
+  padding: 0rem 2rem;
 }
 
 .featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span {
@@ -892,15 +1037,15 @@ h5 {
 }
 
 .featured-wrapper .orbit-container .orbit-prev:hover, .featured-wrapper .orbit-container .orbit-next:hover {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .featured-wrapper .orbit-next span {
-    background: url(../assets/front/orbit2/right-arrow.png) no-repeat;
+  background: url(../assets/front/orbit2/right-arrow.png) no-repeat;
 }
 
 .featured-wrapper .orbit-prev span {
-    background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
+  background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
 }
 
 .featured-activities ul > li > a {

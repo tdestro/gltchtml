@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Grand Teton National Park</title>
     <link rel="stylesheet" href="stylesheets/app.css"/>
+    <link rel="stylesheet" href="assets/jquery-ui.css"/>
 
     <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="bower_components/jquery-2.1.0.min/index.js"></script>
-    
+
+
+
     <style>
 	      #map-canvas {
 	        width: 100%;
@@ -221,7 +223,7 @@
             <div class="small-2 columns weather_cur def_icon_desc">
                 CURRENT
             </div>
-            <div class="small-2 columns weather_temp">
+            <div class="small-1 columns weather_temp">
                 65&#176;
             </div>
             <div class="small-2 columns weather_desc">Chance of Showers</div>
@@ -230,18 +232,18 @@
                 SOCIAL
             </div>
             <div class="small-1 columns def_icon">
-                <img class="show-for-medium-up" id="fbicon" src="assets/topbar/topbar_fb.png"/>
+                <a href="http://www.facebook.com/grandtetonlodgeco"><img class="show-for-medium-up" id="fbicon" src="assets/topbar/topbar_fb.png"/></a>
             </div>
 
             <div class="small-1 columns def_icon">
-                <img class="show-for-medium-up" src="assets/topbar/topbar_twitter.png"/>
+                <a href="http://www.twitter.com/tetontales/"><img class="show-for-medium-up" src="assets/topbar/topbar_twitter.png"/></a>
             </div>
             <div class="small-1 columns def_icon_desc">
                 MEDIA
             </div>
             <div class="small-1 columns def_icon"><img class="show-for-medium-up camicon"
                                                        src="assets/topbar/topbar_cam.png"/></div>
-            <div class="small-1 columns def_icon"><img class="show-for-medium-up" src="assets/topbar/topbar_vid.png"/>
+            <div class="small-1 columns end def_icon"><img class="show-for-medium-up" src="assets/topbar/topbar_vid.png"/>
 
             </div>
 
@@ -357,12 +359,11 @@
     </div>
 </div>
 
-
 <div class="row full-width">
     <div class="large-12 columns nopadding hero-orbit">
-        <ul  class="text-align-center" data-orbit data-options="pause_on_hover:false;
-                  bullets:false; slide_number: false;">
-                  
+
+        <ul class="text-align-center" data-orbit data-options="bullets:false; slide_number: false; resume_on_mouseout: true; pause_on_hover: true;">
+
             <li><img src="assets/front/orbit/MainImage1.jpg">
 
                 <div class="orbit-caption">
@@ -400,6 +401,43 @@
         </ul>
     </div>
 </div>
+
+
+<div id="booking-widget" class="row layer-10 full-width">
+    <div class="large-offset-1 large-10 medium-12 columns">
+        <div class="booking-widget row">
+            <div class="small-12 medium-2 columns">
+                <input type="text" placeholder="Arrival Date" name="departure-date" id="arrival-date" class="datepicker">
+                <img src="assets/bookingwidget/datepicker.png" class="input_img">
+            </div>
+            <div class="small-12 medium-2 columns">
+                <input type="text" placeholder="Departure Date" name="departure-date" id="departure-date" class="datepicker">
+                <img src="assets/bookingwidget/datepicker.png" class="input_img">
+            </div>
+            <div class="small-12 medium-2 columns selectParent">
+                <select>
+                    <option selected="" disabled="disabled">Select Property</option>
+                </select>
+            </div>
+            <div class="small-12 medium-2 columns selectParent">
+                <select>
+                    <option selected="" disabled="disabled">2 Adults</option>
+                </select>
+            </div>
+            <div class="small-12 medium-2 columns selectParent">
+                <select>
+                    <option selected="" disabled="disabled">2 Children</option>
+                </select>
+            </div>
+            <div class="small-12 medium-2 columns text-center bookbut">
+
+                <input type="submit" value="Book Now" class="button">
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="row">
 	<div class="large-10 medium-12 columns text-align-center small-centered headline">
 			Grand Teton National Park is famous for the endless amount of outdoor activities. There is so much to do that
@@ -543,7 +581,12 @@
         <div class="title">
             	RV 
         </div>
-    </div>
+    </div> 
+    <!--
+    <div class="small-4 columns"><div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon3.png"/><img class="show-for-large-up" src="assets/front/tri/tri3.jpg"/>LODGE</div></div>
+    <div class="small-4 columns"><div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon2.png"/><img class="show-for-large-up" src="assets/front/tri/tri2.jpg"/>CAMP</div></div>
+    <div class="small-4 columns"><div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon1.png"/><img class="show-for-large-up" src="assets/front/tri/tri1.jpg"/>RV</div></div>
+    -->
 </div>
 
 
@@ -613,15 +656,20 @@
 	 </div>
 	    <div class="row">
 	    	<div class="small-12 medium-12 large-12 columns">
-	            <h3>Copyright &copy; 2015 Grand Teton Lodge Company & Flagg Ranch Company</br>
+	            <h3>Copyright &copy;
+<script type="text/javascript">
+    var dteNow = new Date();
+    var intYear = dteNow.getFullYear();
+    document.write(intYear);
+</script> Grand Teton Lodge Company & Flagg Ranch Company</br>
 	                Authorized Concessioner of the National Park Service</h3>
 	        </div>
 	    </div>
 	</div>
 </footer>
 
-
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
 <script src="js/app.js"></script>
 
