@@ -35,6 +35,15 @@
   .top-bar-section ul li > a {
     font-size: 28pt;
   }
+  
+  .top-bar-section ul li:hover:not(.has-form) > a.open {
+    background-color: transparent;
+    color: $gtnp_dark_green;
+  }
+  
+  .top-bar-section .dropdown > li > a {
+      padding-left: 3rem;
+  }
 
   .sm-green-buts {
     margin-top: 19px;
@@ -101,6 +110,15 @@
     top: initial;
   }
   
+  .featured-orbit > li {
+    text-align: left;
+  }
+  
+  .featured-orbit > li > .orbit-caption h6 {
+    font-size: 1.2rem;
+    font-weight: 600 !important;
+    font-family: $font-family-sans-serif;
+  }
   
   .featured-wrapper .orbit-container .orbit-slides-container > * .orbit-caption {
     background-color: transparent;
@@ -119,13 +137,40 @@
     position: relative;
   }
   
-  .orbit-next, .orbit-prev {
-    display: block; 
-  }
-  
+
   .featured-wrapper .orbit-next span {
     right: 0 !important;
     margin-left: -4px !important;
+  }
+  
+  .featured-wrapper a.orbit-next, .featured-wrapper a.orbit-prev {
+      top: calc(70%) !important;
+      display: block; 
+  }
+  
+  .featured-wrapper a.orbit-next{
+    margin-right:1rem;
+  }
+  
+  .featured-wrapper a.orbit-prev{
+      margin-left:1rem;
+  }
+  
+  .featured-wrapper .orbit-container .orbit-slides-container li {
+      padding-left: 0;
+      padding-right: 0;
+  }
+  
+  .featured-wrapper > .row > .columns {
+      padding-left: 0;
+      padding-right: 0;
+  }
+  
+  .featured-wrapper .orbit-slides-container .orbit-caption {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+      font-size: 1.1rem;
+      font-weight: normal;
   }
 
 }
@@ -138,8 +183,16 @@
 
   .search-but {
     position: relative;
-    background-color: $gtnp_dark_green;
+    background-color: #606e69;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 18px 26px;
+}
+
+  .searchpad{
+    padding-top: 0;
   }
+  
   .search-but:hover,
   .search-but:focus {
     background-color: $gtnp_dark_gray;
