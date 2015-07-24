@@ -546,6 +546,53 @@
   }
 
 }
+.hero-orbit .orbit-prev  {
+  background: url("../assets/orbit/orbitleft.png");
+  width: 34px !important;
+  height: 84px !important;
+
+  span {
+    border: 0;
+  }
+}
+
+
+.hero-orbit .orbit-next  {
+  background: url("../assets/orbit/orbitright.png");
+  width: 34px !important;
+  height: 84px !important;
+
+  span {
+    border: 0;
+  }
+  
+}
+
+.booking-widget {
+  margin-top:-10rem !important;
+  background-color: $gtnp_gray;
+}
+
+.booking-widget .columns {
+  padding-left: .5rem;
+}
+
+.booking-widget [type='submit'] {
+    padding: .5rem .6rem;
+    text-transform: uppercase;
+}
+
+.booking-widget input, .booking-widget select {
+  margin-top: .4rem !important;
+  margin-bottom: .4rem !important;
+}
+
+
+
+.booking-widget > .columns {
+    padding-right: 0;
+}
+
 
 /////////////////////////////////////////////////
 // ACTIVITIES BAR
@@ -590,7 +637,7 @@
   padding-bottom: 3rem;
 }
 
-.activities-content {
+.activities-content{
   background: url(../assets/front/activities/map-bg.jpg) no-repeat fixed;
   background-size: cover;
 }
