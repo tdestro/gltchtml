@@ -9,8 +9,23 @@ $( document ).ready(function() {
     $("#departure-date").datepicker({
     });
 
+    $('.orbit-container .orbit-next').css('opacity', '0.4');
+    $('.orbit-container .orbit-prev').css('opacity', '0.4');
+    $('.orbit-container').on({
+        mouseenter: function(){
+            $('.orbit-container .orbit-next').fadeTo( "slow", '1');
+            $('.orbit-container .orbit-prev').fadeTo( "slow", '1');
+        },
+        mouseleave: function(){
+            $('.orbit-container .orbit-next').fadeTo("slow", '0.4');
+            $('.orbit-container .orbit-prev').fadeTo("slow", '0.4');
+        }
+    });
 });
-    $(document).foundation({
+
+
+
+$(document).foundation({
    topbar: {
      sticky_class: 'sticky',
      custom_back_text: false,

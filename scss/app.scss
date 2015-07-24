@@ -15,7 +15,45 @@
   }
 }
 
+.orbit-container .orbit-slides-container > * .orbit-caption {
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,0.99) 99%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(99%,rgba(0,0,0,0.99)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
 @media #{$small-only} {
+
+
+
+
+
+  .orbit-container ul li img, .orbit-container ul li {
+    min-height: 670px;
+    min-width: 1295px;
+    overflow: hidden;
+  }
+  .orbit-container .orbit-slides-container > * .orbit-caption {
+    z-index: 100;
+    width: 100vw;
+  }
+  .orbit-container ul li img { width: 100%; }
+
+  .orbit-container ul li:nth-of-type(1) img {
+    margin-left: -463px;
+  }
+  .orbit-container ul li:nth-of-type(2) img {
+    margin-left: -600px;
+  }
+  .orbit-container ul li:nth-of-type(3) img {
+    margin-left: -552px;
+  }
+  .orbit-container ul li:nth-of-type(4) img {
+    margin-left: -466px;
+  }
   .weather_temp {
     color: $white;
     font-weight: 600;
@@ -232,11 +270,13 @@
 
   .weather_desc {
     font-family: $font-family-serif;
+    font-weight: 100;
     font-size: 9pt;
     color: $white;
     letter-spacing: 0.04rem;
     line-height: 0.9rem;
     padding-top: 0.2rem;
+    margin-left: 10px;
   }
   .weather_cur {
     color: $white;
@@ -244,6 +284,14 @@
   
   .featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span{
     left: 0;
+  }
+
+  .hero-orbit .orbit-prev {
+    left: 15px;
+  }
+
+  .hero-orbit .orbit-next {
+    padding-right: 50px;
   }
 }
 
@@ -575,7 +623,7 @@
 ////////////////////////////////////////////////
 // Hero Orbit Related.
 .hero-orbit .orbit-prev {
-  background: url("../assets/orbit/orbitleft.png");
+  background: url("../assets/orbit/orbitleft.png") no-repeat;
   width: 34px !important;
   height: 84px !important;
 
@@ -585,10 +633,9 @@
 }
 
 .hero-orbit .orbit-next {
-  background: url("../assets/orbit/orbitright.png");
+  background: url("../assets/orbit/orbitright.png") no-repeat;
   width: 34px !important;
   height: 84px !important;
-
   span {
     border: 0;
   }
@@ -648,7 +695,9 @@
 ////////////////////////////////////////////////
 // THESE ARE GENERALIZED STYLES TO BE USED ANYWHERE.
 
-
+.orbit-container .orbit-timer{
+  display:none;
+}
 
 
 

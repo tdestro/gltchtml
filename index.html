@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Grand Teton National Park</title>
     <link rel="stylesheet" href="stylesheets/app.css"/>
-    <link rel="stylesheet" href="stylesheets/theme_cb.css"/>
     <link rel="stylesheet" href="assets/jquery-ui.css"/>
 
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -224,7 +223,7 @@
             <div class="small-2 columns weather_cur def_icon_desc">
                 CURRENT
             </div>
-            <div class="small-2 columns weather_temp">
+            <div class="small-1 columns weather_temp">
                 65&#176;
             </div>
             <div class="small-2 columns weather_desc">Chance of Showers</div>
@@ -233,18 +232,18 @@
                 SOCIAL
             </div>
             <div class="small-1 columns def_icon">
-                <img class="show-for-medium-up" id="fbicon" src="assets/topbar/topbar_fb.png"/>
+                <a href="http://www.facebook.com/grandtetonlodgeco"><img class="show-for-medium-up" id="fbicon" src="assets/topbar/topbar_fb.png"/></a>
             </div>
 
             <div class="small-1 columns def_icon">
-                <img class="show-for-medium-up" src="assets/topbar/topbar_twitter.png"/>
+                <a href="http://www.twitter.com/tetontales/"><img class="show-for-medium-up" src="assets/topbar/topbar_twitter.png"/></a>
             </div>
             <div class="small-1 columns def_icon_desc">
                 MEDIA
             </div>
             <div class="small-1 columns def_icon"><img class="show-for-medium-up camicon"
                                                        src="assets/topbar/topbar_cam.png"/></div>
-            <div class="small-1 columns def_icon"><img class="show-for-medium-up" src="assets/topbar/topbar_vid.png"/>
+            <div class="small-1 columns end def_icon"><img class="show-for-medium-up" src="assets/topbar/topbar_vid.png"/>
 
             </div>
 
@@ -362,9 +361,9 @@
 
 <div class="row full-width">
     <div class="large-12 columns nopadding hero-orbit">
-        <ul class="text-align-center" data-orbit data-options="pause_on_hover:false;
-                  bullets:false; slide_number: false;">
-                  
+
+        <ul class="text-align-center" data-orbit data-options="bullets:false; slide_number: false; resume_on_mouseout: true; pause_on_hover: true;">
+
             <li><img src="assets/front/orbit/MainImage1.jpg">
 
                 <div class="orbit-caption">
@@ -409,11 +408,11 @@
         <div class="booking-widget row">
             <div class="small-12 medium-2 columns">
                 <input type="text" placeholder="Arrival Date" name="departure-date" id="arrival-date" class="datepicker">
-                <img src="/assets/bookingwidget/datepicker.png" class="input_img">
+                <img src="assets/bookingwidget/datepicker.png" class="input_img">
             </div>
             <div class="small-12 medium-2 columns">
                 <input type="text" placeholder="Departure Date" name="departure-date" id="departure-date" class="datepicker">
-                <img src="/assets/bookingwidget/datepicker.png" class="input_img">
+                <img src="assets/bookingwidget/datepicker.png" class="input_img">
             </div>
             <div class="small-12 medium-2 columns selectParent">
                 <select>
