@@ -543,7 +543,7 @@
 .activitiesGridRow {
   margin-top: 5rem !important;
   margin-bottom: 1rem !important;
-  font-family: "Lato", Regular;
+  font-family: $font-family-sans-serif;
   font-weight: 300;
   font-size: .9rem;
 }
@@ -810,6 +810,30 @@ h5 {
   input.search::-moz-placeholder, .footer input.search:-ms-input-placeholder {
     color: $gtnp_dark_gray;
   }
+  
+  form.newsletter {
+    display: block;
+    margin: 0.2rem 0 .1rem;  
+  }
+
+  .newsletter input {
+    padding: 0.2rem .8rem !important;
+    margin: 0 !important;
+    height: 1.6rem !important;
+    border: none;
+  }
+  
+  .newsletter input[type="submit"] {
+    background: url(../assets/topbar/searchbut.png) no-repeat;
+    background-position: center;
+    background-color: #606e69;
+    padding: 0.2rem .8rem !important;
+    border: none;
+    background-size: .6rem 1rem;
+    height: 1.6rem !important;
+    margin: 0 !important;
+  }
+  
 
 }
 
@@ -831,7 +855,6 @@ h5 {
 
 .bottom-bar-color-bg {
   background-color: $gtnp_light_green;
-  height: 2.25rem;
 }
 
 .wrapper {
@@ -946,6 +969,25 @@ h5 {
 .featured-activities ul > li div.caption .sub {
   font-size: .9rem;
   font-weight: lighter;
+}
+
+.activity-type-bar {
+    background-color: #788983;
+    color: #fff;
+    padding-top: .5rem;
+}
+  
+.activity-type-bar h5 {
+      color: #fff;
+      float: left;
+      font-size: 1rem;
+      font-weight: normal;
+}
+  
+.activity-type-bar ul li label {
+      color: #fff;
+      font-size: .9rem;
+      font-family: $font-family-sans-serif;
 }
 
 
