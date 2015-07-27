@@ -8,13 +8,6 @@
 ////////////////////////////////////////////////
 // THIS IS SMALL LAYOUT
 
-// hides temp so it doesn't go under logo.
-@media screen and (max-width: 590px) {
-  .smtemp {
-    display: none !important;
-  }
-}
-
 .orbit-container .orbit-slides-container > * .orbit-caption {
   background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(99%, rgba(0, 0, 0, 0.99)), color-stop(100%, rgba(0, 0, 0, 1))); /* Chrome,Safari4+ */
@@ -27,13 +20,14 @@
 
 @media #{$small-only} {
 
+  // ORBIT RELATED
   .home-slider-orbit .orbit-next,
   .home-slider-orbit .orbit-prev {
     display: block;
   }
 
   .orbit-container ul li img, .orbit-container ul li {
-    min-height: 670px;
+    min-height: 850px;
     min-width: 1295px;
     overflow: hidden;
   }
@@ -57,104 +51,7 @@
   .orbit-container ul li:nth-of-type(4) img {
     margin-left: -466px;
   }
-  .weather_temp {
-    color: $white;
-    font-weight: 600;
-    margin-left: -120px;
-    margin-top: -115px;
-    font-size: 42pt;
-  }
-  .weather_cur {
-    color: $white;
-    margin-left: -151px;
-    margin-top: -51px;
-    font-size: 22pt;
-  }
 
-  // MENU ICON FOR SMALLg
-  .top-bar {
-    height: 100px;
-  }
-  .top-bar-section ul li > a {
-    font-size: 28pt;
-  }
-
-  .top-bar-section ul li:hover:not(.has-form) > a.open {
-    background-color: transparent;
-    color: $gtnp_dark_green;
-  }
-
-  .top-bar-section .dropdown > li > a {
-    padding-left: 3rem;
-  }
-
-  .sm-green-buts {
-    margin-top: 19px;
-    margin-bottom: 19px;
-    font-size: 28pt;
-  }
-
-  .title-area {
-    height: 100px !important;
-  }
-  // KEEPS TOP BAR OVERLOGO
-  .top-bar-section {
-    z-index: 1001;
-  }
-  .footer {
-    text-align: center;
-  }
-  .top-bar .toggle-topbar a {
-    height: 100px;
-    width: 91px;
-
-  }
-  .search-but {
-    padding: 26px 26px 26px;
-    height: 71px;
-  }
-  .searchpad {
-    padding-top: 47px;
-  }
-  .search {
-    height: 71px !important;
-    margin: 30px 0px 0.25rem !important;
-  }
-  .top-bar-section ul li.smsearchpad {
-    padding: 0px 20px;
-  }
-
-  .top-bar-section ul li {
-    padding: 0px 0px 0px 0px;
-  }
-
-  .top-bar input,
-  .top-bar select {
-    font-size: 28pt;
-  }
-  @mixin smarrows {
-
-    display: inline;
-    position: absolute;
-    top: -50px;
-    right: 58px;
-    border: 0;
-    font-family: FontAwesome;
-    /* font-style: normal; */
-    font-weight: lighter;
-    font-size: 110px;
-    content: "\f107";
-
-  }
-
-  .top-bar ul > li.has-dropdown a.open:after {
-    @include smarrows;
-    content: "\f107";
-  }
-  .top-bar ul > li.has-dropdown.expand .open:after {
-    @include smarrows;
-    content: "\f106";
-  }
 
   .featured-orbit > li {
     text-align: left;
@@ -222,6 +119,39 @@
 
 @media #{$medium-down} {
 
+  @mixin smarrows {
+    display: inline;
+    position: absolute;
+    top: -25px;
+    right: 29px;
+    border: 0;
+    font-family: FontAwesome;
+    font-weight: lighter;
+    font-size: 60px;
+  }
+
+  .top-bar ul > li.has-dropdown a.open:after {
+    @include smarrows;
+    content: "\f107";
+  }
+  .top-bar ul > li.has-dropdown.expand .open:after {
+    @include smarrows;
+    content: "\f106";
+  }
+
+  .smlogo {
+    height: 60px;
+    width: 170px;
+  }
+
+  .top-bar .toggle-topbar a {
+    height: 50px;
+    width: 45px;
+  }
+  .top-bar, .top-bar .name {
+    height: 50px;
+  }
+
   .tri-bar-color-bg img {
     margin: auto;
     margin-top: 20px;
@@ -231,30 +161,35 @@
     font-family: $font-family-sans-serif;
     color: $white;
   }
-
-  .search-but {
-    position: relative;
-    background-color: $gtnp_dark_green;
-    display: inline-block;
-    margin-top: 30px;
-    padding: 18px 26px;
-  }
-
-  .searchpad {
-    padding-top: 0;
-  }
-
-  .search-but:hover,
-  .search-but:focus {
-    background-color: $gtnp_dark_gray;
+  .search {
+    margin: 0.5rem 0px 0.25rem !important;
+    padding: 0rem 0.5rem 0rem !important;
   }
   .smsearchpad {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .search {
-    color: $gtnp_green !important;
+  .search-but img {
+    vertical-align: baseline;
+
+  }
+  .search-but {
+    position: relative;
+    background-color: $gtnp_dark_green;
+    display: inline-block;
+    margin-top: 8px;
+    padding: 0.2rem 0.5rem 0rem;
+  }
+
+  .search-but:hover,
+  .search-but:focus {
+    background-color: $gtnp_dark_gray;
+  }
+
+  .sm-green-buts {
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 
   .top-bar-section .has-dropdown.moved {
@@ -274,7 +209,6 @@
     clip: auto;
     width: 100%;
     left: 0;
-    //top: auto;
     position: relative !important;
   }
   .title.back.js-generated {
@@ -307,34 +241,24 @@
   .tri-bar-color-bg {
     padding-top: 10px;
   }
+  .weather_temp {
+    color: $white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-left: -95px;
+    margin-top: -57px;
+  }
+  .weather_cur {
+    color: $white;
+    margin-left: -110px;
+    margin-top: -34px;
+  }
 
 }
 
 @media #{$medium-up} {
   .layer-10 {
     margin-top: -120px;
-  }
-
-  .weather_temp {
-    color: $white;
-    font-size: 1.8rem;
-    margin-top: 0.25rem;
-    font-weight: 600;
-    height: 2rem;
-  }
-
-  .weather_desc {
-    font-family: $font-family-serif;
-    font-weight: 100;
-    font-size: 9pt;
-    color: $white;
-    letter-spacing: 0.04rem;
-    line-height: 0.9rem;
-    padding-top: 0.2rem;
-    margin-left: 10px;
-  }
-  .weather_cur {
-    color: $white;
   }
 
   .featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span {
@@ -353,38 +277,6 @@
 ////////////////////////////////////////////////
 // THIS IS MEDIUM UP LAYOUT
 @media #{$medium-only} {
-
-  .weather_temp {
-    margin-left: -95px;
-    margin-top: -57px;
-  }
-  .weather_cur {
-    margin-left: -110px;
-    margin-top: -34px;
-  }
-
-  .sm-green-buts {
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-
-  .search-but {
-    padding: 0.1rem 0.5rem 0.4rem;
-    height: 1.75rem;
-  }
-
-  .searchpad {
-    padding-top: 0.5rem;
-  }
-  .search {
-    margin: 0.5rem 0px 0.25rem !important;
-    padding: 0rem 0.5rem 0rem !important;
-  }
-
-  .top-bar .toggle-topbar a {
-    height: 50px;
-    width: 45px;
-  }
 
   .featured-orbit li {
     position: relative;
@@ -410,19 +302,29 @@
     padding: 0;
     position: relative;
   }
-
-  .smlogo {
-    height: 60px;
-    width: 170px;
-  }
-  .top-bar, .top-bar .name {
-    height: 50px;
-  }
 }
 
 ////////////////////////////////////////////////
 // THIS IS LARGE UP LAYOUT
 @media #{$large-up} {
+
+  .weather_temp {
+    color: $white;
+    font-size: 1.8rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+    height: 2rem;
+  }
+  .weather_desc {
+    font-family: $font-family-serif;
+    font-weight: 100;
+    font-size: 9pt;
+    color: $white;
+    letter-spacing: 0.04rem;
+    line-height: 0.9rem;
+    padding-top: 0.2rem;
+    margin-left: 10px;
+  }
 
   .top-bar-section > ul {
     display: -webkit-flex;
@@ -454,6 +356,7 @@
   .search-but:focus {
     background-color: $gtnp_dark_gray;
   }
+
   .logo {
     margin-top: -2.4rem;
 
