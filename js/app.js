@@ -49,6 +49,14 @@ $(document).foundation({
    }
  });
 
+// Placeholder fix for chrome
+$('input:text, textarea').each(function(){
+    var $this = $(this);
+    $this.data('placeholder', $this.attr('placeholder'))
+         .focus(function(){$this.removeAttr('placeholder');})
+         .blur(function(){$this.attr('placeholder', $this.data('placeholder'));});
+});
+
 
 $(document).foundation();
 $(window).resize(function () {
