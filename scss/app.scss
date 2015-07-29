@@ -5,30 +5,61 @@
 // Font Awesome.
 @import "../bower_components/components-font-awesome/scss/font-awesome.scss";
 
+@mixin font-family-sans-serif-1px {
+  font-family: $font-family-sans-serif;
+  letter-spacing: 1px;
+}
+
+.orbit-container .orbit-slides-container > * .orbit-caption {
+  height: 200px;
+  padding-top: 140px;
+  white-space: nowrap;
+  @include font-family-sans-serif-1px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+100 */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0); /* IE6-9 */
+}
+
+p {
+  letter-spacing: 1px;
+}
+
 ////////////////////////////////////////////////
 // THIS IS SMALL LAYOUT
 
-.orbit-container .orbit-slides-container > * .orbit-caption {
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(99%, rgba(0, 0, 0, 0.99)), color-stop(100%, rgba(0, 0, 0, 1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
+@mixin full-width-mixin {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
 }
 
 @media #{$small-only} {
 
-  // ORBIT RELATED
+  // ORBIT RELATED ON SMALL
   .home-slider-orbit .orbit-next,
   .home-slider-orbit .orbit-prev {
     display: block;
   }
 
+  ///////////////////////////////////
+  // FOOTER RELATED
+  .newsletter-padding {
+    padding-bottom: 15px;
+    padding-top: 14px;
+  }
+  .text-align-center-on-small {
+    text-align: center;
+  }
+
   .orbit-container ul li img, .orbit-container ul li {
-    min-height: 850px;
-    min-width: 1295px;
+    min-height: 425px;
+    min-width: 822px;
     overflow: hidden;
   }
   .orbit-container .orbit-slides-container > * .orbit-caption {
@@ -40,18 +71,17 @@
   }
 
   .orbit-container ul li:nth-of-type(1) img {
-    margin-left: -463px;
+    margin-left: -231px;
   }
   .orbit-container ul li:nth-of-type(2) img {
-    margin-left: -600px;
+    margin-left: -300px;
   }
   .orbit-container ul li:nth-of-type(3) img {
-    margin-left: -552px;
+    margin-left: -276px;
   }
   .orbit-container ul li:nth-of-type(4) img {
-    margin-left: -466px;
+    margin-left: -233px;
   }
-
 
   .featured-orbit > li {
     text-align: left;
@@ -60,7 +90,7 @@
   .featured-orbit > li > .orbit-caption h6 {
     font-size: 1.2rem;
     font-weight: 600 !important;
-    font-family: $font-family-sans-serif;
+    @include font-family-sans-serif-1px;
   }
 
   .featured-wrapper .orbit-container .orbit-slides-container > * .orbit-caption {
@@ -119,6 +149,10 @@
 
 @media #{$medium-down} {
 
+  .full-width-for-medium-down {
+    @include full-width-mixin;
+  }
+
   @mixin smarrows {
     display: inline;
     position: absolute;
@@ -152,13 +186,18 @@
     height: 50px;
   }
 
+  .tri div.columns {
+
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+  }
+
   .tri-bar-color-bg img {
     margin: auto;
-    margin-top: 20px;
 
   }
   .sm-green-buts {
-    font-family: $font-family-sans-serif;
+    @include font-family-sans-serif-1px;
     color: $white;
   }
   .search {
@@ -250,13 +289,24 @@
   }
   .weather_cur {
     color: $white;
-    margin-left: -110px;
+    margin-left: -106px;
     margin-top: -34px;
+    font-size: 0.8rem;
   }
 
 }
 
+////////////////////////////////////////////////
+// THIS IS MEDIUM UP LAYOUT
 @media #{$medium-up} {
+
+  ///////////////////////////////////
+  // FOOTER RELATED
+  .newsletter-padding {
+    padding-bottom: 7px;
+    padding-top: 5px;
+  }
+
   .layer-10 {
     margin-top: -120px;
   }
@@ -272,10 +322,20 @@
   .hero-orbit .orbit-next {
     padding-right: 50px;
   }
+
+  .headline {
+    font-size: 1.15rem;
+  }
+
+  ////////////////////////
+  // FOOTER RELATED
+  .headwaters {
+    padding-left: 30px;
+  }
 }
 
 ////////////////////////////////////////////////
-// THIS IS MEDIUM UP LAYOUT
+// THIS IS MEDIUM ONLY LAYOUT
 @media #{$medium-only} {
 
   .featured-orbit li {
@@ -311,9 +371,8 @@
   .weather_temp {
     color: $white;
     font-size: 1.8rem;
-    margin-top: 0.25rem;
+    margin-top: 0.4rem;
     font-weight: 600;
-    height: 2rem;
   }
   .weather_desc {
     font-family: $font-family-serif;
@@ -323,7 +382,29 @@
     letter-spacing: 0.04rem;
     line-height: 0.9rem;
     padding-top: 0.2rem;
+  }
+
+  .no-right-padding {
+    padding-right: 0;
+
+  }
+  .def_icon_margin_social0 {
     margin-left: 10px;
+  }
+  .def_icon_margin_social1 {
+    margin-left: 25px;
+  }
+  .def_icon_margin_social2 {
+    margin-left: 4px;
+  }
+  .def_icon_margin_media0 {
+    margin-left: 15px;
+  }
+  .def_icon_margin_media1 {
+    margin-left: 24px;
+  }
+  .def_icon_margin_media2 {
+    margin-left: 5px;
   }
 
   .top-bar-section > ul {
@@ -344,6 +425,7 @@
     white-space: nowrap;
     text-align: center;
     overflow: hidden;
+    letter-spacing: 1px;
   }
 
   .search-but {
@@ -358,12 +440,11 @@
   }
 
   .logo {
-    margin-top: -2.4rem;
-
+    margin-top: -40px;
   }
 
   .white {
-    font-family: $font-family-sans-serif;
+    @include font-family-sans-serif-1px;
     font-size: 9pt;
     color: $white;
   }
@@ -382,13 +463,13 @@
     height: 100%;
     margin: 0% 50% 0%;
   }
-
   .searchpad {
-    padding-top: 0.17rem;
+    padding-top: 0.34rem;
   }
+
   .search {
     height: 1.75rem !important;
-    margin: 0.2rem 0px 0.25rem !important;
+    margin: 0.35rem 0px 0.25rem !important;
     padding: 0rem 0.5rem 0rem !important;
     color: $gtnp_green !important;
   }
@@ -396,11 +477,11 @@
     z-index: 1000;
   }
   .top-bar-margin {
-    margin: -36px auto;
+    margin-top: -40px;
   }
   .top-bar-color-bg {
     background-color: $gtnp_green;
-    height: 2.25rem;
+    height: 40px;
   }
 
   // THIS SETS COLOR AND BACKGROUND FOR FULLSIZE MENU TO OVERIDE MOBILE MENU
@@ -438,6 +519,21 @@
     color: white;
   }
 
+  ////////////////////////////////////////////////
+  // LODGING TYPES RELATED
+  .tri div:nth-of-type(1) div {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .tri div:nth-of-type(2) div {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .tri div:nth-of-type(3) div {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .featured-wrapper .orbit-container .orbit-slides-container > * .right-orbit {
     background-color: transparent;
     bottom: 0;
@@ -472,7 +568,7 @@
 }
 
 ////////////////////////////////////////////////
-// THREE IMAGE FRONT PAGE CSS
+// LODGING TYPES RELATED
 .tri-bar-color-bg {
   background-color: $gtnp_dark_green;
   color: $white;
@@ -644,11 +740,15 @@
 // footer CSS
 .footer {
   background-color: $gtnp_gray;
-  text-align: left;
-  color: $gtnp_dark_gray;
-  i {
-    font-size: 100px;
-  }
+}
+
+.social-block-grid {
+  @include block-grid(
+    // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable. // Available options: 1-12 by default, and false. $per-row: 2,
+    // This controls how much space is between each item in the block grid. // Use a variable or any pixel or em values. $spacing: 4px,
+    // This controls whether or not base styles come through, set to false to leave out. $base-style: false
+  );
+
 }
 
 ////////////////////////////////////////////////
@@ -658,8 +758,13 @@
   display: none;
 }
 
+.headline {
+  margin-top: 3rem;
+}
+
 .def_icon_desc {
   margin-top: 0.43rem;
+  letter-spacing: 1px;
 }
 
 .nopadding {
@@ -667,10 +772,7 @@
 }
 
 .full-width {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: initial;
+  @include full-width-mixin;
 }
 
 h6 {
@@ -697,17 +799,24 @@ h6 {
 }
 
 .tri-bar-color-bg {
-  font-size: 1.3rem;
-  line-height: 40px;
-  -webkit-box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
-  -moz-box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
-  box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
+  font-size: 13pt;
+  line-height: 39px;
+  -webkit-box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
+  -moz-box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
+  box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
 }
 
 ////////////////////////////////////////////////
 // FOOTER RELATED
 
 .preserve-protect {
+  color: $gtnp_green;
+  font-family: $font-family-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 2px;
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 }
@@ -715,10 +824,13 @@ h6 {
 h5 {
   color: $gtnp_green;
   font-family: $font-family-serif;
+  margin-top: 3rem;
+  margin-bottom: 0rem;
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  line-height: 25px;
   text-align: center;
+
 }
 
 .footer {
@@ -795,18 +907,20 @@ h5 {
 
 .footer-links {
   list-style-type: none;
-  a {
+  margin-left: 0rem;
+
+  @mixin footer-links-mixin {
     color: $gtnp_dark_gray;
-    font-weight: 300;
     font-size: .9rem;
-  }
-  li {
     margin-top: 0rem;
-    font-weight: 300;
-    font-size: .9rem;
   }
 
-  margin-left: 0rem;
+  a {
+    @include footer-links-mixin;
+  }
+  li {
+    @include footer-links-mixin;
+  }
 }
 
 .bottom-bar-color-bg {
@@ -836,12 +950,6 @@ h5 {
 
 #fbicon, .camicon {
   margin-left: 8px;
-}
-
-.headline {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 2rem 0;
 }
 
 .featured-wrapper {
@@ -947,7 +1055,7 @@ h5 {
 }
 
 //////////////////////////////////////
-// MAP
+/// MAP
 .example-number {
   position: relative;
   width: 200px;
