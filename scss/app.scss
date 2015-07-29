@@ -2,8 +2,6 @@
 @import "settings";
 @import "foundation";
 @import "normalize";
-// Font Awesome.
-@import "../bower_components/components-font-awesome/scss/font-awesome.scss";
 
 ////////////////////////////////////////////////
 // THIS IS SMALL LAYOUT
@@ -14,27 +12,7 @@
     display: none !important;
   }
 }
-
-/*
-.orbit-container .orbit-slides-container > * .orbit-caption {
-  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,0.99) 99%, rgba(0,0,0,1) 100%); /* FF3.6+ * /
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(99%,rgba(0,0,0,0.99)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ * /
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ * /
-  background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Opera 11.10+ * /
-  background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* IE10+ * /
-  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* W3C * /
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 * /
-}
-*/
-
 @media #{$small-only} {
-
-
-  .orbit-container .orbit-slides-container > * .orbit-caption {
-    z-index: 100;
-    width: 100vw;
-  }
-  .orbit-container ul li img { width: 100%; }
 
   .weather_temp {
     color: $white;
@@ -52,7 +30,7 @@
 
   // MENU ICON FOR SMALLg
   .top-bar {
-    height: 100px;
+    height: 65px;
   }
   .top-bar-section ul li > a {
     font-size: 28pt;
@@ -74,7 +52,7 @@
   }
 
   .title-area {
-    height: 100px !important;
+    height: 65px !important;
   }
   // KEEPS TOP BAR OVERLOGO
   .top-bar-section {
@@ -84,9 +62,8 @@
     text-align: center;
   }
   .top-bar .toggle-topbar a {
-    height: 100px;
-    width: 91px;
-
+    height: 65px;
+    width: 55px;
   }
   .search-but {
     padding: 26px 26px 26px;
@@ -111,34 +88,19 @@
   .top-bar select {
     font-size: 28pt;
   }
-  @mixin smarrows {
-
-    display: inline;
-    position: absolute;
-    top: -50px;
-    right: 58px;
-    border: 0;
-    font-family: FontAwesome;
-    /* font-style: normal; */
-    font-weight: lighter;
-    font-size: 110px;
-    content: "\f107";
-
-  }
-
-  /* Had to revert these as they were too thick compared to the comps
-   * and awesome fonts doesn't seem to provide a lighter weight
-   */
+  
   .top-bar ul > li.has-dropdown a.open:after {
     content: "";
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 27px;
+    height: 18px;
     border: 0;
     background: url("../assets/topbar/topbarsmdownd.png") no-repeat;
-
+    background-size: contain;
     position: absolute;
+    margin-top: -8px;
   }
+  
   .top-bar ul > li.has-dropdown.expand .open:after {
     content: "";
     display: block;
@@ -149,25 +111,24 @@
     top: initial;
   }
   
-  
-.top-bar-section ul li > a {
-    font-family:$font-family-serif-bold;
-    font-weight:700;
+  .top-bar-section ul li > a {
+    font-family: "Georgia Bold", Cambria, "Times New Roman", Times, serif;
+    font-weight: 700;
     text-rendering: geometricPrecision;
     font-size: 1rem;
   }
-  
- .top-bar-section > ul > li > a{
-    font-size:1.5rem; 
- }
 
+  .top-bar-section > ul > li > a {
+    font-size: 1.5rem;
+  }
   
   .featured-orbit > li {
     text-align: left;
   }
   
   .featured-orbit > li > .orbit-caption h6 {
-    font-size: 1.2rem;
+    /*font-size: 1.2rem; */
+    font-size: 1rem !important;
     font-weight: 600 !important;
     font-family: $font-family-sans-serif;
   }
@@ -178,7 +139,8 @@
     clear: both;
     width: 100%;
     position: relative;
-    font-weight: lighter;
+    color: $gtnp_dark_gray !important;
+    font-size:0.875rem;
   }
   
   .featured-wrapper .orbit-container .orbit-slides-container img {
@@ -188,6 +150,10 @@
     clear: both;
     width: 100% !important;
     position: relative;
+  }
+  
+  .featured-wrapper .orbit-container .orbit-slides-container a {
+    font-size:0.8rem;
   }
   
 
@@ -229,12 +195,12 @@
 }
 
 @media #{$medium-down} {
-
   .tri-bar-color-bg img {
     margin: auto;
     margin-top: 20px;
-
+    padding-top: 20px;
   }
+
   .sm-green-buts {
     font-family: $font-family-sans-serif;
     color: $white;
@@ -268,32 +234,26 @@
     margin-right: 0 !important;
     float: left;
     font-size: 1.2rem;
-    font-weight:lighter;
-    height: 3rem !important; 
-  }
-  
-  .smsearchpad .search-but img {
-      width: 16px;
+    font-weight: lighter;
+    height: 3rem !important;
   }
 
-  .smsearchpad {   
-    ::-webkit-input-placeholder { color: $gtnp_green;;} 
-    :-moz-placeholder {color: $gtnp_green;;  } 
-    ::-moz-placeholder {color: $gtnp_green;  } 
-    :-ms-input-placeholder {  color: $gtnp_green;  }
-  }
   .search {
     color: $gtnp_green !important;
   }
   
   .top-bar-section .sm-green-buts img:first-child {
-    margin-left: 1.2rem;
+    margin-left: 1.1rem;
   }
-  .top-bar-section .sm-green-buts {
-      margin-left: .9375rem;
-      font-size: 1.2rem;
+  
+  .top-bar-section .sm-green-buts img{
+    height: 2.4rem;
   }
 
+  .top-bar-section .sm-green-buts {
+    margin-left: .9375rem;
+    font-size: 1.2rem;
+  }
 
   .top-bar-section .has-dropdown.moved {
     position: relative;
@@ -321,13 +281,35 @@
   .smlogo {
     z-index: 1000;
     position: absolute;
+    width: 218px;
+    margin-left: 8px;
   }
-
+  
+  
+/*
   .top-bar .toggle-topbar a {
-
     background: url("../assets/topbar/topbarsmbutd.png") no-repeat;
     background-size: 100% 100%;
+    
   }
+*/
+  .top-bar .toggle-topbar a {
+    background-color:#fff;
+  }
+  
+  .top-bar .toggle-topbar a span {
+    content: "";
+    display: block;
+    height: 0px;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.777rem;
+    left: 0.80556rem;
+    box-shadow: 0 0 0 3px #788983, 0 13px 0 3px #788983, 0 26px 0 3px #78899E;
+    width: 2rem; 
+  }
+  
+  /*
   .top-bar.expanded .toggle-topbar a {
     background: url("../assets/topbar/topbarsmbut.png") no-repeat;
     background-size: 100% 100%;
@@ -336,23 +318,25 @@
   .top-bar-section .dropdown li a {
     color: $gtnp_dark_gray;
   }
+  */
 
   .sm-green-color-bg {
     background-color: $gtnp_green;
     font-family: $font-family-serif;
   }
-
-  .tri-bar-color-bg {
-    padding-top: 10px;
+  
+  .top-bar-section > ul > li > a {
+    font-size: 1.45rem !important;
+  }
+  
+  .smsearchpad .search-but img {
+    width: 16px;
   }
 
 }
 
-@media #{$medium-up} {
-  .layer-10 {
-    margin-top: -120px;
-  }
 
+@media #{$medium-up} {
   .weather_temp {
     color: $white;
     font-size: 1.8rem;
@@ -363,13 +347,12 @@
 
   .weather_desc {
     font-family: $font-family-serif;
-    font-weight: 100;
     font-size: 9pt;
     color: $white;
     letter-spacing: 0.04rem;
     line-height: 0.9rem;
     padding-top: 0.2rem;
-    margin-left: 10px;
+    margin-left:10px;
   }
   .weather_cur {
     color: $white;
@@ -378,19 +361,51 @@
   .featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span{
     left: 0;
   }
-
-  .hero-orbit .orbit-prev {
-    left: 15px;
+  
+  
+  .top-bar-section > ul > li:not(.has-form):hover > a:not(.button) {
+  border-top: 3px solid #fff;     
+  height: 40px !important;     
+  line-height: 34px !important;
+  }
+  
+  .top-bar-section .has-dropdown.not-click:hover > .dropdown {
+      box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
+  }
+  
+  .top-bar-section,  .top-bar-section > ul,  .top-bar-section > ul > li, .top-bar-section > ul > li > a {
+      height: 40px !important;
+      line-height:40px !important;
+  }
+  
+  .top-bar-section > ul > li > a {
+      line-height: 40px !important;
+      height: 40px !important;
+  }
+  
+  nav.top-bar {
+      height: 40px;
   }
 
-  .hero-orbit .orbit-next {
-    padding-right: 50px;
+  .layer-10 {
+      margin-top: -120px;
   }
+
+
+  .tri-bar-color-bg {
+    font-size: 1.3rem;
+    line-height: 40px;
+    -webkit-box-shadow: 10px 10px 0px -5px #999999;
+    -moz-box-shadow: 10px 10px 0px -5px #999999;
+    box-shadow: 10px 10px 0px -5px #999999;
+  }
+  
 }
-
 ////////////////////////////////////////////////
 // THIS IS MEDIUM UP LAYOUT
 @media #{$medium-only} {
+
+
 
   .weather_temp {
     margin-left: -95px;
@@ -423,30 +438,30 @@
     height: 50px;
     width: 45px;
   }
-
-  .featured-orbit li {
-    position: relative;
+  
+  .featured-orbit li{
+    position:relative;
   }
-
+  
   .featured-wrapper .orbit-caption.right-orbit {
-    background-color: transparent !important;
-    clear: both;
-    display: block;
-    /* position:absolute; */
-    height: auto;
-    position: relative;
-    text-align: left;
+      background-color: transparent !important;
+      clear: both;
+      display: block;
+      /* position:absolute; */
+      height: auto;
+      position: relative;
+      text-align: left;
   }
-
+  
   .featured-wrapper img.left-image {
-    margin-left: auto;
-    margin-right: auto;
-    clear: both;
-    display: block;
-    position: absolute;
-    height: auto;
-    padding: 0;
-    position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      clear: both;
+      display: block;
+      position:absolute;
+      height: auto;
+      padding: 0;
+      position: relative;
   }
 
   .smlogo {
@@ -549,30 +564,23 @@
   }
 
   // THIS SETS THE ARROWS ON THE DROPDOWNS
-
-  @mixin arrows {
-    display: inline;
-    position: static;
-    border: 0;
-    content: "\f078";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    font-size: 12px;
-    margin-left: 3px;
-  }
-
   .top-bar-section .has-dropdown > a:after {
-    @include arrows;
-    color: $gtnp_dark_green;
+    width: 12px;
+    height: 10px;
+    border: none;
+    margin-top: -6px;
+    background: url("../assets/topbar/topbardroparrowd.png") no-repeat;
   }
 
   .top-bar-section .has-dropdown:hover > a:after {
-    @include arrows;
-    color: white;
-  }
+    width: 12px;
+    height: 10px;
+    border: none;
 
+    margin-top: -3px;
+    background: url("../assets/topbar/topbardroparrow.png") no-repeat;
+  }
+  
   .featured-wrapper .orbit-container .orbit-slides-container > * .right-orbit {
     background-color: transparent;
     bottom: 0;
@@ -581,9 +589,65 @@
     height: 100%;
     position: relative;
     text-align: left;
+    color:$gtnp_dark_gray !important;
   }
 
 }
+.hero-orbit .orbit-prev  {
+  background: url("../assets/orbit/orbitleft.png");
+  width: 34px !important;
+  height: 84px !important;
+
+  span {
+    border: 0;
+  }
+}
+
+
+.hero-orbit .orbit-next  {
+  background: url("../assets/orbit/orbitright.png");
+  width: 34px !important;
+  height: 84px !important;
+
+  span {
+    border: 0;
+  }
+  
+}
+
+.booking-widget {
+  background-color: $gtnp_gray;
+}
+
+.booking-widget .columns {
+  padding-left: .5rem;
+}
+
+.booking-widget [type='submit'] {
+    padding: .5rem .6rem;
+    text-transform: uppercase;
+}
+
+.booking-widget input, .booking-widget select {
+  margin-top: .4rem !important;
+  margin-bottom: .4rem !important;
+}
+
+.booking-widget > .columns {
+    padding-right: 0;
+}
+
+.input_img {
+  position: absolute;
+  bottom: 14px;
+  right: 4px;
+}
+
+.layer-10 {
+  z-index: 100;
+  position: absolute;
+}
+
 
 /////////////////////////////////////////////////
 // ACTIVITIES BAR
@@ -611,6 +675,12 @@
 .tri-bar-color-bg {
   background-color: $gtnp_dark_green;
   color: $white;
+  background-clip: content-box;
+}
+
+.tri-bar-color-bg a{
+  display: block !important;
+  color: #FFF;
 }
 
 ////////////////////////////////////////////////
@@ -628,7 +698,7 @@
   padding-bottom: 3rem;
 }
 
-.activities-content {
+.activities-content{
   background: url(../assets/front/activities/map-bg.jpg) no-repeat fixed;
   background-size: cover;
 }
@@ -648,42 +718,42 @@
     margin: 0rem 1rem 0 0 !important;
     border: 0 !important;
   }
-
-  [role='tab']:not(.resp-tab-active) > img {
+  
+  [role='tab']:not(.resp-tab-active) > img{
     opacity: 0.4;
     filter: alpha(opacity=80);
   }
-
+  
   ul.resp-tabs-list li:last-child {
     margin-right: 0 !important;
   }
-
-  div.lodge {
-    margin-top: 2rem;
+  
+  div.lodge{
+    margin-top:2rem;
   }
-
+  
   a.close-activities-content {
     font-size: 2rem;
     color: $gtnp_gray;
     float: right;
   }
-
+  
   ul.features {
     list-style-position: inside !important;
     list-style-type: disc !important;
     margin-top: 1rem;
   }
-
+  
   ul.features li {
     display: list-item !important;
     list-style: inherit;
     padding-bottom: .2rem;
   }
-
+  
   .resp-tab-content .image-wrapper {
     max-width: 440px;
   }
-
+  
   a.button.book-now {
     padding: .5rem 1rem !important;
     margin-top: 2rem;
@@ -696,9 +766,9 @@
     background-position: 100% 0;
     background-size: contain;
   }
-
+  
   .caption .price {
-    float: right;
+  float: right;
   }
   .caption .title {
     font-family: $font-family-serif;
@@ -711,67 +781,9 @@
     color: #fff;
     padding: .7rem 1rem;
   }
-
-}
-////////////////////////////////////////////////
-// Hero Orbit Related.
-.hero-orbit .orbit-prev {
-  background: url("../assets/orbit/orbitleft.png") no-repeat;
-  width: 34px !important;
-  height: 84px !important;
-
-  span {
-    border: 0;
-  }
+  
 }
 
-.hero-orbit .orbit-next {
-  background: url("../assets/orbit/orbitright.png") no-repeat;
-  width: 34px !important;
-  height: 84px !important;
-  span {
-    border: 0;
-  }
-}
-
-////////////////////////////////////////////////
-// Booking Widget Related.
-.booking-widget {
-  background-color: $gtnp_gray;
-}
-
-.booking-widget .columns {
-  padding-left: .5rem;
-}
-
-.booking-widget [type='submit'] {
-  padding: .5rem .6rem;
-  text-transform: uppercase;
-}
-
-.booking-widget input, .booking-widget select {
-  margin-top: .4rem !important;
-  margin-bottom: .4rem !important;
-}
-
-.booking-widget > .columns {
-  padding-right: 0;
-}
-
-.input_img {
-  position: absolute;
-  bottom: 14px;
-  right: 4px;
-}
-
-.layer-10 {
-  z-index: 100;
-  position: absolute;
-}
-.selectParent select{
-  background: url("../assets/bookingwidget/dwn.png") no-repeat white;
-  background-position: right 5px bottom 10px;
-}
 
 ////////////////////////////////////////////////
 // footer CSS
@@ -784,19 +796,13 @@
   }
 }
 
-
 ////////////////////////////////////////////////
 // THESE ARE GENERALIZED STYLES TO BE USED ANYWHERE.
-
-.orbit-container .orbit-timer{
-  display:none;
-}
-
-
 
 .def_icon_desc {
   margin-top: 0.43rem;
 }
+
 
 .nopadding {
   padding: 0rem 0rem 0rem;
@@ -828,24 +834,17 @@ h6 {
 }
 
 .button {
-  background-color: $gtnp_green;
-  color: #fff;
+  background-color:$gtnp_green;
+  color:#fff;
 }
 
-.tri-bar-color-bg {
-  font-size: 1.3rem;
-  line-height: 40px;
-  -webkit-box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
-  -moz-box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
-  box-shadow: 10px 10px 0px -5px $gtnp_dark_gray;
-}
 
 ////////////////////////////////////////////////
 // FOOTER RELATED
 
 .preserve-protect {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  padding-top:3.5rem;
+  padding-bottom:3.5rem;
 }
 
 h5 {
@@ -880,13 +879,13 @@ h5 {
     font-weight: 300;
     font-size: 0.8rem;
   }
-
+  
   i {
-    font-size: 100px;
-    display: block;
-    padding-top: 1rem;
+      font-size: 100px;
+      display: block;
+      padding-top: 1rem;
   }
-
+  
   .searchpad img {
     height: 17px;
   }
@@ -897,11 +896,11 @@ h5 {
   }
 
   input.search::-webkit-input-placeholder {
-    color: $gtnp_dark_gray;
+      color: $gtnp_dark_gray;
   }
 
-  input.search::-moz-placeholder, .footer input.search:-ms-input-placeholder {
-    color: $gtnp_dark_gray;
+  input.search::-moz-placeholder, .footer input.search:-ms-input-placeholder{
+      color: $gtnp_dark_gray;
   }
   
   form.newsletter {
@@ -927,7 +926,6 @@ h5 {
     margin: 0 !important;
   }
   
-
 }
 
 .footer-links {
@@ -981,44 +979,45 @@ h5 {
   margin: 2rem 0;
 }
 
-.featured-wrapper {
+.featured-wrapper{
   margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom:2rem;
 }
 
 .featured-wrapper .orbit-timer {
-  display: none !important;
+    display: none !important;
 }
 
 .featured-wrapper .orbit-slide-number {
   display: none !important;
 }
 
-.featured-wrapper .orbit-container .orbit-slides-container img {
+.featured-wrapper .orbit-container .orbit-slides-container img{
   display: inline-block;
   max-width: 100%;
   float: left;
 }
 
 .featured-orbit > li > .orbit-caption {
-  color: $gtnp_green !important;
+    color: $gtnp_green !important;
 }
 
 .featured-orbit > li > .orbit-caption h6 {
-  color: $gtnp_green;
-  padding-bottom: 1rem;
-  font-weight: lighter;
+    color: $gtnp_green;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+    font-size: 1.125rem !important;
 }
 
 .featured-orbit a {
-  color: $gtnp_green;
-  font-weight: bold;
-  margin-top: 1.5rem;
-  display: block;
+    color: $gtnp_green;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    display: block;
 }
 
 .featured-orbit li {
-  padding: 0rem 2rem;
+    padding: 0rem 2rem;
 }
 
 .featured-wrapper .orbit-next span, .featured-wrapper .orbit-prev span {
@@ -1030,20 +1029,43 @@ h5 {
 }
 
 .featured-wrapper .orbit-container .orbit-prev:hover, .featured-wrapper .orbit-container .orbit-next:hover {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .featured-wrapper .orbit-next span {
-  background: url(../assets/front/orbit2/right-arrow.png) no-repeat;
+    background: url(../assets/front/orbit2/right-arrow.png) no-repeat;
 }
 
 .featured-wrapper .orbit-prev span {
-  background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
+    background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
+}
+
+.featured-activities ul > li > a:hover:after {
+    background-color: rgba(0,0,0, .4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    bottom: 0;
+    right: 0;
 }
 
 .featured-activities ul > li > a {
     position: relative;
     display:block;
+    overflow:hidden;
+}
+
+.featured-activities ul > li > a img {
+    transition: all .5s ease-in-out;
+    width:100%;
+}
+
+.featured-activities ul > li > a:hover img {
+  animation-duration: 1s;
+  transform: scale(1.2);
+  
 }
 
 .featured-activities ul > li div.caption {
@@ -1069,6 +1091,36 @@ h5 {
     color: #fff;
     padding-top: .5rem;
 }
+
+.activity-type-bar .close {
+    float: right;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.activity-type-bar .close:after {
+    display: inline;
+    position: static;
+    border: 0;
+    content: "\f078";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 12px;
+    margin-left: 3px;
+    color: #fff;
+}
+
+.activity-type-bar .resultCount {
+    float: right;
+    display: inline-block;
+    position: relative;
+}
+
+.activity-type-bar ul li {
+    padding-bottom: 0;
+}
   
 .activity-type-bar h5 {
       color: #fff;
@@ -1083,6 +1135,176 @@ h5 {
       font-family: $font-family-sans-serif;
 }
 
+
+.activities-grid {
+    margin-top: .975rem;
+}
+
+.activities-grid li .wrapper{
+    box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
+    border: 1px solid #8A8888;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 323px;
+    float: none;
+}
+
+.activities-grid li .imgwrapper {
+    position: relative;
+}
+
+.activities-grid li .imgwrapper img {
+    width: 100%;
+    position:relative;
+}
+
+.activities-grid .titles {
+    position: absolute;
+    bottom: 0;
+    padding-left: 0.875rem;
+    color: #fff;
+    font-size:1.25rem;
+}
+
+.activities-grid li .details {
+    padding:0.875rem; 
+    font-family: $font-family-sans-serif;
+    font-size:1rem;
+    background-color: #fff;
+}
+
+
+
+.activities-grid li .details .price {
+    display:inline-block; 
+    float:right;
+}
+
+.activities-grid li .details .ages {
+    display: inline-block;
+    float: left;
+}
+
+.activities-grid li .details .learn-more {
+    display: block;
+    clear: both;
+    color: $gtnp_green
+}
+
+ul.details-grid {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: $font-family-sans-serif;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+ul.details-grid .label {
+    font-size: 1rem;
+    background-color: transparent;
+    color: green;
+    padding: 0;
+    color: $gtnp_green;
+}
+
+ul.details-grid .value {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight:100;
+}
+
+//////////////////////////////////////
+// ACTIVITY DETAILS
+.activity-details{
+  font-family: $font-family-sans-serif;
+  font-weight:100;
+  font-size: 0.875rem;
+}
+
+.activity-details h5 {
+    text-align:left;
+    font-size:1rem;
+}
+
+.activity-details .button.book-now{
+    width: 50%;
+    max-width: 100%;
+    text-align: left;
+    padding: .7rem 1rem;
+    text-transform: uppercase;
+    background-image: url("../assets/front/activities/book-btn-arrow.png");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: contain;
+}
+
+ul.activity-list {
+  margin-left: 0;
+}
+
+ul.activity-list > li {
+    list-style: none;
+    box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);     
+    border: 1px solid #8A8888;     
+    margin-left: auto;     
+    margin-right: auto;          
+    float: none;
+    background-color: #fff;
+    font-family: $font-family-sans-serif;
+    margin-bottom: 2rem;
+}
+
+ul.activity-list > li h6 {
+    text-align: left;
+    color: $gtnp_green;
+    padding-top: 0.9375rem;
+}
+
+.activity-list > li > .row {
+    width: 100%;
+    max-width: 62.5rem;
+    margin: 0 auto;
+}
+
+.activity-list > li > .row > div:first-of-type {
+    padding-left: 0;
+}
+
+.activity-list > li > .row > div:nth-of-type(2) {
+    padding-left: 0;
+}
+
+ul.activity-list .prices {
+    border-top: 1px solid #000;
+    list-style: none;
+    margin-left: 0;
+    padding-top: 2px;
+    bottom: 0;
+    position: absolute !important;
+    width: calc(100% - 0.9375rem);
+    padding-right: 0.9375rem;
+    margin-right: 0.9375rem;
+}
+
+ul.activity-list .prices li {
+    display: inline-block;
+    margin-right: 3rem;
+}
+
+ul.activity-list .prices li .amt {
+    font-size: 1.1rem;
+    text-align: center;
+    color: $gtnp_green;
+}
+
+ul.activity-list .prices li .group {
+    text-align: center;
+    line-height: 16px;
+}
 
 //////////////////////////////////////
 // MAP
