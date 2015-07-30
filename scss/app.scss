@@ -42,9 +42,9 @@ p {
 @media #{$small-only} {
 
   // ORBIT RELATED ON SMALL
-  .home-slider-orbit .orbit-next,
-  .home-slider-orbit .orbit-prev {
-    display: block;
+  .hero-orbit a.orbit-next,
+  .hero-orbit a.orbit-prev {
+    display: block !important;
   }
 
   ///////////////////////////////////
