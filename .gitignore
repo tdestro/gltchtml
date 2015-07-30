@@ -3,9 +3,5 @@
 /stylesheets/*
 
 .idea/workspace.xml
-<<<<<<< HEAD
-/bower_components/*
-=======
->>>>>>> pr/7
 
 bower_components/jquery-2.1.0.min/.bower.json
