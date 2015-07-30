@@ -7,6 +7,7 @@
 
 @mixin font-family-sans-serif-1px {
   font-family: $font-family-sans-serif;
+  font-weight: $font-weight-thin;
   letter-spacing: 1px;
 }
 
@@ -27,7 +28,7 @@
   }
 }
 p {
-  letter-spacing: 1px;
+  @include font-family-sans-serif-1px;
 }
 
 
@@ -824,12 +825,8 @@ h6 {
   box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
 }
 
-.activity-type-bar {
-  h5 {
+.margin-top-0 {
     margin-top: 0px;
-
-  }
-
 }
 
 ////////////////////////////////////////////////
@@ -936,6 +933,7 @@ h5 {
   margin-left: 0rem;
 
   @mixin footer-links-mixin {
+    @include font-family-sans-serif-1px;
     color: $gtnp_dark_gray;
     font-size: .9rem;
     margin-top: 0rem;
