@@ -83,6 +83,15 @@ p {
     margin-left: -233px;
   }
 
+  //////////////////////////
+  // BOOKING WIDGET RELATED
+  .layer-10 {
+    position: relative;
+  }
+
+  /////////////////////////
+  // FEATURED RELATED
+
   .featured-orbit > li {
     text-align: left;
   }
@@ -101,7 +110,7 @@ p {
     width: 100%;
     position: relative;
     color: $gtnp_dark_gray !important;
-    font-size:0.875rem;
+    font-size: 0.875rem;
   }
 
   .featured-wrapper .orbit-container .orbit-slides-container img {
@@ -114,9 +123,8 @@ p {
   }
 
   .featured-wrapper .orbit-container .orbit-slides-container a {
-    font-size:0.8rem;
+    font-size: 0.8rem;
   }
-
 
   .featured-wrapper .orbit-next span {
     right: 0 !important;
@@ -336,6 +344,12 @@ p {
   }
 
   ////////////////////////
+  // BOOKING WIDGET RELATED
+
+  .layer-10 {
+    position: absolute;
+  }
+  ////////////////////////
   // FOOTER RELATED
   .headwaters {
     padding-left: 30px;
@@ -550,7 +564,7 @@ p {
     height: 100%;
     position: relative;
     text-align: left;
-    color:$gtnp_dark_gray !important;
+    color: $gtnp_dark_gray !important;
   }
 
 }
@@ -735,10 +749,7 @@ p {
   right: 4px;
 }
 
-.layer-10 {
-  z-index: 100;
-  position: absolute;
-}
+
 
 .selectParent select {
   background: url("../assets/bookingwidget/dwn.png") no-repeat white;
@@ -753,9 +764,7 @@ p {
 
 .social-block-grid {
   @include block-grid(
-    // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable. // Available options: 1-12 by default, and false. $per-row: 2,
-    // This controls how much space is between each item in the block grid. // Use a variable or any pixel or em values. $spacing: 4px,
-    // This controls whether or not base styles come through, set to false to leave out. $base-style: false
+    // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable. // Available options: 1-12 by default, and false. $per-row: 2, // This controls how much space is between each item in the block grid. // Use a variable or any pixel or em values. $spacing: 4px, // This controls whether or not base styles come through, set to false to leave out. $base-style: false
   );
 
 }
@@ -814,6 +823,7 @@ h6 {
   -moz-box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
   box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
 }
+
 .activity-type-bar {
   h5 {
     margin-top: 0px;
@@ -1030,7 +1040,7 @@ h5 {
 }
 
 .featured-activities ul > li > a:hover:after {
-  background-color: rgba(0,0,0, .4);
+  background-color: rgba(0, 0, 0, .4);
   position: absolute;
   top: 0;
   left: 0;
@@ -1042,13 +1052,13 @@ h5 {
 
 .featured-activities ul > li > a {
   position: relative;
-  display:block;
-  overflow:hidden;
+  display: block;
+  overflow: hidden;
 }
 
 .featured-activities ul > li > a img {
   transition: all .5s ease-in-out;
-  width:100%;
+  width: 100%;
 }
 
 .featured-activities ul > li > a:hover img {
@@ -1124,12 +1134,11 @@ h5 {
   font-family: $font-family-sans-serif;
 }
 
-
 .activities-grid {
   margin-top: .975rem;
 }
 
-.activities-grid li .wrapper{
+.activities-grid li .wrapper {
   box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
   border: 1px solid #8A8888;
   margin-left: auto;
@@ -1144,7 +1153,7 @@ h5 {
 
 .activities-grid li .imgwrapper img {
   width: 100%;
-  position:relative;
+  position: relative;
 }
 
 .activities-grid .titles {
@@ -1152,21 +1161,19 @@ h5 {
   bottom: 0;
   padding-left: 0.875rem;
   color: #fff;
-  font-size:1.25rem;
+  font-size: 1.25rem;
 }
 
 .activities-grid li .details {
-  padding:0.875rem;
+  padding: 0.875rem;
   font-family: $font-family-sans-serif;
-  font-size:1rem;
+  font-size: 1rem;
   background-color: #fff;
 }
 
-
-
 .activities-grid li .details .price {
-  display:inline-block;
-  float:right;
+  display: inline-block;
+  float: right;
 }
 
 .activities-grid li .details .ages {
@@ -1190,8 +1197,6 @@ ul.details-grid {
   margin-bottom: 1rem;
 }
 
-
-
 ul.details-grid .label {
   font-size: 1rem;
   background-color: transparent;
@@ -1203,23 +1208,23 @@ ul.details-grid .label {
 ul.details-grid .value {
   font-size: 0.875rem;
   line-height: 1rem;
-  font-weight:100;
+  font-weight: 100;
 }
 
 //////////////////////////////////////
 // ACTIVITY DETAILS
-.activity-details{
+.activity-details {
   font-family: $font-family-sans-serif;
-  font-weight:100;
+  font-weight: 100;
   font-size: 0.875rem;
 }
 
 .activity-details h5 {
-  text-align:left;
-  font-size:1rem;
+  text-align: left;
+  font-size: 1rem;
 }
 
-.activity-details .button.book-now{
+.activity-details .button.book-now {
   width: 50%;
   max-width: 100%;
   text-align: left;
