@@ -88,7 +88,8 @@ p {
   }
 
   .featured-orbit > li > .orbit-caption h6 {
-    font-size: 1.2rem;
+    /*font-size: 1.2rem; */
+    font-size: 1rem !important;
     font-weight: 600 !important;
     @include font-family-sans-serif-1px;
   }
@@ -99,6 +100,8 @@ p {
     clear: both;
     width: 100%;
     position: relative;
+    color: $gtnp_dark_gray !important;
+    font-size:0.875rem;
   }
 
   .featured-wrapper .orbit-container .orbit-slides-container img {
@@ -109,6 +112,11 @@ p {
     width: 100% !important;
     position: relative;
   }
+
+  .featured-wrapper .orbit-container .orbit-slides-container a {
+    font-size:0.8rem;
+  }
+
 
   .featured-wrapper .orbit-next span {
     right: 0 !important;
@@ -542,6 +550,7 @@ p {
     height: 100%;
     position: relative;
     text-align: left;
+    color:$gtnp_dark_gray !important;
   }
 
 }
@@ -979,6 +988,7 @@ h5 {
   color: $gtnp_green;
   padding-bottom: 1rem;
   font-weight: lighter;
+  font-size: 1.125rem !important;
 }
 
 .featured-orbit a {
@@ -1012,9 +1022,32 @@ h5 {
   background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
 }
 
+.featured-activities ul > li > a:hover:after {
+  background-color: rgba(0,0,0, .4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: "";
+  bottom: 0;
+  right: 0;
+}
+
 .featured-activities ul > li > a {
   position: relative;
-  display: block;
+  display:block;
+  overflow:hidden;
+}
+
+.featured-activities ul > li > a img {
+  transition: all .5s ease-in-out;
+  width:100%;
+}
+
+.featured-activities ul > li > a:hover img {
+  animation-duration: 1s;
+  transform: scale(1.2);
+
 }
 
 .featured-activities ul > li div.caption {
@@ -1041,6 +1074,36 @@ h5 {
   padding-top: .5rem;
 }
 
+.activity-type-bar .close {
+  float: right;
+  padding-left: 10px;
+  color: #fff;
+}
+
+.activity-type-bar .close:after {
+  display: inline;
+  position: static;
+  border: 0;
+  content: "\f078";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  font-size: 12px;
+  margin-left: 3px;
+  color: #fff;
+}
+
+.activity-type-bar .resultCount {
+  float: right;
+  display: inline-block;
+  position: relative;
+}
+
+.activity-type-bar ul li {
+  padding-bottom: 0;
+}
+
 .activity-type-bar h5 {
   color: #fff;
   float: left;
@@ -1054,8 +1117,179 @@ h5 {
   font-family: $font-family-sans-serif;
 }
 
+
+.activities-grid {
+  margin-top: .975rem;
+}
+
+.activities-grid li .wrapper{
+  box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
+  border: 1px solid #8A8888;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 323px;
+  float: none;
+}
+
+.activities-grid li .imgwrapper {
+  position: relative;
+}
+
+.activities-grid li .imgwrapper img {
+  width: 100%;
+  position:relative;
+}
+
+.activities-grid .titles {
+  position: absolute;
+  bottom: 0;
+  padding-left: 0.875rem;
+  color: #fff;
+  font-size:1.25rem;
+}
+
+.activities-grid li .details {
+  padding:0.875rem;
+  font-family: $font-family-sans-serif;
+  font-size:1rem;
+  background-color: #fff;
+}
+
+
+
+.activities-grid li .details .price {
+  display:inline-block;
+  float:right;
+}
+
+.activities-grid li .details .ages {
+  display: inline-block;
+  float: left;
+}
+
+.activities-grid li .details .learn-more {
+  display: block;
+  clear: both;
+  color: $gtnp_green
+}
+
+ul.details-grid {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: $font-family-sans-serif;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+
+ul.details-grid .label {
+  font-size: 1rem;
+  background-color: transparent;
+  color: green;
+  padding: 0;
+  color: $gtnp_green;
+}
+
+ul.details-grid .value {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight:100;
+}
+
 //////////////////////////////////////
-/// MAP
+// ACTIVITY DETAILS
+.activity-details{
+  font-family: $font-family-sans-serif;
+  font-weight:100;
+  font-size: 0.875rem;
+}
+
+.activity-details h5 {
+  text-align:left;
+  font-size:1rem;
+}
+
+.activity-details .button.book-now{
+  width: 50%;
+  max-width: 100%;
+  text-align: left;
+  padding: .7rem 1rem;
+  text-transform: uppercase;
+  background-image: url("../assets/front/activities/book-btn-arrow.png");
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: contain;
+}
+
+ul.activity-list {
+  margin-left: 0;
+}
+
+ul.activity-list > li {
+  list-style: none;
+  box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
+  border: 1px solid #8A8888;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  background-color: #fff;
+  font-family: $font-family-sans-serif;
+  margin-bottom: 2rem;
+}
+
+ul.activity-list > li h6 {
+  text-align: left;
+  color: $gtnp_green;
+  padding-top: 0.9375rem;
+}
+
+.activity-list > li > .row {
+  width: 100%;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+.activity-list > li > .row > div:first-of-type {
+  padding-left: 0;
+}
+
+.activity-list > li > .row > div:nth-of-type(2) {
+  padding-left: 0;
+}
+
+ul.activity-list .prices {
+  border-top: 1px solid #000;
+  list-style: none;
+  margin-left: 0;
+  padding-top: 2px;
+  bottom: 0;
+  position: absolute !important;
+  width: calc(100% - 0.9375rem);
+  padding-right: 0.9375rem;
+  margin-right: 0.9375rem;
+}
+
+ul.activity-list .prices li {
+  display: inline-block;
+  margin-right: 3rem;
+}
+
+ul.activity-list .prices li .amt {
+  font-size: 1.1rem;
+  text-align: center;
+  color: $gtnp_green;
+}
+
+ul.activity-list .prices li .group {
+  text-align: center;
+  line-height: 16px;
+}
+
+//////////////////////////////////////
+// MAP
 .example-number {
   position: relative;
   width: 200px;
