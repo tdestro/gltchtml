@@ -10,27 +10,26 @@
   letter-spacing: 1px;
 }
 
-.orbit-container .orbit-slides-container > * .orbit-caption {
-  height: 200px;
-  padding-top: 140px;
-  white-space: nowrap;
-  @include font-family-sans-serif-1px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+100 */
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0); /* IE6-9 */
+.hero-orbit {
+  .orbit-container .orbit-slides-container > * .orbit-caption {
+    height: 200px;
+    padding-top: 140px;
+    white-space: nowrap;
+    @include font-family-sans-serif-1px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0); /* IE6-9 */
+  }
 }
-
 p {
   letter-spacing: 1px;
 }
 
-////////////////////////////////////////////////
-// THIS IS SMALL LAYOUT
 
 @mixin full-width-mixin {
   width: 100%;
@@ -38,7 +37,8 @@ p {
   margin-right: auto;
   max-width: initial;
 }
-
+////////////////////////////////////////////////
+// S M A L L  O N L Y
 @media #{$small-only} {
 
   // ORBIT RELATED ON SMALL
@@ -162,7 +162,8 @@ p {
   }
 
 }
-
+////////////////////////////////////////////////
+// M E D I U M  D O W N
 @media #{$medium-down} {
 
   .full-width-for-medium-down {
@@ -311,9 +312,8 @@ p {
   }
 
 }
-
 ////////////////////////////////////////////////
-// THIS IS MEDIUM UP LAYOUT
+// M E D I U M  U P
 @media #{$medium-up} {
 
   ///////////////////////////////////
@@ -355,9 +355,8 @@ p {
     padding-left: 30px;
   }
 }
-
 ////////////////////////////////////////////////
-// THIS IS MEDIUM ONLY LAYOUT
+// M E D I U M  O N L Y
 @media #{$medium-only} {
 
   .featured-orbit li {
@@ -385,9 +384,8 @@ p {
     position: relative;
   }
 }
-
 ////////////////////////////////////////////////
-// THIS IS LARGE UP LAYOUT
+// L A R G E  U P
 @media #{$large-up} {
 
   .weather_temp {
