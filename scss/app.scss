@@ -47,6 +47,8 @@ p {
     display: block !important;
   }
 
+
+
   ///////////////////////////////////
   // FOOTER RELATED
   .newsletter-padding {
@@ -716,6 +718,12 @@ p {
     border: 0;
   }
 }
+
+.hero-orbit .orbit-next:hover, .hero-orbit .orbit-prev:hover {
+  background-color: transparent;
+}
+
+
 
 ////////////////////////////////////////////////
 // Booking Widget Related.
