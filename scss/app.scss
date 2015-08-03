@@ -2,6 +2,7 @@
 @import "settings";
 @import "foundation";
 @import "normalize";
+// Font Awesome.
 @import "../bower_components/components-font-awesome/scss/font-awesome.scss";
 
 @mixin font-family-sans-serif-1px {
@@ -47,6 +48,10 @@ p {
     display: block !important;
   }
 
+  .featured-wrapper .orbit-next span,  .featured-wrapper .orbit-next,
+  .featured-wrapper .orbit-prev span,  .featured-wrapper .orbit-prev {
+      display: block !important;
+  }
 
 
   ///////////////////////////////////
@@ -99,7 +104,6 @@ p {
   }
 
   .featured-orbit > li > .orbit-caption h6 {
-    /*font-size: 1.2rem; */
     font-size: 1rem !important;
     font-weight: 600 !important;
     @include font-family-sans-serif-1px;
@@ -171,7 +175,7 @@ p {
     padding: 0 0.9375rem !important;
   }
 
-  ul.activity-list .prices{
+  ul.activity-list .prices {
     position: relative !important;
     margin: 2rem 0 0 0;
     padding: 0 0 1rem 0;
@@ -179,7 +183,11 @@ p {
   }
 
   .activity-details .button.book-now{
-    width:100%;
+    width:100% !important;
+  }
+
+  .activity-details .details-grid {
+    margin-top: 1rem !important;
   }
 
 
@@ -198,7 +206,8 @@ p {
   }
 
 }
-
+////////////////////////////////////////////////
+// M E D I U M  D O W N
 @media #{$medium-down} {
 
   .full-width-for-medium-down {
@@ -402,7 +411,6 @@ p {
     background-color: transparent !important;
     clear: both;
     display: block;
-    /* position:absolute; */
     height: auto;
     position: relative;
     text-align: left;
@@ -1012,10 +1020,21 @@ h5 {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 2rem 0;
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  letter-spacing: .1rem;
+  line-height: 1.6rem;
+}
+
+.headline p {
+    line-height: 1.2rem;
+    font-size: 1.1rem;
+    padding-bottom: 1.4rem;
 }
 
 .subheadline h5{
   font-size: 1.1rem;
+  letter-spacing: 0.06rem;
 }
 
 .subheadline {
@@ -1025,8 +1044,7 @@ h5 {
 }
 
 .featured-wrapper{
-  margin-top: 3rem;
-  margin-bottom:2rem;
+  margin-bottom: 2rem;
 }
 
 .featured-wrapper .orbit-timer {
@@ -1037,7 +1055,7 @@ h5 {
   display: none !important;
 }
 
-.featured-wrapper .orbit-container .orbit-slides-container img{
+.featured-wrapper .orbit-container .orbit-slides-container img {
   display: inline-block;
   max-width: 100%;
   float: left;
@@ -1050,8 +1068,9 @@ h5 {
 .featured-orbit > li > .orbit-caption h6 {
     color: $gtnp_green;
     padding-bottom: 1rem;
-    font-weight: lighter;
+  font-weight: bold;
     font-size: 1.125rem !important;
+  font-family: $font-family-sans-serif;
 }
 
 .featured-orbit a {
@@ -1077,16 +1096,23 @@ h5 {
     background-color: transparent !important;
 }
 
+.featured-wrapper .orbit-container .orbit-prev, .featured-wrapper .orbit-container .orbit-next {
+    opacity: 1 !important;
+}
+
+
 .featured-wrapper .orbit-next span {
     background: url(../assets/front/orbit2/right-arrow.png) no-repeat;
+  display:block !important;
 }
 
 .featured-wrapper .orbit-prev span {
     background: url(../assets/front/orbit2/left-arrow.png) no-repeat;
+  display:block !important;
 }
 
 .featured-activities ul > li > a:hover:after {
-    background-color: rgba(0,0,0, .4);
+  background-color: rgba(0, 0, 0, .4);
     position: absolute;
     top: 0;
     left: 0;
@@ -1098,13 +1124,13 @@ h5 {
 
 .featured-activities ul > li > a {
     position: relative;
-    display:block;
-    overflow:hidden;
+  display: block;
+  overflow: hidden;
 }
 
 .featured-activities ul > li > a img {
     transition: all .5s ease-in-out;
-    width:100%;
+  width: 100%;
 }
 
 .featured-activities ul > li > a:hover img {
@@ -1131,7 +1157,7 @@ h5 {
 .featured-activities ul > li div.caption .sub {
    font-size: .925rem;
    font-weight: lighter;
-   padding: 0.6rem;
+   padding: 0 .6rem;
    letter-spacing: .062rem;
    line-height: 1.2rem;
 }
@@ -1140,6 +1166,7 @@ h5 {
   background-color: #788983;
   color: #fff;
   padding-top: .5rem;
+  box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
 }
 
 .activity-type-bar .close {
@@ -1209,7 +1236,7 @@ h5 {
 
 .activities-grid li .imgwrapper img {
     width: 100%;
-    position:relative;
+  position: relative;
 }
 
 ul.activities-grid .imgwrapper:hover img {
@@ -1275,7 +1302,7 @@ ul.details-grid {
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     padding-top: 1rem;
-    margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
 
 ul.details-grid .label {
@@ -1289,33 +1316,46 @@ ul.details-grid .label {
 ul.details-grid .value {
   font-size: 0.875rem;
   line-height: 1rem;
-  font-weight:100;
+  font-weight: 100;
 }
 
 //////////////////////////////////////
 // ACTIVITY DETAILS
-.activity-details{
+.activity-details {
   font-family: $font-family-sans-serif;
-  font-weight:100;
+  font-weight: 100;
   font-size: 0.875rem;
 }
 
 .activity-details h5 {
-    text-align:left;
-    font-size:1rem;
+  text-align: left;
+  font-size: 1rem;
 }
 
-.activity-details .button.book-now{
+.activity-details .button.book-now {
     width: 50%;
     max-width: 100%;
     text-align: left;
     padding: .7rem 1rem;
     text-transform: uppercase;
+  /*
     background-image: url("../assets/front/activities/book-btn-arrow.png");
     background-repeat: no-repeat;
     background-position: 100% 0;
     background-size: contain;
+  */
 }
+
+.activity-details .button.book-now:after {
+    content: "\f054";
+    font-family: FontAwesome;
+    right: 0;
+    position: absolute;
+    margin-right: .5rem;
+    font-weight: 100;
+    font-size: 1.3rem;
+}
+
 
 ul.activity-list {
   margin-left: 0;
@@ -1337,6 +1377,18 @@ ul.activity-list > li h6 {
     text-align: left;
     color: $gtnp_green;
     padding-top: 0.9375rem;
+  letter-spacing: .12rem;
+  margin-bottom: 1rem;
+}
+
+ul.activity-list > li p {
+    font-size: .8rem;
+    margin-bottom: .8rem;
+}
+
+ul.activity-list > li .img-wrapper {
+    overflow: hidden;
+    padding-right: 0;
 }
 
 .activity-list > li > .row {
@@ -1357,12 +1409,19 @@ ul.activity-list .prices {
     border-top: 1px solid #000;
     list-style: none;
     margin-left: 0;
-    padding-top: 2px;
+  padding-top: 6px;
     bottom: 0;
     position: absolute;
     width: calc(100% - 0.9375rem);
     padding-right: 0.9375rem;
     margin-right: 0.9375rem;
+  padding-bottom: .5rem;
+}
+
+ul.activity-list .class {
+    font-size: .8rem;
+    font-weight: lighter;
+    text-align: center;
 }
 
 ul.activity-list .prices li {
@@ -1371,9 +1430,10 @@ ul.activity-list .prices li {
 }
 
 ul.activity-list .prices li .amt {
-    font-size: 1.1rem;
+  font-size: 1rem;
     text-align: center;
     color: $gtnp_green;
+  line-height: 1rem;
 }
 
 ul.activity-list .prices li .group {
@@ -1381,7 +1441,7 @@ ul.activity-list .prices li .group {
     line-height: 16px;
 }
 
-ul.activity-list .img-wrapper:hover img {
+ul.activity-list .img-wrapper a:hover img {
     animation-duration: 1s;
     transform: scale(1.2);
     transition: all .5s ease-in-out;
@@ -1391,7 +1451,7 @@ ul.activity-list .img-wrapper {
     overflow: hidden;
 }
 
-ul.activity-list .img-wrapper:hover:after {
+ul.activity-list .img-wrapper a:hover:after {
     background-color: rgba(0,0,0, .4);
     position: absolute;
     top: 0;
