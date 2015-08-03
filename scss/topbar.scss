@@ -29,8 +29,6 @@
 
 }
 
-
-
 .top-bar-section ul li:hover:not(.has-form) > a, .top-bar-section li:not(.has-form) a:not(.button):hover {
   background:  $theme_color_base_dark none repeat scroll 0% 0%;
 }
@@ -60,6 +58,10 @@
 
   .top-bar-section .has-dropdown:hover > a:after {
     color: white;
+  }
+
+  .no-right-padding{
+    padding-right: 0;
   }
 
 }
