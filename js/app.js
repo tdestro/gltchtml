@@ -1,7 +1,30 @@
 
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
+
+function IsEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
 $( document ).ready(function() {
+
+    $( "#newsletter" ).submit(function( event ) {
+
+        if( !IsEmail($("#email" ).val())) {
+            $( "#dialog p:nth-child(1)").hide();
+            $( "#dialog p:nth-child(2)").show();
+            $( "#dialog" ).dialog();
+            event.preventDefault(); }
+        else {
+            $( "#dialog p:nth-child(2)").hide();
+            $( "#dialog p:nth-child(1)").show();
+            $( "#dialog" ).dialog();
+            event.preventDefault();
+        }
+
+
+    });
 
 
     $("#arrival-date").datepicker({

@@ -573,14 +573,21 @@
         Preserve &bull; Protect &bull; Inspire
     </div>
 </div>
+
+
+<div id="dialog" title="" style="display: none;">
+    <p>You're on the list!</p>
+    <p>Invalid email address.</p>
+</div>
+
 <footer class="footer">
 	    <div class="bottom-bar-color-bg">
 	        <div class="row newsletter-padding">
 	            <div class="small-12 medium-5 columns end">
-	                <form class="newsletter">
+	                <form id="newsletter" class="newsletter">
 	                    <div class="row collapse">
 	                        <div class="small-11 medium-9 columns">
-	                            <input type="text" class="search white" placeholder="Newsletter Sign Up" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Newsletter Sign Up'"/>
+	                            <input type="text" id="email" class="search white" placeholder="Newsletter Sign Up" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Newsletter Sign Up'"/>
 	                        </div>
 	                        <div class="small-1 medium-3 columns end">
 	                        	<input type="submit" value=""/>
