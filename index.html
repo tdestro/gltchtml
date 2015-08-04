@@ -221,15 +221,54 @@
     <div class="small-6 columns white no-right-padding">
         <div class="row collapse">
             <div class="small-5 columns">
+
+                <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">
             <div class="row collapse">
                 <div class="small-4 columns weather_cur def_icon_desc">
                     CURRENT
+
                 </div>
-                <div class="small-3 columns weather_temp">
-                    65&#176;
+                <div id="weather" class="small-3 columns weather_temp">
+
                 </div>
-                <div class="small-5 columns weather_desc">Chance of Showers</div>
+                <div id="weathertext" class="small-5 columns weather_desc"></div>
             </div>
+                </a>
+                <div id="drop2" data-dropdown-content class="custom-dropdown-container-class content" aria-hidden="true" tabindex="-1">
+                    <div class="row collapse">
+                        <div class="small-6 columns weather_cur def_icon_desc">
+                            TODAY'S HI
+
+                        </div>
+                        <div  class="todayshigh small-6 columns weather_temp">
+                        </div>
+                    </div>
+                    <div class="row collapse">
+                        <div class="small-6 columns weather_cur def_icon_desc">
+                            TODAY'S LO
+
+                        </div>
+                        <div  class="todayslow small-6 columns weather_temp">
+                        </div>
+                    </div>
+                    <div class="row collapse">
+                        <div class="small-5 columns weather_cur def_icon_desc">
+                            SUNRISE
+
+                        </div>
+                        <div  class="sunrise small-7 columns weather_temp">
+                        </div>
+                    </div>
+                    <div class="row collapse">
+                        <div class="small-5 columns weather_cur def_icon_desc">
+                            SUNSET
+
+                        </div>
+                        <div  class="sunset small-7 columns weather_temp">
+                        </div>
+                    </div>
+                    <p class="text-align-center"> 5 DAY FORECAST </p>
+                      </div>
             </div>
             <div class="small-offset-1 small-6 columns">
                 <div class="row collapse">
@@ -644,9 +683,10 @@
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
 <script src="js/app.js"></script>
-
+<script src="js/weather.js"></script>
 </body>
 
 </html>

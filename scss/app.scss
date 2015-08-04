@@ -41,6 +41,25 @@ p {
 }
 
 
+//////////////////////////
+// WEATHER WIDGET RELATED
+.custom-dropdown-container-class {
+  @include dropdown-container(
+    // Sets list-style. Default: list. Options: [list, content]
+  $content:list,
+    // Sets if dropdown has triangle. Default:true.
+  $triangle:false
+  );
+  background-color: $gtnp_green;
+  z-index: 2000;
+  border: 0;
+  outline: none;
+  margin-top:8px;
+
+  li { @include dropdown-style; }
+}
+
+
 @mixin full-width-mixin {
   width: 100%;
   margin-left: auto;
@@ -324,7 +343,7 @@ p {
     display: none;
   }
   .smlogo {
-    z-index: 1000;
+    z-index: 2000;
     position: absolute;
   }
 
@@ -376,6 +395,9 @@ p {
     padding-top: 5px;
   }
 
+  .weather_cur{
+    color: $white;
+  }
   .layer-10 {
     margin-top: -120px;
   }
