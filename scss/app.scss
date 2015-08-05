@@ -204,7 +204,7 @@ p {
   }
 
   ul.activity-list .prices {
-    position: relative;
+    position: relative !important;
     margin: 2rem 0 0 0;
     padding: 0 0 1rem 0;
     width: 100% !important;
@@ -429,10 +429,41 @@ p {
   .headwaters {
     padding-left: 30px;
   }
+
+  /////////////////////////////////////////
+  // ACTIVITY DETAILS
+  .activity-list .img-wrapper {
+    width: calc(50% - .9375rem);
+  }
 }
 ////////////////////////////////////////////////
 // M E D I U M  O N L Y
 @media #{$medium-only} {
+
+
+
+  .featured-wrapper .orbit-caption.right-orbit {
+    background-color: transparent !important;
+    clear: both;
+    display: block;
+    height: auto;
+    position: relative;
+    text-align: left;
+  }
+
+  .top-bar.expanded {
+    overflow:visible !important;
+  }
+
+  .top-bar-section {
+    position:absolute;
+    z-index: 9999;
+    left: auto !important;
+    right: 0;
+    float: right;
+    max-width: 100%;
+    min-width: 350px;
+  }
 
   .featured-orbit li {
     position: relative;
@@ -522,6 +553,26 @@ p {
     letter-spacing: 1px;
   }
 
+  .top-bar-section > ul > li,  .top-bar-section > ul > li > a {
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+
+  .top-bar-section > ul > li > a {
+    line-height: 40px !important;
+    height: 40px !important;
+  }
+
+  .top-bar-section > ul > li:not(.has-form):hover > a:not(.button) {
+    border-top: 3px solid #fff;
+    height: 40px !important;
+    line-height: 34px !important;
+  }
+
+  .top-bar-section .has-dropdown.not-click:hover > .dropdown {
+    box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
+  }
+
   .search-but {
     position: relative;
     background-color: $gtnp_dark_green;
@@ -569,9 +620,11 @@ p {
   }
   .top-bar {
     z-index: 1000;
+    height:40px;
   }
   .top-bar-margin {
     margin-top: -40px;
+    height: 40px;
   }
   .top-bar-color-bg {
     background-color: $gtnp_green;
@@ -884,8 +937,12 @@ h6 {
 }
 
 .button {
-  background-color:$gtnp_green;
-  color:#fff;
+  background-color: $gtnp_green;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: $gtnp_dark_green;
 }
 
 .tri-bar-color-bg {
@@ -970,7 +1027,7 @@ h5 {
       color: $gtnp_dark_gray;
   }
 
-  input.search::-moz-placeholder, .footer input.search:-ms-input-placeholder{
+  input.search::-moz-placeholder, .footer input.search:-ms-input-placeholder {
       color: $gtnp_dark_gray;
   }
 
@@ -1356,6 +1413,7 @@ ul.details-grid .value {
   font-family: $font-family-sans-serif;
   font-weight: 100;
   font-size: 0.875rem;
+  line-height: 1.3rem;
 }
 
 .activity-details h5 {
@@ -1369,12 +1427,6 @@ ul.details-grid .value {
     text-align: left;
     padding: .7rem 1rem;
     text-transform: uppercase;
-  /*
-    background-image: url("../assets/front/activities/book-btn-arrow.png");
-    background-repeat: no-repeat;
-    background-position: 100% 0;
-    background-size: contain;
-  */
 }
 
 .activity-details .button.book-now:after {
@@ -1483,6 +1535,135 @@ ul.activity-list .img-wrapper {
 }
 
 ul.activity-list .img-wrapper a:hover:after {
+    background-color: rgba(0,0,0, .4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    bottom: 0;
+    right: 0;
+}
+
+//////////////////////////////////////
+// EVENTS
+.date-selector {
+    height: 40px;
+    margin-bottom: 1rem;
+    display: block;
+    box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
+}
+
+.date-selector .lbl {
+    line-height: 38px;
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.date-selector .prev, .date-selector .next {
+    width: 40px !important;
+    height: 40px !important;
+    display: block;
+    position: absolute;
+    background-color: #788983;
+    background-size: 15px;
+    background-position: 10px;
+    z-index: 10;
+    color: white;
+    margin: 0;
+    font-family: FontAwesome;
+}
+
+.date-selector .prev {
+    left: 0.9375rem;;
+    top: 0;
+}
+
+.date-selector .prev:after {
+    content: "\f054";
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+.date-selector .next {
+    right: 0;
+    top: 0;
+}
+
+.date-selector .next:after {
+    content: "\f054";
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+ul.events-list {
+  margin-left: 0;
+}
+
+ul.events-list > li {
+  list-style: none;
+  box-shadow: 2px 2px 1px 1px rgba(100, 100, 100, 0.5);
+  border: 1px solid #8A8888;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  background-color: #fff;
+  font-family: $font-family-sans-serif;
+  margin-bottom: 2rem;
+}
+
+ul.events-list > li h6 {
+  text-align: left;
+  color: $gtnp_green;
+  padding-top: 0.9375rem;
+  letter-spacing: .12rem;
+  margin-bottom: 1rem;
+}
+
+ul.events-list > li p {
+    font-size: .8rem;
+    margin-bottom: .8rem;
+}
+
+ul.events-list > li .img-wrapper {
+    overflow: hidden;
+    padding-right: 0;
+}
+
+ul.events-list > li > .row {
+  width: 100%;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+ul.events-list > li > .row > div:first-of-type {
+  padding-left: 0;
+}
+
+ul.events-list .class {
+    font-size: .8rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+ul.events-list .img-wrapper a:hover img {
+    animation-duration: 1s;
+    transform: scale(1.2);
+    transition: all .5s ease-in-out;
+}
+
+ul.events-list .img-wrapper {
+    overflow: hidden;
+}
+
+ul.events-list .img-wrapper a:hover:after {
     background-color: rgba(0,0,0, .4);
     position: absolute;
     top: 0;
