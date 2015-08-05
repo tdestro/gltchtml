@@ -2,7 +2,5 @@
 *.DS_Store
 /stylesheets/*
 
-.idea/workspace.xml
 
 bower_components/jquery-2.1.0.min/.bower.json
-.idea/*
