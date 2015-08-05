@@ -1,6 +1,12 @@
 /.sass-cache/*
 *.DS_Store
 /stylesheets/*
-
-
 bower_components/jquery-2.1.0.min/.bower.json
+
+*.iml
+
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
