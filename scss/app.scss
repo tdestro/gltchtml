@@ -48,13 +48,16 @@ p {
     // Sets list-style. Default: list. Options: [list, content]
   $content:list,
     // Sets if dropdown has triangle. Default:true.
-  $triangle:false
+  $triangle:false,
+  $max-width: 600px
   );
   background-color: $gtnp_green;
   z-index: 2000;
   border: 0;
   outline: none;
   margin-top:8px;
+
+
 
   li { @include dropdown-style; }
 }
@@ -904,7 +907,10 @@ p {
 .headline2 {
   margin-top: 3rem;
 }
+.weather_indent{
+  margin-left:10px
 
+}
 .def_icon_desc {
   margin-top: 0.43rem;
   letter-spacing: 1px;
