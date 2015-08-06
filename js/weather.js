@@ -7,7 +7,7 @@ $(document).ready(function() {
         woeid: '',
         unit: 'f',
         success: function(weather) {
-            $("#weather").html(weather.temp+'&deg;');
+            $(".weather").html(weather.temp+'&deg;');
             $("#weathertext").html(weather.text.split(' ').join('<br/>'));
             $(".todayshigh").html(weather.high+'&deg;');
             $(".todayslow").html(weather.low+'&deg;');
