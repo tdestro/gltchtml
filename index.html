@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en"> 
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8"/>
@@ -11,194 +11,191 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
 
 
-
     <style>
-	      #map-canvas {
-	        width: 100%;
-	        height: 850px;
-	      }
-	</style>
-    
-    <script src="https://maps.googleapis.com/maps/api/js"></script>  
+        #map-canvas {
+            width: 100%;
+            height: 850px;
+        }
+    </style>
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
-    var overlay;
-	USGSOverlay.prototype = new google.maps.OverlayView();
-	
-      function initialize() {
-      	
-	    var mapCanvas = document.getElementById('map-canvas');
-	    
-	    var styles = [
-		  {
-		    stylers: [
-		      { hue: "#00ffe6" },
-		      { saturation: -20 }
-		    ]
-		  },{
-		    featureType: "road",
-		    elementType: "geometry",
-		    stylers: [
-		      { lightness: 100 },
-		      { visibility: "simplified" }
-		    ]
-		  },{
-		    featureType: "road",
-		    elementType: "labels",
-		    stylers: [
-		      { visibility: "off" }
-		    ]
-		  }
-		];
-	    
-	    var mapOptions = {
-	      center: new google.maps.LatLng(43.921143, -110.703735),
-	      zoom: 10,
-	      mapTypeId: google.maps.MapTypeId.ROADMAP,
-	      mapTypeControl: false,
-	      scrollwheel: false
-	    }
-	    
-	    var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
-	    
-		    var locations = [
-		    ['Jackson Lake Lodge', 43.877448, -110.577411, 'address 1'],
-		    ['Colter Bay Village', 43.905273, -110.639096, 'address 1'],
-		    ['Headwaters', 44.106511, -110.667603, 'address 1'],
-		    ['Jenny Lake Lodge', 43.782964, -110.724797, 'address 1'],
-		    ]
-	    
-	    var map = new google.maps.Map(mapCanvas, mapOptions);
-	    
-	    map.mapTypes.set('map_style', styledMap);
-		map.setMapTypeId('map_style');
-		
-		var swBound = new google.maps.LatLng(43.877448, -110.577411);
-		var neBound = new google.maps.LatLng(44.000000, -110.377411);
-		var bounds = new google.maps.LatLngBounds(swBound, neBound);
-		overlay = new USGSOverlay(bounds, map);
-	    setMarkers(map, locations);	
+        var overlay;
+        USGSOverlay.prototype = new google.maps.OverlayView();
 
-	  }
-	  
-	  function setMarkers(map,locations){
+        function initialize() {
 
-	      var marker, i
-	
-		  for (i = 0; i < locations.length; i++)
-		  {  
-			
-			 var loan = locations[i][0]
-			 var lat = locations[i][1]
-			 var long = locations[i][2]
-			 var add =  locations[i][3]
-			
-			 latlngset = new google.maps.LatLng(lat, long);
-			
-			  var marker = new google.maps.Marker({  
-			          map: map, title: loan , position: latlngset  
-			        });
-			        map.setCenter(marker.getPosition())
-			
-			
-			        var content = loan;     
-			
-			  var infowindow = new google.maps.InfoWindow()
-			
-			google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
-			    return function() {
-			        infowindow.setContent(content);
-			        infowindow.open(map,marker);
-			    };
-			})(marker,content,infowindow));  
-		  }
-	  }
-	  
-	   
-	  /** @constructor */
-		function USGSOverlay(bounds, map) {
-		
-		  // Initialize all properties.
-		  this.bounds_ = bounds;
-		  this.map_ = map;
-		
-		  // Define a property to hold the image's div. We'll
-		  // actually create this div upon receipt of the onAdd()
-		  // method so we'll leave it null for now.
-		  this.div_ = null;
-		  this.setMap(map);
-		}
-		
-		/**
-		 * onAdd is called when the map's panes are ready and the overlay has been
-		 * added to the map.
-		 */
-		USGSOverlay.prototype.onAdd = function() {
-		
-		  var div = document.createElement('div');
-		  div.style.borderStyle = 'none';
-		  div.style.borderWidth = '0px';
-		  div.style.position = 'absolute';
-		  div.className = "example-number";
-		  
-		  var arrow = document.createElement('div');
-		  arrow.style.borderStyle = 'none';
-		  arrow.style.borderWidth = '0px';
-		  arrow.style.position = 'absolute';
-		  arrow.className = "example-number-arrow";
-		
-		  /*	
-		  // Create the img element and attach it to the div.
-		  var img = document.createElement('img');
-		  img.src = this.image_;
-		  img.style.width = '100%';
-		  img.style.height = '100%';
-		  img.style.position = 'absolute';
-		  div.appendChild(img);
-		  */
-		  this.div_ = div;
-		  div.appendChild(arrow);
-		
-		  // Add the element to the "overlayLayer" pane.
-		  var panes = this.getPanes();
-		  panes.overlayLayer.appendChild(div);
-		};
-		
-		USGSOverlay.prototype.draw = function() {
-		
-		  // We use the south-west and north-east
-		  // coordinates of the overlay to peg it to the correct position and size.
-		  // To do this, we need to retrieve the projection from the overlay.
-		  var overlayProjection = this.getProjection();
-		
-		  // Retrieve the south-west and north-east coordinates of this overlay
-		  // in LatLngs and convert them to pixel coordinates.
-		  // We'll use these coordinates to resize the div.
-		  var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
-		  var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
-		
-		  // Resize the image's div to fit the indicated dimensions.
-		  var div = this.div_;
-		  div.style.left = sw.x + 'px';
-		  div.style.top = ne.y + 'px';
-		  //div.style.width = (ne.x - sw.x) + 'px';
-		  //div.style.height = (sw.y - ne.y) + 'px';
-		  div.style.background_color = "#000";
-		  console.log(sw.x + 'px ' + ne.y + 'px');
-		};
-		
-		// The onRemove() method will be called automatically from the API if
-		// we ever set the overlay's map property to 'null'.
-		USGSOverlay.prototype.onRemove = function() {
-		  this.div_.parentNode.removeChild(this.div_);
-		  this.div_ = null;
-		};
+            var mapCanvas = document.getElementById('map-canvas');
 
-	  
-	  google.maps.event.addDomListener(window, 'load', initialize);
+            var styles = [
+                {
+                    stylers: [
+                        {hue: "#00ffe6"},
+                        {saturation: -20}
+                    ]
+                }, {
+                    featureType: "road",
+                    elementType: "geometry",
+                    stylers: [
+                        {lightness: 100},
+                        {visibility: "simplified"}
+                    ]
+                }, {
+                    featureType: "road",
+                    elementType: "labels",
+                    stylers: [
+                        {visibility: "off"}
+                    ]
+                }
+            ];
+
+            var mapOptions = {
+                center: new google.maps.LatLng(43.921143, -110.703735),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                scrollwheel: false
+            }
+
+            var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
+
+            var locations = [
+                ['Jackson Lake Lodge', 43.877448, -110.577411, 'address 1'],
+                ['Colter Bay Village', 43.905273, -110.639096, 'address 1'],
+                ['Headwaters', 44.106511, -110.667603, 'address 1'],
+                ['Jenny Lake Lodge', 43.782964, -110.724797, 'address 1'],
+            ]
+
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style');
+
+            var swBound = new google.maps.LatLng(43.877448, -110.577411);
+            var neBound = new google.maps.LatLng(44.000000, -110.377411);
+            var bounds = new google.maps.LatLngBounds(swBound, neBound);
+            overlay = new USGSOverlay(bounds, map);
+            setMarkers(map, locations);
+
+        }
+
+        function setMarkers(map, locations) {
+
+            var marker, i
+
+            for (i = 0; i < locations.length; i++) {
+
+                var loan = locations[i][0]
+                var lat = locations[i][1]
+                var long = locations[i][2]
+                var add = locations[i][3]
+
+                latlngset = new google.maps.LatLng(lat, long);
+
+                var marker = new google.maps.Marker({
+                    map: map, title: loan, position: latlngset
+                });
+                map.setCenter(marker.getPosition())
+
+
+                var content = loan;
+
+                var infowindow = new google.maps.InfoWindow()
+
+                google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+                    return function () {
+                        infowindow.setContent(content);
+                        infowindow.open(map, marker);
+                    };
+                })(marker, content, infowindow));
+            }
+        }
+
+
+        /** @constructor */
+        function USGSOverlay(bounds, map) {
+
+            // Initialize all properties.
+            this.bounds_ = bounds;
+            this.map_ = map;
+
+            // Define a property to hold the image's div. We'll
+            // actually create this div upon receipt of the onAdd()
+            // method so we'll leave it null for now.
+            this.div_ = null;
+            this.setMap(map);
+        }
+
+        /**
+         * onAdd is called when the map's panes are ready and the overlay has been
+         * added to the map.
+         */
+        USGSOverlay.prototype.onAdd = function () {
+
+            var div = document.createElement('div');
+            div.style.borderStyle = 'none';
+            div.style.borderWidth = '0px';
+            div.style.position = 'absolute';
+            div.className = "example-number";
+
+            var arrow = document.createElement('div');
+            arrow.style.borderStyle = 'none';
+            arrow.style.borderWidth = '0px';
+            arrow.style.position = 'absolute';
+            arrow.className = "example-number-arrow";
+
+            /*
+             // Create the img element and attach it to the div.
+             var img = document.createElement('img');
+             img.src = this.image_;
+             img.style.width = '100%';
+             img.style.height = '100%';
+             img.style.position = 'absolute';
+             div.appendChild(img);
+             */
+            this.div_ = div;
+            div.appendChild(arrow);
+
+            // Add the element to the "overlayLayer" pane.
+            var panes = this.getPanes();
+            panes.overlayLayer.appendChild(div);
+        };
+
+        USGSOverlay.prototype.draw = function () {
+
+            // We use the south-west and north-east
+            // coordinates of the overlay to peg it to the correct position and size.
+            // To do this, we need to retrieve the projection from the overlay.
+            var overlayProjection = this.getProjection();
+
+            // Retrieve the south-west and north-east coordinates of this overlay
+            // in LatLngs and convert them to pixel coordinates.
+            // We'll use these coordinates to resize the div.
+            var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
+            var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
+
+            // Resize the image's div to fit the indicated dimensions.
+            var div = this.div_;
+            div.style.left = sw.x + 'px';
+            div.style.top = ne.y + 'px';
+            //div.style.width = (ne.x - sw.x) + 'px';
+            //div.style.height = (sw.y - ne.y) + 'px';
+            div.style.background_color = "#000";
+            console.log(sw.x + 'px ' + ne.y + 'px');
+        };
+
+        // The onRemove() method will be called automatically from the API if
+        // we ever set the overlay's map property to 'null'.
+        USGSOverlay.prototype.onRemove = function () {
+            this.div_.parentNode.removeChild(this.div_);
+            this.div_ = null;
+        };
+
+
+        google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
 </head>
-
 
 
 <body>
@@ -221,53 +218,63 @@
     <div class="small-6 columns white no-right-padding">
         <div class="row collapse">
             <div class="small-6 columns">
-                <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">
-            <div class="row collapse">
-                <div class="small-4 columns weather_cur def_icon_desc">
-                    <div class="weather_indent">
-                    CURRENT</div>
+
+                <div class="row collapse">
+                    <div class="small-11 columns">
+                        <a class="weatherwidget" data-options="is_hover:true;" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">
+                            <div class="row collapse weatherwidgetbg">
+                                <div class="small-4 columns weather_cur def_icon_desc">
+                                    <div class="weather_indent">
+                                        CURRENT
+                                    </div>
+                                </div>
+                                <div id="weather" class="small-3 columns weather_temp">
+                                </div>
+                                <div id="weathertext" class="small-5 columns weather_desc"></div>
+                            </div>
+                        </a>
+
+                        <div id="drop2" data-dropdown-content class="custom-dropdown-container-class content"
+                             aria-hidden="true" tabindex="-1">
+                            <div class="row collapse">
+                                <div class="small-6 columns weather_cur def_icon_desc">
+                                    <div class="weather_indent"> TODAY'S HI</div>
+
+                                </div>
+                                <div class="todayshigh small-6 columns weather_temp">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="small-6 columns weather_cur def_icon_desc">
+                                    <div class="weather_indent"> TODAY'S LO</div>
+
+                                </div>
+                                <div class="todayslow small-6 columns weather_temp">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="small-5 columns weather_cur def_icon_desc">
+                                    <div class="weather_indent"> SUNRISE</div>
+
+                                </div>
+                                <div class="sunrise small-7 columns weather_temp">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="small-5 columns weather_cur def_icon_desc">
+                                    <div class="weather_indent"> SUNSET</div>
+
+                                </div>
+                                <div class="sunset small-7 columns weather_temp">
+                                </div>
+                            </div>
+                            <p class="text-align-center"> 5 DAY FORECAST </p>
+                        </div>
+                    </div>
+                    <div class="small-offset-1 columns"></div>
+
                 </div>
-                <div id="weather" class="small-3 columns weather_temp">
 
-                </div>
-                <div id="weathertext" class="small-5 columns weather_desc"></div>
-            </div>
-                </a>
-                <div id="drop2" data-dropdown-content class="custom-dropdown-container-class content" aria-hidden="true" tabindex="-1">
-                    <div class="row collapse">
-                        <div class="small-6 columns weather_cur def_icon_desc">
-                            TODAY'S HI
-
-                        </div>
-                        <div  class="todayshigh small-6 columns weather_temp">
-                        </div>
-                    </div>
-                    <div class="row collapse">
-                        <div class="small-6 columns weather_cur def_icon_desc">
-                            TODAY'S LO
-
-                        </div>
-                        <div  class="todayslow small-6 columns weather_temp">
-                        </div>
-                    </div>
-                    <div class="row collapse">
-                        <div class="small-5 columns weather_cur def_icon_desc">
-                            SUNRISE
-
-                        </div>
-                        <div  class="sunrise small-7 columns weather_temp">
-                        </div>
-                    </div>
-                    <div class="row collapse">
-                        <div class="small-5 columns weather_cur def_icon_desc">
-                            SUNSET
-
-                        </div>
-                        <div  class="sunset small-7 columns weather_temp">
-                        </div>
-                    </div>
-                    <p class="text-align-center"> 5 DAY FORECAST </p>
-                      </div>
             </div>
             <div class="small-6 columns">
                 <div class="row collapse">
@@ -275,15 +282,17 @@
                         <div class="def_icon_margin_social0">SOCIAL</div>
                     </div>
                     <div class="small-4 columns def_icon">
-                        <a href="http://www.facebook.com/grandtetonlodgeco" class="def_icon_margin_social1"><img src="assets/topbar/topbar_fb.png"/></a>
-                        <a href="http://www.twitter.com/tetontales/" class="def_icon_margin_social2"><img src="assets/topbar/topbar_twitter.png"/></a>
+                        <a href="http://www.facebook.com/grandtetonlodgeco" class="def_icon_margin_social1"><img
+                                src="assets/topbar/topbar_fb.png"/></a>
+                        <a href="http://www.twitter.com/tetontales/" class="def_icon_margin_social2"><img
+                                src="assets/topbar/topbar_twitter.png"/></a>
                     </div>
                     <div class="small-2 columns def_icon_desc">
                         <div class="def_icon_margin_media0">MEDIA</div>
                     </div>
                     <div class="small-4 columns def_icon">
                         <a href="#" class="def_icon_margin_media1">
-                        <img src="assets/topbar/topbar_cam.png"/></a>
+                            <img src="assets/topbar/topbar_cam.png"/></a>
                         <a href="#" class="def_icon_margin_media2"><img src="assets/topbar/topbar_vid.png"/></a>
                     </div>
                 </div>
@@ -306,7 +315,7 @@
 
 
                 </li>
-                <li class="toggle-topbar">   <a class="right" href="#"><span></span></a>
+                <li class="toggle-topbar"><a class="right" href="#"><span></span></a>
                     <ul class="show-for-medium-down small-block-grid-1">
                         <li class="weather_temp">65&#176;</li>
                         <li class="weather_cur">CURRENT</li>
@@ -334,9 +343,9 @@
                     </li>
                     <li class="has-dropdown"><a class="open" href="#">THE PARK</a>
                         <ul class="dropdown">
-							<li><a href="#">Maps &amp; Directions</a></li>
+                            <li><a href="#">Maps &amp; Directions</a></li>
                             <li><a href="#">Events Calendar</a></li>
-                            <li><a href="#">Itineraries</a> </li>
+                            <li><a href="#">Itineraries</a></li>
                             <li><a href="#">Season Information</a></li>
                             <li><a href="#">GTNP Service Information</a></li>
                             <li><a href="#">Employment</a></li>
@@ -396,7 +405,8 @@
 <div class="row full-width">
     <div class="large-12 columns nopadding hero-orbit">
 
-        <ul class="text-align-center" data-orbit data-options="bullets:false; slide_number: false; resume_on_mouseout: true; pause_on_hover: true;">
+        <ul class="text-align-center" data-orbit
+            data-options="bullets:false; slide_number: false; resume_on_mouseout: true; pause_on_hover: true;">
 
             <li><img src="assets/front/orbit/MainImage1.jpg">
 
@@ -409,7 +419,7 @@
             <li><img src="assets/front/orbit/MainImage2.jpg">
 
                 <div class="orbit-caption">
-                    <h6>  Caption Two.</h6>
+                    <h6> Caption Two.</h6>
                     Body Text
                 </div>
 
@@ -445,11 +455,13 @@
     <div class="large-offset-1 large-10 medium-12 columns">
         <div class="booking-widget row">
             <div class="small-12 medium-2 columns">
-                <input type="text" placeholder="Arrival Date" name="departure-date" id="arrival-date" class="datepicker">
+                <input type="text" placeholder="Arrival Date" name="departure-date" id="arrival-date"
+                       class="datepicker">
                 <img src="assets/bookingwidget/datepicker.png" class="input_img">
             </div>
             <div class="small-12 medium-2 columns">
-                <input type="text" placeholder="Departure Date" name="departure-date" id="departure-date" class="datepicker">
+                <input type="text" placeholder="Departure Date" name="departure-date" id="departure-date"
+                       class="datepicker">
                 <img src="assets/bookingwidget/datepicker.png" class="input_img">
             </div>
             <div class="small-12 medium-2 columns selectParent">
@@ -477,47 +489,63 @@
 
 
 <div class="row">
-	<div class="large-10 medium-12 columns text-align-center small-centered">
-			<p class="headline2">Grand Teton National Park is famous for the endless amount of outdoor activities. There is so much to do that
-	        even the locals have a hard time getting it all in each season. Best of all, there is literally something for
-	        everyone—from the most extreme outdoor sports to leisure activities such as wildlife viewing or simply soaking
-	        in the surrounding natural beauty.</p>
-	</div>
+    <div class="large-10 medium-12 columns text-align-center small-centered">
+        <p class="headline2">Grand Teton National Park is famous for the endless amount of outdoor activities. There is
+            so much to do that
+            even the locals have a hard time getting it all in each season. Best of all, there is literally something
+            for
+            everyone—from the most extreme outdoor sports to leisure activities such as wildlife viewing or simply
+            soaking
+            in the surrounding natural beauty.</p>
+    </div>
 </div>
 <div class="featured-wrapper bar-color-bg">
     <div class="row">
         <div class="large-12 columns">
-            <ul class="featured-orbit text-align-center" data-orbit="" data-options="timer: false;pause_on_hover:true; bullets:false;swipe: false;">
-				<li class="active"><img class="left-image" src="assets/front/orbit2/orbitb0.png">
-				  <div class="orbit-caption right-orbit">
-				     <h6>Jenny Lake Lodge Photography Workshops</h6>
-				    <div>
-						The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of the Jenny Lake Lodge cruiser bicycles  as well as photography guidance from an industry professional at no additional cost. 
-					</div>
-					<a href="#">Read More »</a>
-				  </div>
-				
-				</li>
-				<li><img src="assets/front/orbit2/orbitb0.png">
-				  <div class="orbit-caption right-orbit">
-				      <h6>Jenny Lake Lodge Photography Workshops</h6>
-				    <div>
-						The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of the Jenny Lake Lodge cruiser bicycles  as well as photography guidance from an industry professional at no additional cost. 
-					</div>
-					<a href="#">Read More »</a>
-				    </div>
-				</li>
-				
-				<li><img src="assets/front/orbit2/orbitb0.png">
-				  <div class="orbit-caption right-orbit">
-				      <h6>Jenny Lake Lodge Photography Workshops</h6>
-				    <div>
-						The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of the Jenny Lake Lodge cruiser bicycles  as well as photography guidance from an industry professional at no additional cost. 
-					</div>
-					<a href="#">Read More »</a>
-				    </div>
-				</li>
-			</ul>
+            <ul class="featured-orbit text-align-center" data-orbit=""
+                data-options="timer: false;pause_on_hover:true; bullets:false;swipe: false;">
+                <li class="active"><img class="left-image" src="assets/front/orbit2/orbitb0.png">
+
+                    <div class="orbit-caption right-orbit">
+                        <h6>Jenny Lake Lodge Photography Workshops</h6>
+
+                        <div>
+                            The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of
+                            the Jenny Lake Lodge cruiser bicycles as well as photography guidance from an industry
+                            professional at no additional cost.
+                        </div>
+                        <a href="#">Read More »</a>
+                    </div>
+
+                </li>
+                <li><img src="assets/front/orbit2/orbitb0.png">
+
+                    <div class="orbit-caption right-orbit">
+                        <h6>Jenny Lake Lodge Photography Workshops</h6>
+
+                        <div>
+                            The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of
+                            the Jenny Lake Lodge cruiser bicycles as well as photography guidance from an industry
+                            professional at no additional cost.
+                        </div>
+                        <a href="#">Read More »</a>
+                    </div>
+                </li>
+
+                <li><img src="assets/front/orbit2/orbitb0.png">
+
+                    <div class="orbit-caption right-orbit">
+                        <h6>Jenny Lake Lodge Photography Workshops</h6>
+
+                        <div>
+                            The Jenny Lake Lodge Photo Workshop includes Nightly Lodging, Breakfast each morning, use of
+                            the Jenny Lake Lodge cruiser bicycles as well as photography guidance from an industry
+                            professional at no additional cost.
+                        </div>
+                        <a href="#">Read More »</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -525,48 +553,61 @@
     <div class="large-12 columns text-align-center subheadline">
 
         <h5>Endless Amounts of Outdoor Activities</h5>
-       <p>So much to do that even the locals have a hard time getting it all in each season.</p>
+
+        <p>So much to do that even the locals have a hard time getting it all in each season.</p>
 
 
     </div>
 </div>
 <div class="row full-width featured-activities">
-	<div class="small-12 columns nopadding">
-		<ul class="small-block-grid-1 medium-block-grid-2">
-			<li>
-				<a href="#"><img src="assets/front/quad/quad1.jpg"/>
-					<div class="caption">
-						<div class="title">Rafting the Snake River</div>
-						<div class="sub">Our guides will show you amazing Teton views, share in depth knowledge and the local flore and founa, and wildlife.</div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="#"><img src="assets/front/quad/quad2.jpg"/>
-					<div class="caption">
-						<div class="title">Horesback Riding</div>
-						<div class="sub">We offer horesback rides that take you to a beatiful vistas, where you can see everythign from Jackson Hole to the boundaries of Yellowstone.</div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="#"><img src="assets/front/quad/quad3.jpg"/>
-					<div class="caption">
-						<div class="title">Fishing</div>
-						<div class="sub">Our guides can tak you fishing by private boat with custom trips on Jackson Lake, or on private fly fishing adventures along the Snake River.</div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="#"><img src="assets/front/quad/quad4.jpg"/>
-					<div class="caption">
-						<div class="title">Marina</div>
-						<div class="sub">The activities at the marina include Jackson Lake Boat Cruises, canoe, kayak and motor boat rentals, and guided fishing trips.</div>
-					</div>
-				</a>
-			</li>
-		</ul>
-	</div>
+    <div class="small-12 columns nopadding">
+        <ul class="small-block-grid-1 medium-block-grid-2">
+            <li>
+                <a href="#"><img src="assets/front/quad/quad1.jpg"/>
+
+                    <div class="caption">
+                        <div class="title">Rafting the Snake River</div>
+                        <div class="sub">Our guides will show you amazing Teton views, share in depth knowledge and the
+                            local flore and founa, and wildlife.
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="assets/front/quad/quad2.jpg"/>
+
+                    <div class="caption">
+                        <div class="title">Horesback Riding</div>
+                        <div class="sub">We offer horesback rides that take you to a beatiful vistas, where you can see
+                            everythign from Jackson Hole to the boundaries of Yellowstone.
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="assets/front/quad/quad3.jpg"/>
+
+                    <div class="caption">
+                        <div class="title">Fishing</div>
+                        <div class="sub">Our guides can tak you fishing by private boat with custom trips on Jackson
+                            Lake, or on private fly fishing adventures along the Snake River.
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="assets/front/quad/quad4.jpg"/>
+
+                    <div class="caption">
+                        <div class="title">Marina</div>
+                        <div class="sub">The activities at the marina include Jackson Lake Boat Cruises, canoe, kayak
+                            and motor boat rentals, and guided fishing trips.
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
 <div class="activities-bar-color-bg text-align-center">
     <div class="middle">
@@ -576,15 +617,16 @@
 <div class="row">
     <div class="large-12 columns text-align-center">
         <h5>Located Inside the Grand Teton National Park</h5>
+
         <p>3 locations in the heart of the GTNP, as well as our Headwaters Lodge between Grand Teton National Park and
-        Yellowstone. Explore our different lodges below.</p>
+            Yellowstone. Explore our different lodges below.</p>
     </div>
 </div>
 
 <div class="row full-width">
-	<div class="large-12 columns nopadding text-align-center">
-		<div id="map-canvas"></div>
-	</div>
+    <div class="large-12 columns nopadding text-align-center">
+        <div id="map-canvas"></div>
+    </div>
 </div>
 
 <div class="row">
@@ -592,17 +634,29 @@
         <h5>
             Lodging Types
         </h5>
+
         <p>
-        From relaxing to roughing it, we have accomodations for everybody.</p>
+            From relaxing to roughing it, we have accomodations for everybody.</p>
     </div>
 </div>
 
 
-
 <div class="row text-align-center tri">
-    <div class="small-4 columns"><div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon3.png"/><img class="show-for-large-up" src="assets/front/tri/tri3.jpg"/>LODGE</div></div>
-    <div class="small-4 columns"><div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon2.png"/><img class="show-for-large-up" src="assets/front/tri/tri2.jpg"/>CAMP</div></div>
-    <div class="small-4 columns"><div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon1.png"/><img class="show-for-large-up" src="assets/front/tri/tri1.jpg"/>RV</div></div>
+    <div class="small-4 columns">
+        <div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon3.png"/><img
+                class="show-for-large-up" src="assets/front/tri/tri3.jpg"/>LODGE
+        </div>
+    </div>
+    <div class="small-4 columns">
+        <div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon2.png"/><img
+                class="show-for-large-up" src="assets/front/tri/tri2.jpg"/>CAMP
+        </div>
+    </div>
+    <div class="small-4 columns">
+        <div class="tri-bar-color-bg"><img class="show-for-medium-down" src="assets/front/tri/triicon1.png"/><img
+                class="show-for-large-up" src="assets/front/tri/tri1.jpg"/>RV
+        </div>
+    </div>
 </div>
 
 
@@ -615,69 +669,73 @@
 
 <div id="dialog" title="" style="display: none;">
     <p>You're on the list!</p>
+
     <p>Invalid email address.</p>
 </div>
 
 <footer class="footer">
-	    <div class="bottom-bar-color-bg">
-	        <div class="row newsletter-padding">
-	            <div class="small-12 medium-5 columns end">
-	                <form id="newsletter" class="newsletter">
-	                    <div class="row collapse">
-	                        <div class="small-11 medium-9 columns">
-	                            <input type="text" id="email" class="search white" placeholder="Newsletter Sign Up" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Newsletter Sign Up'"/>
-	                        </div>
-	                        <div class="small-1 medium-3 columns end">
-	                        	<input type="submit" value=""/>
-	                        </div>
-	                    </div>
-	                </form>
-	            </div>
-	        </div>
-	    </div>
-	<div class="small-12 medium-12 large-12 columns no-padding">	
-	    <div class="row">
-	        <div class="small-12 medium-4 large-4 columns text-align-center-on-small">
-	            <i><img src="assets/footer/gtlc.png"/></a></i>
-	            <i class="headwaters"><img src="assets/footer/headwaters.png"/></a></i>
-	            <i><img src="assets/footer/nps_authorized.png"/></a></i>
-	        </div>
-	        <div class="small-12 medium-4 large-4 text-align-center-on-small columns">
-	            <h4>Grand Teton Lodge Company</h4>
-	            <ul class="footer-links">
-	                <li><a href="#">Groups</a></li>
-	                <li><a href="#">Weddings</a></li>
-	                <li><a href="#">Envision</a></li>
-	                <li><a href="#">Employment</a></li>
-	                <li><a href="#">Press Room</a></li>
-	                <li><a href="#">Site Map</a></li>
-	                <li><a href="#">Privacy Statement</a></li>
-	                </ul>
-	        </div>
-	        <div class="small-12 medium-4 large-4 text-align-center-on-small columns">
-	            <h4>Contact Us</h4>
-	            <ul class="footer-links">
-	                <li>1-888-555-5555</li>
-	                <li>info@gtlc.com</li>
-	            </ul>
-	 
-	            <h4>Social</h4>
-<img src="assets/footer/darktwit.png"/><img class="camicon" src="assets/footer/darkfb.png"/>
-	        </div>
-	    </div>
-	 </div>
-	    <div class="row">
-	    	<div class="small-12 medium-12 large-12 columns">
-	            <h3>Copyright &copy;
-<script type="text/javascript">
-    var dteNow = new Date();
-    var intYear = dteNow.getFullYear();
-    document.write(intYear);
-</script> Grand Teton Lodge Company & Flagg Ranch Company</br>
-	                Authorized Concessioner of the National Park Service</h3>
-	        </div>
-	    </div>
-	</div>
+    <div class="bottom-bar-color-bg">
+        <div class="row newsletter-padding">
+            <div class="small-12 medium-5 columns end">
+                <form id="newsletter" class="newsletter">
+                    <div class="row collapse">
+                        <div class="small-11 medium-9 columns">
+                            <input type="text" id="email" class="search white" placeholder="Newsletter Sign Up"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Newsletter Sign Up'"/>
+                        </div>
+                        <div class="small-1 medium-3 columns end">
+                            <input type="submit" value=""/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="small-12 medium-12 large-12 columns no-padding">
+        <div class="row">
+            <div class="small-12 medium-4 large-4 columns text-align-center-on-small">
+                <i><img src="assets/footer/gtlc.png"/></a></i>
+                <i class="headwaters"><img src="assets/footer/headwaters.png"/></a></i>
+                <i><img src="assets/footer/nps_authorized.png"/></a></i>
+            </div>
+            <div class="small-12 medium-4 large-4 text-align-center-on-small columns">
+                <h4>Grand Teton Lodge Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Groups</a></li>
+                    <li><a href="#">Weddings</a></li>
+                    <li><a href="#">Envision</a></li>
+                    <li><a href="#">Employment</a></li>
+                    <li><a href="#">Press Room</a></li>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">Privacy Statement</a></li>
+                </ul>
+            </div>
+            <div class="small-12 medium-4 large-4 text-align-center-on-small columns">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li>1-888-555-5555</li>
+                    <li>info@gtlc.com</li>
+                </ul>
+
+                <h4>Social</h4>
+                <img src="assets/footer/darktwit.png"/><img class="camicon" src="assets/footer/darkfb.png"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+            <h3>Copyright &copy;
+                <script type="text/javascript">
+                    var dteNow = new Date();
+                    var intYear = dteNow.getFullYear();
+                    document.write(intYear);
+                </script>
+                Grand Teton Lodge Company & Flagg Ranch Company</br>
+                Authorized Concessioner of the National Park Service
+            </h3>
+        </div>
+    </div>
+    </div>
 </footer>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>

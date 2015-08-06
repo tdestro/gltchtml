@@ -9,6 +9,10 @@ function IsEmail(email) {
 
 $( document ).ready(function() {
 
+    $(".weatherwidget").hover(function(){
+        $(".weatherwidgetbg").css('background','yellow');
+    });
+
     $( "#newsletter" ).submit(function( event ) {
 
         if( !IsEmail($("#email" ).val())) {

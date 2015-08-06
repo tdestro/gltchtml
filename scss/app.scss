@@ -51,12 +51,15 @@ p {
   $triangle:false,
   $max-width: 600px
   );
-  background-color: $gtnp_green;
+  background-color: $gtnp_dark_green;
   z-index: 2000;
   border: 0;
   outline: none;
   margin-top:8px;
 
+.weatherwidget{
+ height:40px;
+}
 
 
   li { @include dropdown-style; }
@@ -908,8 +911,8 @@ p {
   margin-top: 3rem;
 }
 .weather_indent{
-  margin-left:10px
-
+  margin-left:10px;
+  font-size: 9pt;
 }
 .def_icon_desc {
   margin-top: 0.43rem;
