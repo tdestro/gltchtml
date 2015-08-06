@@ -36,10 +36,10 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0); /* IE6-9 */
   }
 }
+
 p {
   @include font-family-sans-serif-1px;
 }
-
 
 //////////////////////////
 // WEATHER WIDGET RELATED
@@ -55,16 +55,23 @@ p {
   z-index: 2000;
   border: 0;
   outline: none;
-  margin-top:8px;
-
-.weatherwidget{
- height:40px;
-}
+  padding-top:40px;
+  margin-top: -40px;
 
 
   li { @include dropdown-style; }
 }
+.weatherwidget div{
+z-index: 2001;
 
+}
+.overstate{
+  background-color: $gtnp_dark_green;
+}
+
+.wwh{
+  height: 40px;
+}
 
 @mixin full-width-mixin {
   width: 100%;
