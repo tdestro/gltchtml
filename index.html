@@ -316,8 +316,8 @@
 
                 </li>
                 <li class="weather-topbar">
-                    <a class="weatherwidget" data-options="is_hover:true;" data-dropdown="drop3"
-                       aria-controls="drop3" aria-expanded="false">
+                    <a class="weatherwidget" data-dropdown="drop3" data-options="is_hover:true; hover_timeout:0;"
+                       aria-controls="drop3" aria-expanded="false" >
                         <ul class="show-for-medium-down small-block-grid-1">
                             <li class="weather_temp weather"></li>
                             <li class="weather_cur">CURRENT</li>
@@ -325,11 +325,11 @@
                     <div id="drop3" data-dropdown-content class="custom-dropdown-container-class content"
                          aria-hidden="true" tabindex="-1">
                         <div class="row collapse">
-                            <div class="small-6 columns def_icon_desc">
+                            <div class="small-6 columns">
                                 <div class="weather_indent"> TODAY'S HI</div>
 
                             </div>
-                            <div class="todayshigh small-6 columns weather_temp">
+                            <div class="todayshigh small-6 columns weather_temp_drop">
                             </div>
                         </div>
                         <div class="row collapse">
@@ -337,26 +337,26 @@
                                 <div class="weather_indent"> TODAY'S LO</div>
 
                             </div>
-                            <div class="todayslow small-6 columns weather_temp">
+                            <div class="todayslow small-6 columns weather_temp_drop">
                             </div>
                         </div>
                         <div class="row collapse">
-                            <div class="small-5 columns def_icon_desc">
+                            <div class="small-6 columns">
                                 <div class="weather_indent"> SUNRISE</div>
 
                             </div>
-                            <div class="sunrise small-7 columns weather_temp">
+                            <div class="sunrise small-6 columns weather_temp_drop">
                             </div>
                         </div>
                         <div class="row collapse">
-                            <div class="small-5 columns weather_cur def_icon_desc">
+                            <div class="small-6 columns">
                                 <div class="weather_indent"> SUNSET</div>
 
                             </div>
-                            <div class="sunset small-7 columns weather_temp">
+                            <div class="sunset small-6 columns weather_temp">
                             </div>
                         </div>
-                        <p class="text-align-center"> 5 DAY FORECAST </p>
+                        <p class="text-align-center weather_indent"> 5 DAY FORECAST </p>
                     </div>
                 </li>
                 <li class="toggle-topbar"><a class="right" href="#"><span></span></a>

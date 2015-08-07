@@ -2,6 +2,16 @@
  * Created by anthonyodestro on 8/4/15.
  */
 $(document).ready(function() {
+
+    $(".weather-topbar").hover(function(){
+        $(".top-bar").css("overflow", "visible");
+        $(".top-bar-section").css("display", "none");
+    }, function(){
+        $(".top-bar").removeAttr( 'style' );
+        $(".top-bar-section").removeAttr( 'style' );
+    });
+
+
     $.simpleWeather({
         location: 'Teton County, WY',
         woeid: '',

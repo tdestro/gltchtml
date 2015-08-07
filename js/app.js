@@ -10,7 +10,6 @@ function IsEmail(email) {
 $( document ).ready(function() {
 
     $( "#newsletter" ).submit(function( event ) {
-
         if( !IsEmail($("#email" ).val())) {
             $( "#dialog p:nth-child(1)").hide();
             $( "#dialog p:nth-child(2)").show();

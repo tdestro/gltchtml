@@ -251,6 +251,11 @@ p {
 ////////////////////////////////////////////////
 // M E D I U M  D O W N
 @media #{$medium-down} {
+////////////////////////////////////////////////
+// Weather Widget Related
+  .custom-dropdown-container-class {
+    margin-top: -45px;
+  }
 
   .full-width-for-medium-down {
     @include full-width-mixin;
@@ -383,29 +388,32 @@ p {
   .tri-bar-color-bg {
     padding-top: 10px;
   }
+  .weatherwidget{  z-index: 2001;
+}
   .weather_temp {
     color: $white;
     font-size: 1.8rem;
     font-weight: 600;
-    margin-left: -95px;
+    margin-left: 70px;
     margin-top: -5px;
   }
+  .weather_temp_drop {
+    color: $white;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
   .weather_cur {
     color: $white;
-    margin-left: -106px;
+    margin-left: 60px;
     margin-top: -34px;
     font-size: 0.8rem;
   }
   .top-bar .weather-topbar {
     position: absolute;
-    right: 0;
+    right: 45px;
     top: 0;
-  }
-
-  .top-bar .weather-topbar {
-    position: absolute;
-    right: 0;
-    top: 0;
+    width: 208px;
   }
   .top-bar .weather-topbar a {
     display: block;
@@ -941,6 +949,10 @@ p {
 }
 
 .weather_indent {
+  @include font-family-sans-serif-1px;
+  margin-top: 0.43rem;
+  font-size: 9pt;
+  color: $white;
   margin-left: 10px;
   font-size: 9pt;
 }
