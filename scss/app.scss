@@ -70,6 +70,22 @@ p {
   background-color: $gtnp_dark_green;
 }
 
+.weather_border{
+  border-color: $black;
+  border-style:solid;
+  border-width: 1px 1px 1px 0px;
+}
+
+.weather_border_first{
+  border-width: 1px 1px 1px 1px;
+}
+
+.weather_border_top_bottom{
+border-color: $black;
+border-style:solid;
+border-width: 1px 0px 1px 0px;
+}
+
 .wwh {
   height: 40px;
 }
@@ -950,9 +966,16 @@ p {
 
 .weather_indent {
   @include font-family-sans-serif-1px;
-  margin-top: 0.43rem;
   font-size: 9pt;
   color: $white;
+  margin-left: 10px;
+  font-size: 9pt;
+}
+
+.weather_indent_5day {
+  @include font-family-sans-serif-1px;
+  margin-top: 0.43rem;
+  font-size: 9pt;
   margin-left: 10px;
   font-size: 9pt;
 }
