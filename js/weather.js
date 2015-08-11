@@ -3,6 +3,11 @@
  */
 $(document).ready(function() {
 
+    String.prototype.splice = function( idx, rem, s ) {
+        return (this.slice(0,idx) + s + this.slice(idx + Math.abs(rem)));
+    };
+
+    var result = "foo baz".splice( 4, 0, "bar " );
     $(".weather-topbar").hover(function(){
         $(".top-bar").css("overflow", "visible");
         $(".top-bar-section").css("display", "none");
@@ -31,8 +36,8 @@ $(document).ready(function() {
             $("#weathertext").html(weather.text.split(' ').join('<br/>'));
             $(".todayshigh").html(weather.high+'&deg;');
             $(".todayslow").html(weather.low+'&deg;');
-            $(".sunrise").html(weather.sunrise);
-            $(".sunset").html(weather.sunset);
+            $(".sunrise").html(weather.sunrise.splice( 4, 0, "<span class='weather_pmam'>")+"</span>");
+            $(".sunset").html(weather.sunset.splice( 4, 0, "<span class='weather_pmam'>")+"</span>");
 
             var html = '<div class="row collapse"><div class="small-offset-1 medium-offset-1 large-offset-1 columns"></div>';
             for(var i=0;i<weather.forecast.length;i++) {
