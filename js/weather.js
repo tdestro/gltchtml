@@ -7,13 +7,17 @@ $(document).ready(function() {
         return (this.slice(0,idx) + s + this.slice(idx + Math.abs(rem)));
     };
 
-    var result = "foo baz".splice( 4, 0, "bar " );
-    $(".weather-topbar").hover(function(){
+    $('.weather-topbar').on('opened.fndtn.dropdown', function() {
         $(".top-bar").css("overflow", "visible");
         $(".top-bar-section").css("display", "none");
-    }, function(){
+        $(".custom-dropdown-container-class").ClipPath({path:'0 400,200 400,200 40,150 40,150 0,50 0,50 40,0 40'});
+
+        return console.log('opened');
+    });
+    $('.weather-topbar').on('closed.fndtn.dropdown', function() {
         $(".top-bar").removeAttr( 'style' );
         $(".top-bar-section").removeAttr( 'style' );
+        return console.log('closed');
     });
 
 
