@@ -10,14 +10,11 @@ $(document).ready(function() {
     $('.weather-topbar').on('opened.fndtn.dropdown', function() {
         $(".top-bar").css("overflow", "visible");
         $(".top-bar-section").css("display", "none");
-        $(".custom-dropdown-container-class").ClipPath({path:'0 400,200 400,200 40,150 40,150 0,50 0,50 40,0 40'});
-
-        return console.log('opened');
+        $(".custom-dropdown-container-class").ClipPath({path:'0 400,200 400,200 45,150 45,150 0,50 0,50 45,0 45'});
     });
     $('.weather-topbar').on('closed.fndtn.dropdown', function() {
         $(".top-bar").removeAttr( 'style' );
         $(".top-bar-section").removeAttr( 'style' );
-        return console.log('closed');
     });
 
 
