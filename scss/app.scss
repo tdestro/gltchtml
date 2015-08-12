@@ -400,6 +400,10 @@ border-width: 1px 0px 1px 0px;
     left: 0;
     position: relative !important;
   }
+  .top-bar-section ul li:hover:not(.has-form) > a.open, .top-bar-section ul li:hover:not(.has-form) > a {
+    background-color: #fff !important;
+    color: $gtnp_dark_green !important;
+  }
   .title.back.js-generated {
     display: none;
   }
