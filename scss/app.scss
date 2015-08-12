@@ -421,6 +421,9 @@ border-width: 1px 0px 1px 0px;
   .top-bar-section .dropdown li a {
     color: $gtnp_dark_gray;
   }
+  .top-bar .toggle-topbar {
+    z-index: 6000;
+  }
 
   .sm-green-color-bg {
     background-color: $gtnp_green;
@@ -453,7 +456,7 @@ border-width: 1px 0px 1px 0px;
   }
   .top-bar .weather-topbar {
     position: absolute;
-    right: 45px;
+    right: -15px;
     top: 0;
     width: 208px;
   }
