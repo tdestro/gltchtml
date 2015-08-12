@@ -100,7 +100,6 @@ border-width: 1px 0px 1px 0px;
 // S M A L L  O N L Y
 @media #{$small-only} {
 
-
   // ORBIT RELATED ON SMALL
   .hero-orbit a.orbit-next,
   .hero-orbit a.orbit-prev {
@@ -269,6 +268,8 @@ border-width: 1px 0px 1px 0px;
 @media #{$medium-down} {
 
 
+
+
   .top-bar ul > li.has-dropdown:hover a.open{
     background-color: #fff !important ;
     color: $gtnp_dark_green !important;
@@ -381,6 +382,9 @@ border-width: 1px 0px 1px 0px;
     padding-left:12px;
   }
 
+  .top-bar-section{
+    z-index: 2001;
+  }
   .top-bar-section .has-dropdown.moved {
     position: relative;
     display: block;
@@ -408,7 +412,7 @@ border-width: 1px 0px 1px 0px;
     display: none;
   }
   .smlogo {
-    z-index: 2000;
+    z-index: 2002;
     position: absolute;
   }
 
