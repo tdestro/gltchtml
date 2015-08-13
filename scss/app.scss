@@ -100,11 +100,41 @@ border-width: 1px 0px 1px 0px;
 // S M A L L  O N L Y
 @media #{$small-only} {
 
+  ////////////////////////////////////////////////
+  // Hero Orbit Related.
+  .hero-orbit .orbit-prev {
+    background: url("../assets/orbit/orbitleft.png") no-repeat;
+    background-size: 23px 53px;
+    width: 23px !important;
+    height: 53px !important;
+
+    span {
+      border: 0;
+    }
+  }
+
+  .hero-orbit .orbit-next {
+    background: url("../assets/orbit/orbitright.png") no-repeat;
+    background-size: 23px 53px;
+    width: 23px !important;
+    height: 53px !important;
+    span {
+      border: 0;
+    }
+  }
+
+  .hero-orbit .orbit-prev {
+    left: 10px;
+  }
+  .hero-orbit .orbit-next {
+    padding-right: 33px;
+  }
   // ORBIT RELATED ON SMALL
   .hero-orbit a.orbit-next,
   .hero-orbit a.orbit-prev {
     display: block !important;
   }
+
 
   .featured-wrapper .orbit-next span, .featured-wrapper .orbit-next,
   .featured-wrapper .orbit-prev span, .featured-wrapper .orbit-prev {
@@ -495,6 +525,27 @@ border-width: 1px 0px 1px 0px;
 ////////////////////////////////////////////////
 // M E D I U M  U P
 @media #{$medium-up} {
+
+  ////////////////////////////////////////////////
+  // Hero Orbit Related.
+  .hero-orbit .orbit-prev {
+    background: url("../assets/orbit/orbitleft.png") no-repeat;
+    width: 34px !important;
+    height: 84px !important;
+
+    span {
+      border: 0;
+    }
+  }
+
+  .hero-orbit .orbit-next {
+    background: url("../assets/orbit/orbitright.png") no-repeat;
+    width: 34px !important;
+    height: 84px !important;
+    span {
+      border: 0;
+    }
+  }
 
   ///////////////////////////////////
   // FOOTER RELATED
@@ -931,26 +982,7 @@ border-width: 1px 0px 1px 0px;
 
 }
 
-////////////////////////////////////////////////
-// Hero Orbit Related.
-.hero-orbit .orbit-prev {
-  background: url("../assets/orbit/orbitleft.png") no-repeat;
-  width: 34px !important;
-  height: 84px !important;
 
-  span {
-    border: 0;
-  }
-}
-
-.hero-orbit .orbit-next {
-  background: url("../assets/orbit/orbitright.png") no-repeat;
-  width: 34px !important;
-  height: 84px !important;
-  span {
-    border: 0;
-  }
-}
 
 .hero-orbit .orbit-next:hover, .hero-orbit .orbit-prev:hover {
   background-color: transparent;
