@@ -653,6 +653,23 @@ border-width: 1px 0px 1px 0px;
 // L A R G E  U P
 @media #{$large-up} {
 
+
+  .tri-bar-color-bg > a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .tri-bar-color-bg > a > img {
+    transition: all .5s ease-in-out;
+    width: 100%;
+  }
+
+  .tri-bar-color-bg > a:hover > img {
+    animation-duration: 1s;
+    transform: scale(1.2);
+
+  }
   .weather_temp {
     color: $white;
     font-size: 1.8rem;
