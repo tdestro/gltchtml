@@ -293,25 +293,6 @@ border-width: 1px 0px 1px 0px;
     @include full-width-mixin;
   }
 
-  @mixin smarrows {
-    display: inline;
-    position: absolute;
-    top: -25px;
-    right: 29px;
-    border: 0;
-    font-family: FontAwesome;
-    font-weight: lighter;
-    font-size: 60px;
-  }
-
-  .top-bar ul > li.has-dropdown a.open:after {
-    @include smarrows;
-    content: "\f107";
-  }
-  .top-bar ul > li.has-dropdown.expand .open:after {
-    @include smarrows;
-    content: "\f106";
-  }
 
   .smlogo {
     height: 60px;
@@ -404,6 +385,32 @@ border-width: 1px 0px 1px 0px;
     left: 0;
     position: relative !important;
   }
+
+// SVG COLORS CAN CHANGE, SEE FILL IN URL DATA.
+  .top-bar ul > li.has-dropdown a.open:after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 14px;
+    border: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' width='22px' height='13px' viewBox='0 0 22 13' enable-background='new 0 0 22 13' xml:space='preserve'><path fill='%23788983' d='M20.998 1.847l-1.333-1.353L10.997 9.29L2.33 0.494L0.997 1.847l10 10.149L20.998 1.847z'/></svg>") no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin-top: -8px;
+  }
+
+  .top-bar ul > li.has-dropdown.expand .open:after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 14px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' width='22px' height='13px' viewBox='0 0 22 13' enable-background='new 0 0 22 13' xml:space='preserve'><path fill='%23788983' d='M0.997,10.643l1.333,1.354L10.998,3.2l8.667,8.796l1.333-1.354l-10-10.148L0.997,10.643z'/></svg>") no-repeat;
+    top: initial;
+    margin-top: -22px;
+    background-size: contain;
+  }
+
+
   .top-bar-section ul li:hover:not(.has-form) > a.open, .top-bar-section ul li:hover:not(.has-form) > a {
     background-color: #fff !important;
     color: $gtnp_dark_green !important;
