@@ -100,6 +100,10 @@ border-width: 1px 0px 1px 0px;
 // S M A L L  O N L Y
 @media #{$small-only} {
 
+  #booking-widget {
+  display:none;
+  }
+
   @mixin block-grid-margin(
     $per-row:false,
     $spacing:$block-grid-default-spacing,
@@ -916,6 +920,22 @@ border-width: 1px 0px 1px 0px;
   }
 
 }
+
+.button.gtnp_green:hover, .button.gtnp_green:focus {
+  background-color: $gtnp_dark_green;
+
+}
+.button.gtnp_green.open{
+  background: $gtnp_green url("../assets/bookingwidget/whiteup.png") no-repeat scroll right 12px bottom 15px;
+}
+
+.button.gtnp_green{
+  text-align: left;
+  padding-left: 15px;
+  margin-bottom:0px;
+  background: $gtnp_green url("../assets/bookingwidget/whitedwn.png") no-repeat scroll right 12px bottom 15px;
+}
+
 
 /////////////////////////////////////////////////
 // ACTIVITIES BAR

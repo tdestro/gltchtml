@@ -9,6 +9,25 @@ function IsEmail(email) {
 
 $( document ).ready(function() {
 
+    if (!Modernizr.inputtypes.date) {
+        $('input[type=date]').datepicker({
+            // Consistent format with the HTML5 picker
+            dateFormat: 'yy-mm-dd'
+        });
+    }
+
+    $(".gtnp_green").click(function(){
+        if ( $( this ).hasClass( "open" ) ) {
+            $(".gtnp_green").removeClass("open");
+            $("#booking-widget").hide();
+        } else {
+            $(".gtnp_green").addClass("open");
+            $("#booking-widget").show();
+
+        }
+
+    });
+
     $( "#newsletter" ).submit(function( event ) {
         if( !IsEmail($("#email" ).val())) {
             $( "#dialog p:nth-child(1)").hide();

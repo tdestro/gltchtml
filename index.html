@@ -491,36 +491,74 @@
     </div>
 </div>
 
+<!--
+## Properties: Jenny Lake Lodge, Jackson Lake Lodge, Colter Bay Village & Headwaters
+## Adults: 1-10, default to 2· Children: 0-9, default to 0
+## On selection, collapse dropdown
+# Call to Action:
+## Cannot click on Book Now/Search until Arrival, Departure, Property are filled out (gray out, use hex #a9a9a9 see new image)
+## On hover of an active CTA, turn cursor to hand
+## On click of Book Now/Search, go to booking engine and carry over selections
+-->
 
+<a class="button gtnp_green expand show-for-small-only" href="#">
+        Book Now
+</a>
 <div id="booking-widget" class="row layer-10 full-width">
     <div class="large-offset-1 large-10 medium-12 columns">
         <div class="booking-widget row">
             <div class="small-12 medium-2 columns">
-                <input type="text" placeholder="Arrival Date" name="departure-date" id="arrival-date"
+                <input type="date" placeholder="Arrival Date" name="departure-date" id="arrival-date"
                        class="datepicker">
                 <img src="assets/bookingwidget/datepicker.png" class="input_img">
             </div>
             <div class="small-12 medium-2 columns">
-                <input type="text" placeholder="Departure Date" name="departure-date" id="departure-date"
+                <input type="date" placeholder="Departure Date" name="departure-date" id="departure-date"
                        class="datepicker">
                 <img src="assets/bookingwidget/datepicker.png" class="input_img">
             </div>
             <div class="small-12 medium-2 columns selectParent">
                 <select>
-                    <option selected="" disabled="disabled">Select Property</option>
+                    <option>Jenny Lake Lodge</option>
+                    <option>Jackson Lake Lodge</option>
+                    <option>Colter Bay Village & Headwaters</option>
                 </select>
             </div>
-            <div class="small-12 medium-2 columns selectParent">
+            <div class="small-6 medium-2 columns selectParent">
                 <select>
-                    <option selected="" disabled="disabled">2 Adults</option>
+                    <option>1 Adults</option>
+                    <option selected="selected">2 Adults</option>
+                    <option>3 Adults</option>
+                    <option>4 Adults</option>
+                    <option>5 Adults</option>
+                    <option>6 Adults</option>
+                    <option>7 Adults</option>
+                    <option>8 Adults</option>
+                    <option>9 Adults</option>
+                    <option>10 Adults</option>
                 </select>
+
             </div>
-            <div class="small-12 medium-2 columns selectParent">
+            <div class="small-6 medium-2 columns selectParent">
                 <select>
-                    <option selected="" disabled="disabled">2 Children</option>
+                    <option selected="selected">0 Children</option>
+                    <option>1 Children</option>
+                    <option>2 Children</option>
+                    <option>3 Children</option>
+                    <option>4 Children</option>
+                    <option>5 Children</option>
+                    <option>6 Children</option>
+                    <option>7 Children</option>
+                    <option>8 Children</option>
+                    <option>9 Children</option>
+
                 </select>
             </div>
-            <div class="small-12 medium-2 columns text-center bookbut">
+            <div class="small-12 medium-2 columns text-center bookbut show-for-small-only">
+
+                <input type="submit" value="Search" class="button expand">
+            </div>
+            <div class="small-12 medium-2 columns text-center bookbut show-for-medium-up">
 
                 <input type="submit" value="Book Now" class="button">
             </div>
