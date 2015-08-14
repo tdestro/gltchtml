@@ -100,7 +100,36 @@ border-width: 1px 0px 1px 0px;
 // S M A L L  O N L Y
 @media #{$small-only} {
 
-  ////////////////////////////////////////////////
+  @mixin block-grid-margin(
+    $per-row:false,
+    $spacing:$block-grid-default-spacing,
+    $include-spacing:true,
+    $base-style:true,
+    $margin:0) {
+    @include block-grid(
+            $per-row,
+            $spacing,
+            $include-spacing,
+            $base-style);
+
+    @if $per-row {
+      &>li {
+        $width: (100% - 2 * $per-row * $margin) / $per-row;
+        width: $width;
+        margin: $margin;
+      }
+    }
+  }
+  .tri-block-grid{
+
+    @include block-grid-margin(
+    $per-row: 1,
+    $margin: 2%
+    );
+  }
+
+
+    ////////////////////////////////////////////////
   // Hero Orbit Related.
   .hero-orbit .orbit-prev {
     background: url("../assets/orbit/orbitleft.png") no-repeat;
@@ -526,6 +555,23 @@ border-width: 1px 0px 1px 0px;
 ////////////////////////////////////////////////
 // M E D I U M  U P
 @media #{$medium-up} {
+
+  .tri-block-grid{
+    @include block-grid(
+      // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable.
+      // Available options: 1-12 by default, and false.
+    $per-row: 3,
+
+      // This controls how much space is between each item in the block grid.
+      // Use a variable or any pixel or em values.
+    $spacing: $block-grid-default-spacing,
+
+      // This controls whether or not base styles come through, set to false to leave out.
+    $base-style: true
+    );
+
+
+  }
 
   ////////////////////////////////////////////////
   // Hero Orbit Related.
@@ -1001,6 +1047,25 @@ border-width: 1px 0px 1px 0px;
 }
 
 
+.tri-block-grid h5{
+  color: $gtnp_green;
+  font-family: $font-family-serif;
+  margin-top: 0.3rem;
+  margin-bottom: 0rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
+}
+
+.tri-block-grid li {
+text-align: center;
+}
+.tri-block-grid li > a > img {
+  -webkit-box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
+  -moz-box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
+  box-shadow: 5px 5px 0px -2.5px $gtnp_dark_gray;
+}
 
 .hero-orbit .orbit-next:hover, .hero-orbit .orbit-prev:hover {
   background-color: transparent;
