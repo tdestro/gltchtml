@@ -83,6 +83,7 @@ p {
 border-color: $black;
 border-style:solid;
 border-width: 1px 0px 1px 0px;
+  background-color: $gtnp_light_green;
 }
 
 .wwh {
@@ -325,7 +326,11 @@ border-width: 1px 0px 1px 0px;
   }
 
 }
-
+.custom-dropdown-container-class > p > a {
+  @include font-family-sans-serif-1px;
+  color: $white;
+  text-decoration: underline;
+}
 ////////////////////////////////////////////////
 // M E D I U M  D O W N
 @media #{$medium-down} {
@@ -352,6 +357,8 @@ border-width: 1px 0px 1px 0px;
     margin-top: -45px;
     padding-top: 50px;
   }
+
+
   .full-width-for-medium-down {
     @include full-width-mixin;
   }

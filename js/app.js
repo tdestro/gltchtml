@@ -44,13 +44,51 @@ $( document ).ready(function() {
 
     });
 
+    var d = new Date();
 
-    $("#arrival-date").datepicker({
+
+    function checkifbetweenoctmay(){
+        var d = new Date();
+        // January is 0, February is 1, and so on.
+        if(d.getMonth() >= 4 && d.getMonth() < 10)
+        {
+           return ""
+        }
+        return new Date(d.getFullYear(), 5, 1);
+    }
+
+    $("#arrival-date").datepicker('option', {
+        defaultDate: checkifbetweenoctmay(),
+        maxDate: "+12m",
+        minDate: 0,
+        onSelect: function(dateText, inst) {
+            // Clear
+            $('#departure-date').datepicker('setDate', null);
+
+
+            var d = $(this).datepicker( 'getDate' );
+            d.setDate(d.getDate() + 27);
+
+            var depart = $(this).datepicker( 'getDate' );
+            depart.setDate(depart.getDate() + 1);
+
+
+            $("#departure-date").datepicker("option", "minDate", $(this).val());
+            $("#departure-date").datepicker("option", "maxDate", d);
+            $('#departure-date').datepicker("setDate", depart);
+
+
+        },
+        onClose: function(x,y){
+            //$('#departure-date').datepicker.show();
+            $('#departure-date').focus();
+        }
+
     });
 
-    $("#departure-date").datepicker({
+    $("#departure-date").datepicker('option', {
+        defaultDate: checkifbetweenoctmay()
     });
-
     $('.orbit-container .orbit-next').css('opacity', '0.4');
     $('.orbit-container .orbit-prev').css('opacity', '0.4');
     $('.orbit-container').on({

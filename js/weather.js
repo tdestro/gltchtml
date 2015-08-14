@@ -57,7 +57,7 @@ $(document).ready(function() {
                 html += '</div>';
             }
             html += '<div class="small-0 medium-1 large-1 columns"></div></div>';
-            html += '<div class="row"><div class="small-12 columns text-align-center"><a href="'+weather.link+'">More Weather Information</a></div></div>';
+            html += '<div class="row"><div class="small-12 columns text-align-center"><a href="http://forecast.weather.gov/MapClick.php?textField1=43.94&textField2=-110.31#.Vc4Yvns5Q31">More Weather Information</a></div></div>';
             $("#weather5day").html(html);
         },
         error: function(error) {
