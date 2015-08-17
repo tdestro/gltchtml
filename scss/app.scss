@@ -48,14 +48,18 @@ p {
     // Sets if dropdown has triangle. Default:true. $triangle: false,
   $max-width: 600px
   );
-  background-color: $gtnp_dark_green;
+
   z-index: 2000;
   border: 0;
   outline: none;
-  padding-top: 40px;
-  margin-top: -40px;
-  opacity: 0.9;
+  background-color: transparent;
 
+  .color{
+    padding-top: 40px;
+    margin-top: -40px;
+    background-color: $gtnp_dark_green;
+    opacity: 0.9;
+  }
   li {
     @include dropdown-style;
   }
@@ -329,7 +333,7 @@ border-width: 1px 0px 1px 0px;
   }
 
 }
-.custom-dropdown-container-class > p > a {
+.custom-dropdown-container-class > .color > p > a {
   @include font-family-sans-serif-1px;
   color: $white;
   text-decoration: underline;
@@ -337,9 +341,6 @@ border-width: 1px 0px 1px 0px;
 ////////////////////////////////////////////////
 // M E D I U M  D O W N
 @media #{$medium-down} {
-
-
-
 
   .top-bar ul > li.has-dropdown:hover a.open{
     background-color: #fff !important ;
@@ -356,7 +357,7 @@ border-width: 1px 0px 1px 0px;
   .weather_indent {
     margin-top: 30px;
   }
-  .custom-dropdown-container-class {
+  .custom-dropdown-container-class .color {
     margin-top: -45px;
     padding-top: 50px;
   }
@@ -525,15 +526,19 @@ border-width: 1px 0px 1px 0px;
 }
   li .weather_temp {
     color: $white;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 23pt;
     padding-left: 70px;
     margin-top: -5px;
+
   }
+  li .weather_temp.bold{
+    font-weight: bold;
+  }
+
   .weather_temp_drop {
     color: $white;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: lighter !important;
+    font-size: 23pt;
     margin-top: 20px;
   }
 
@@ -732,10 +737,14 @@ border-width: 1px 0px 1px 0px;
   }
   .weather_temp {
     color: $white;
-    font-size: 1.8rem;
+    font-size: 22pt;
     margin-top: 0.4rem;
-    font-weight: 600;
   }
+  .weather_temp.bold{
+    font-weight: bold;
+    font-size: 22pt;
+  }
+
   .weather_desc {
     font-family: $font-family-serif;
     font-weight: 100;

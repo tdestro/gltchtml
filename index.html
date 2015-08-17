@@ -221,7 +221,7 @@
 
                 <div class="row collapse">
                     <div class="small-11 columns">
-                        <a class="weatherwidget" data-options="is_hover:true;" data-dropdown="drop2"
+                        <a class="weatherwidget" data-dropdown="drop2"
                            aria-controls="drop2" aria-expanded="false">
                             <div class="row collapse">
                                 <div class="small-4 columns weather_cur def_icon_desc">
@@ -229,7 +229,7 @@
                                         CURRENT
                                     </div>
                                 </div>
-                                <div class="weather small-3 columns weather_temp">
+                                <div class="weather small-3 columns weather_temp bold">
                                 </div>
                                 <div id="weathertext" class="small-5 columns weather_desc"></div>
                             </div>
@@ -237,6 +237,7 @@
 
                         <div id="drop2" data-dropdown-content class="custom-dropdown-container-class content"
                              aria-hidden="true" tabindex="-1">
+                            <div class="color">
                             <div class="row collapse">
                                 <div class="small-6 columns def_icon_desc">
                                     <div class="weather_indent"> TODAY'S HI</div>
@@ -270,7 +271,7 @@
                                 </div>
                             </div>
                             <p class="text-align-center"><a href="weather.html">5 DAY FORECAST</a></p>
-                        </div>
+                        </div></div>
                     </div>
                     <div class="small-offset-1 columns"></div>
 
@@ -316,16 +317,17 @@
 
                 </li>
                 <li class="weather-topbar">
-                    <a class="weatherwidget" data-options="is_hover:true;" data-dropdown="drop3"
+                    <a class="weatherwidget" data-dropdown="drop3"
                        aria-controls="drop3" aria-autoclose="false" aria-expanded="false">
                         <ul class="show-for-medium-down small-block-grid-1">
-                            <li class="weather_temp weather"></li>
+                            <li class="weather_temp bold weather"></li>
                             <li class="weather_cur">CURRENT</li>
                         </ul>
                     </a>
 
-                    <div id="drop3" data-dropdown-content class="custom-dropdown-container-class content"
+                    <div id="drop3" data-dropdown-content class="custom-dropdown-container-class drop3 content"
                          aria-hidden="true" tabindex="-1">
+                        <div class="color">
                         <div class="row collapse">
                             <div class="small-6 columns">
                                 <div class="weather_indent"> TODAY'S HI</div>
@@ -359,7 +361,7 @@
                             </div>
                         </div>
                         <p class="text-align-center"><a href="weather.html">5 DAY FORECAST</a></p>
-                    </div>
+                    </div></div>
                 </li>
 
                 <li class="toggle-topbar"><a class="right" href="#"><span></span></a>
@@ -490,16 +492,6 @@
         </ul>
     </div>
 </div>
-
-<!--
-## Properties: Jenny Lake Lodge, Jackson Lake Lodge, Colter Bay Village & Headwaters
-## Adults: 1-10, default to 2· Children: 0-9, default to 0
-## On selection, collapse dropdown
-# Call to Action:
-## Cannot click on Book Now/Search until Arrival, Departure, Property are filled out (gray out, use hex #a9a9a9 see new image)
-## On hover of an active CTA, turn cursor to hand
-## On click of Book Now/Search, go to booking engine and carry over selections
--->
 
 <a class="button gtnp_green expand show-for-small-only" href="#">
         Book Now
