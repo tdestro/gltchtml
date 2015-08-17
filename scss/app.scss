@@ -54,6 +54,7 @@ p {
   outline: none;
   padding-top: 40px;
   margin-top: -40px;
+  opacity: 0.9;
 
   li {
     @include dropdown-style;
@@ -64,6 +65,8 @@ p {
   z-index: 2001;
 
 }
+
+
 
 .overstate {
   background-color: $gtnp_dark_green;
