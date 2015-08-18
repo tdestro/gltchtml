@@ -522,8 +522,10 @@ border-width: 1px 0px 1px 0px;
   .tri-bar-color-bg {
     padding-top: 10px;
   }
-  .weatherwidget{  z-index: 2001;
-}
+  .weatherwidget{
+    z-index: 2001;
+    cursor: pointer;
+  }
   li .weather_temp {
     color: $white;
     font-size: 23pt;
